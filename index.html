@@ -1,0 +1,1395 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#c8101e">
+  <meta name="color-scheme" content="light">
+  <title>Grand Senheng Temerloh - Google Review Helper September 2026</title>
+  <meta name="description" content="Pilih ayat Google Review berdasarkan pengalaman sebenar anda di Grand Senheng Temerloh.">
+
+  <style>
+    :root{
+      --red:#d51020;
+      --red-dark:#ad0815;
+      --red-soft:#fff1f2;
+      --gold:#f8b91b;
+      --ink:#1c1917;
+      --muted:#6b6661;
+      --line:#e9e4de;
+      --paper:#fff;
+      --canvas:#f1eee9;
+      --soft:#f8f6f2;
+      --green:#087a4b;
+      --green-soft:#eafaf2;
+      --danger:#b42318;
+      --shadow:0 28px 70px rgba(44,31,20,.15);
+      --shadow-sm:0 10px 28px rgba(44,31,20,.08);
+      --radius-xl:30px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --safe-bottom:env(safe-area-inset-bottom,0px);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      padding:12px;
+      color:var(--ink);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      line-height:1.5;
+      background:
+        radial-gradient(circle at 7% -8%,rgba(248,185,27,.28),transparent 29rem),
+        radial-gradient(circle at 100% 4%,rgba(213,16,32,.15),transparent 30rem),
+        var(--canvas);
+    }
+
+    button,input{font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,input:focus-visible{
+      outline:3px solid rgba(213,16,32,.22);
+      outline-offset:2px;
+    }
+
+    .app{width:min(100%,590px);min-height:calc(100vh - 24px);margin:0 auto;display:flex}
+    .shell{
+      position:relative;
+      width:100%;
+      min-height:calc(100vh - 24px);
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      background:var(--paper);
+      border:1px solid rgba(255,255,255,.75);
+      border-radius:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .brandbar{
+      position:relative;
+      z-index:5;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:17px 20px 13px;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(16px);
+    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .brandmark{
+      width:42px;height:42px;display:grid;place-items:center;
+      color:#fff;background:linear-gradient(145deg,var(--red),var(--red-dark));
+      border-radius:14px;box-shadow:0 10px 22px rgba(213,16,32,.22);
+      font-size:1.32rem;font-weight:950;font-style:italic;letter-spacing:-.08em;
+    }
+    .brandname{display:block;color:var(--red);font-weight:950;letter-spacing:-.045em;line-height:1}
+    .branch{display:block;margin-top:4px;color:var(--muted);font-size:.72rem;font-weight:750;white-space:nowrap}
+    .step-count{
+      flex:0 0 auto;padding:8px 11px;border:1px solid var(--line);border-radius:999px;
+      background:var(--soft);color:#514b45;font-size:.74rem;font-weight:850;
+    }
+
+    .progress-wrap{position:relative;z-index:4;padding:0 20px 14px;background:#fff;border-bottom:1px solid var(--line)}
+    .progress-track{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+    .progress-segment{height:7px;overflow:hidden;border-radius:999px;background:#ebe7e1}
+    .progress-segment::after{content:"";display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--red),#ff5260);transition:width .25s ease}
+    .progress-segment.is-done::after{width:100%}
+
+    .stage{flex:1;min-height:0;padding:20px 20px 122px}
+    .screen{display:none;animation:screen-in .22s ease both}
+    .screen.is-active{display:block}
+    @keyframes screen-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+    h1,h2{margin:0;color:#171311;letter-spacing:-.048em;line-height:1.08}
+    h1{font-size:clamp(2rem,8.8vw,2.68rem)}
+    h2{font-size:clamp(1.68rem,7.4vw,2.18rem)}
+    .lead{margin:10px 0 0;color:var(--muted);font-size:.94rem}
+    .kicker{
+      display:inline-flex;align-items:center;gap:7px;margin-bottom:10px;padding:7px 10px;
+      color:var(--red-dark);background:var(--red-soft);border:1px solid #ffd4d8;
+      border-radius:999px;font-size:.72rem;font-weight:900;
+    }
+
+    .hero{
+      position:relative;overflow:hidden;padding:23px;color:#fff;border-radius:28px;
+      background:
+        radial-gradient(circle at 100% 0%,rgba(248,185,27,.38),transparent 42%),
+        linear-gradient(145deg,#211313 0%,#60131a 58%,#b90817 100%);
+      box-shadow:0 18px 38px rgba(91,12,18,.23);
+    }
+    .hero::after{
+      content:"SEP";position:absolute;right:-7px;bottom:-28px;color:rgba(255,255,255,.065);
+      font-size:7.6rem;font-weight:950;letter-spacing:-.09em;line-height:1;
+    }
+    .hero h1,.hero .lead,.hero-badges{position:relative;z-index:1}
+    .hero h1{color:#fff;max-width:430px}
+    .hero .lead{color:rgba(255,255,255,.82)}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .hero-badge{padding:8px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.1);font-size:.75rem;font-weight:800}
+
+    .notice{
+      display:flex;gap:12px;margin-top:16px;padding:14px;border:1px solid #f0d9a3;
+      border-radius:var(--radius-lg);background:#fff9e9;box-shadow:var(--shadow-sm);
+    }
+    .notice-icon{flex:0 0 auto;width:36px;height:36px;display:grid;place-items:center;border-radius:12px;background:var(--gold);color:#3a2700;font-weight:950}
+    .notice strong{display:block;font-size:.9rem}
+    .notice p{margin:4px 0 0;color:#6b5a35;font-size:.8rem;line-height:1.45}
+
+    .field{margin-top:18px}
+    .field-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+    label{display:block;margin-bottom:7px;font-size:.85rem;font-weight:850}
+    .optional{color:var(--muted);font-size:.72rem;font-weight:700}
+    input[type="text"],input[type="number"]{
+      width:100%;height:52px;padding:0 14px;color:var(--ink);background:#fff;
+      border:1.5px solid #dcd6cf;border-radius:15px;box-shadow:inset 0 1px 0 rgba(0,0,0,.02);
+    }
+    input::placeholder{color:#aaa29a}
+    input:focus{border-color:var(--red)}
+    .input-prefix{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;overflow:hidden;border:1.5px solid #dcd6cf;border-radius:15px;background:#fff}
+    .input-prefix:focus-within{border-color:var(--red);box-shadow:0 0 0 3px rgba(213,16,32,.12)}
+    .input-prefix span{padding-left:14px;color:#5b554f;font-weight:850}
+    .input-prefix input{border:0;box-shadow:none;outline:0}
+    .hint{margin:7px 0 0;color:var(--muted);font-size:.74rem}
+
+    .check-row{
+      display:flex;align-items:flex-start;gap:11px;margin-top:14px;padding:13px 14px;
+      border:1px solid var(--line);border-radius:15px;background:var(--soft);cursor:pointer;
+    }
+    .check-row input{width:20px;height:20px;flex:0 0 auto;margin:1px 0 0;accent-color:var(--red)}
+    .check-row span{font-size:.8rem;color:#4f4943}
+
+    .option-grid{display:grid;gap:10px;margin-top:18px}
+    .option{
+      width:100%;display:grid;grid-template-columns:48px minmax(0,1fr) 22px;align-items:center;
+      gap:12px;padding:13px;text-align:left;color:var(--ink);background:#fff;
+      border:1.5px solid var(--line);border-radius:18px;box-shadow:0 5px 15px rgba(44,31,20,.035);
+    }
+    .option:hover{border-color:#d8aeb2;background:#fffafa}
+    .option.is-selected{border-color:var(--red);background:var(--red-soft);box-shadow:0 9px 22px rgba(213,16,32,.10)}
+    .option-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:#f2eee8;color:#5a5149;font-weight:950}
+    .option.is-selected .option-icon{color:#fff;background:linear-gradient(145deg,var(--red),var(--red-dark))}
+    .option strong{display:block;font-size:.88rem;line-height:1.25}
+    .option small{display:block;margin-top:3px;color:var(--muted);font-size:.72rem;line-height:1.35}
+    .radio-dot{width:19px;height:19px;border:2px solid #c8c0b8;border-radius:50%;position:relative}
+    .option.is-selected .radio-dot{border-color:var(--red)}
+    .option.is-selected .radio-dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--red)}
+
+    .requirement-card{margin-top:16px;padding:14px;border:1px solid #d9ebe2;border-radius:18px;background:#f2fbf6}
+    .requirement-card strong{display:block;color:#075b39;font-size:.84rem}
+    .requirement-card ul{margin:7px 0 0;padding-left:19px;color:#47705c;font-size:.76rem}
+
+    .choice-grid{display:grid;gap:9px;margin-top:16px}
+    .choice-chip{
+      width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:13px 14px;text-align:left;color:#453f39;background:#fff;border:1.5px solid var(--line);
+      border-radius:15px;font-size:.82rem;font-weight:800;
+    }
+    .choice-chip::after{content:"";width:17px;height:17px;border:2px solid #c8c0b8;border-radius:50%}
+    .choice-chip.is-selected{color:var(--red-dark);border-color:var(--red);background:var(--red-soft)}
+    .choice-chip.is-selected::after{border:5px solid var(--red)}
+
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+    .chip{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#544d47;font-size:.76rem;font-weight:850}
+    .chip.is-selected{color:#fff;border-color:var(--red);background:var(--red)}
+
+    .template-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px}
+    .template-status{color:var(--muted);font-size:.75rem;font-weight:750}
+    .mini-btn{padding:9px 11px;border:1px solid var(--line);border-radius:12px;background:#fff;color:#4b4540;font-size:.75rem;font-weight:850}
+    .templates{display:grid;gap:10px;margin-top:11px}
+    .template-card{
+      position:relative;width:100%;padding:15px 42px 15px 15px;text-align:left;color:#38322d;
+      background:#fff;border:1.5px solid var(--line);border-radius:18px;font-size:.82rem;line-height:1.5;
+      box-shadow:0 7px 18px rgba(44,31,20,.045);
+    }
+    .template-card::after{content:"";position:absolute;right:15px;top:17px;width:18px;height:18px;border:2px solid #c9c1b9;border-radius:50%}
+    .template-card.is-selected{border-color:var(--red);background:var(--red-soft);box-shadow:0 10px 24px rgba(213,16,32,.10)}
+    .template-card.is-selected::after{border:5px solid var(--red)}
+
+    .review-card{margin-top:17px;padding:17px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow-sm)}
+    .review-head{display:flex;align-items:center;gap:11px;padding-bottom:13px;border-bottom:1px solid var(--line)}
+    .google-mark{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#f3f5f8;color:#4285f4;font-weight:950}
+    .review-title{font-size:.87rem;font-weight:900}
+    .rating-note{margin-top:2px;color:var(--muted);font-size:.7rem}
+    .review-text{padding:15px 0 4px;white-space:pre-wrap;color:#332e2a;font-size:.88rem;line-height:1.58}
+    .review-tags{margin-top:10px;color:#3f6fae;font-size:.74rem;word-break:break-word}
+    .final-note{margin-top:14px;padding:13px;border-radius:15px;background:#f5f3ef;color:#5d5650;font-size:.76rem}
+
+    .error{display:none;margin-top:9px;color:var(--danger);font-size:.76rem;font-weight:750}
+    .error.is-visible{display:block}
+
+    .footer{
+      position:absolute;z-index:6;left:0;right:0;bottom:0;padding:13px 20px calc(13px + var(--safe-bottom));
+      border-top:1px solid rgba(231,226,220,.92);background:rgba(255,255,255,.94);backdrop-filter:blur(16px);
+    }
+    .nav{display:grid;grid-template-columns:1fr 1.35fr;gap:10px}
+    .nav.is-single{grid-template-columns:1fr}
+    .btn{min-height:51px;padding:0 16px;border-radius:15px;border:1px solid transparent;font-size:.86rem;font-weight:900}
+    .btn-primary{color:#fff;background:linear-gradient(145deg,var(--red),var(--red-dark));box-shadow:0 10px 24px rgba(213,16,32,.22)}
+    .btn-secondary{color:#4c4640;background:#fff;border-color:var(--line)}
+    .btn-dark{color:#fff;background:#1f1b18;box-shadow:0 10px 22px rgba(31,27,24,.18)}
+    .btn:disabled{cursor:not-allowed;opacity:.55;box-shadow:none}
+
+    .toast{
+      position:fixed;z-index:20;left:50%;bottom:calc(20px + var(--safe-bottom));width:min(calc(100% - 28px),520px);
+      padding:14px 16px;color:#fff;background:#1f1b18;border-radius:17px;box-shadow:0 18px 42px rgba(0,0,0,.22);
+      transform:translate(-50%,130%);opacity:0;transition:.25s ease;
+    }
+    .toast.is-visible{transform:translate(-50%,0);opacity:1}
+    .toast strong{display:block;font-size:.84rem}.toast span{display:block;margin-top:3px;color:#ded9d4;font-size:.75rem}
+
+    @media (max-width:430px){
+      body{padding:0;background:#fff}.app,.shell{min-height:100vh}.shell{border:0;border-radius:0;box-shadow:none}
+      .brandbar{padding:15px 16px 12px}.progress-wrap{padding:0 16px 12px}.stage{padding:18px 16px 118px}.footer{padding-left:16px;padding-right:16px}.hero{padding:20px}
+    }
+    @media (max-width:355px){.branch{display:none}.option{grid-template-columns:44px minmax(0,1fr) 20px}.option-icon{width:44px;height:44px}}
+    @media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+
+<body>
+  <main class="app">
+    <section class="shell" aria-live="polite">
+      <header class="brandbar">
+        <div class="brand" aria-label="Grand Senheng Temerloh">
+          <div class="brandmark" aria-hidden="true">S</div>
+          <div>
+            <span class="brandname">SENHENG</span>
+            <span class="branch">Grand Senheng Temerloh · GS009</span>
+          </div>
+        </div>
+        <div class="step-count" id="stepCount">Langkah 1 / 5</div>
+      </header>
+
+      <div class="progress-wrap">
+        <div class="progress-track" aria-label="Kemajuan">
+          <div class="progress-segment is-done"></div>
+          <div class="progress-segment"></div>
+          <div class="progress-segment"></div>
+          <div class="progress-segment"></div>
+          <div class="progress-segment"></div>
+        </div>
+      </div>
+
+      <div class="stage">
+        <section class="screen is-active" data-step="1" aria-labelledby="title1">
+          <div class="hero">
+            <span class="kicker">Google Review · September 2026</span>
+            <h1 id="title1">Pilih ayat yang betul-betul kena dengan pengalaman anda</h1>
+            <p class="lead">Tak perlu tulis dari kosong. Pilih pengalaman, isi butiran ringkas dan pilih satu ayat yang paling tepat.</p>
+            <div class="hero-badges">
+              <span class="hero-badge">7 jenis pengalaman</span>
+              <span class="hero-badge">Ayat siap tersedia</span>
+            </div>
+          </div>
+
+          <div class="notice">
+            <div class="notice-icon" aria-hidden="true">!</div>
+            <div>
+              <strong>Review mesti datang daripada anda sendiri</strong>
+              <p>Gunakan akaun dan peranti sendiri. Pilih ayat yang jujur sahaja. Review berulang daripada pengguna sama dalam bulan yang sama dikira sekali.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-head">
+              <label for="staffCode">Kod staf yang membantu anda</label>
+              <span class="optional">Contoh: SH9861</span>
+            </div>
+            <input id="staffCode" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" maxlength="12" placeholder="Masukkan kod staf">
+            <p class="hint">Kod ini akan dimasukkan pada hujung review untuk rujukan outlet.</p>
+            <div class="error" id="errStaff" role="alert">Sila masukkan kod staf yang sah.</div>
+          </div>
+
+          <label class="check-row" for="monthlyConfirm">
+            <input id="monthlyConfirm" type="checkbox">
+            <span>Saya belum hantar Google Review untuk outlet ini menggunakan akaun yang sama pada bulan ini.</span>
+          </label>
+          <div class="error" id="errMonthly" role="alert">Sila sahkan perkara ini untuk teruskan.</div>
+        </section>
+
+        <section class="screen" data-step="2" aria-labelledby="title2">
+          <span class="kicker">Pilih pengalaman</span>
+          <h2 id="title2">Apa yang anda alami?</h2>
+          <p class="lead">Pilih satu pengalaman sebenar. Setiap pilihan ikut syarat baharu yang berkuat kuasa 1 September 2026.</p>
+          <div class="option-grid" id="categoryList" role="radiogroup" aria-label="Jenis pengalaman"></div>
+          <div class="error" id="errCategory" role="alert">Sila pilih satu jenis pengalaman.</div>
+        </section>
+
+        <section class="screen" data-step="3" aria-labelledby="title3">
+          <span class="kicker">Butiran wajib</span>
+          <h2 id="title3">Lengkapkan butiran ringkas</h2>
+          <p class="lead" id="detailsLead">Maklumat ini digunakan untuk memastikan komen memenuhi syarat kategori.</p>
+          <div class="requirement-card" id="requirementCard"></div>
+          <div id="dynamicFields"></div>
+          <div class="error" id="errDetails" role="alert">Sila lengkapkan semua maklumat yang diperlukan.</div>
+        </section>
+
+        <section class="screen" data-step="4" aria-labelledby="title4">
+          <span class="kicker">Pilih ayat</span>
+          <h2 id="title4">Yang mana paling tepat?</h2>
+          <p class="lead">Baca dulu dan pilih satu ayat yang memang sepadan dengan pengalaman anda.</p>
+          <div class="template-tools">
+            <span class="template-status" id="templateStatus">Memuatkan ayat...</span>
+            <button class="mini-btn" id="refreshTemplates" type="button"><span aria-hidden="true">↻</span> Tukar pilihan</button>
+          </div>
+          <div class="templates" id="templateList" role="radiogroup" aria-label="Pilihan ayat review"></div>
+          <div class="error" id="errTemplate" role="alert">Sila pilih satu ayat review.</div>
+        </section>
+
+        <section class="screen" data-step="5" aria-labelledby="title5">
+          <span class="kicker">Semak & buka Google</span>
+          <h2 id="title5">Review anda sudah siap</h2>
+          <p class="lead">Semak sekali lagi. Sistem akan copy ayat ini dan buka halaman Google Review.</p>
+
+          <div class="review-card">
+            <div class="review-head">
+              <div class="google-mark" aria-hidden="true">G</div>
+              <div>
+                <div class="review-title">Google Review</div>
+                <div class="rating-note">Pilih rating yang jujur berdasarkan pengalaman anda</div>
+              </div>
+            </div>
+            <div class="review-text" id="finalPreview"></div>
+            <div class="review-tags" id="finalTags"></div>
+          </div>
+
+          <label class="check-row" for="truthConfirm">
+            <input id="truthConfirm" type="checkbox">
+            <span>Ayat ini memang menggambarkan pengalaman saya, dan saya sendiri bersetuju untuk menghantarnya menggunakan akaun serta peranti saya.</span>
+          </label>
+          <div class="error" id="errTruth" role="alert">Sila sahkan sebelum buka Google Review.</div>
+
+          <div class="final-note">Selepas Google dibuka, paste ayat yang sudah di-copy. Anda masih bebas memilih rating sendiri atau tidak meneruskan review.</div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <div class="nav is-single" id="nav">
+          <button class="btn btn-secondary" id="backBtn" type="button" hidden>Kembali</button>
+          <button class="btn btn-primary" id="nextBtn" type="button">Mula</button>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <strong id="toastTitle"></strong>
+    <span id="toastText"></span>
+  </div>
+
+  <noscript>
+    <p style="max-width:560px;margin:24px auto;padding:16px;font-family:Arial,sans-serif">JavaScript perlu diaktifkan untuk menggunakan Google Review Helper.</p>
+  </noscript>
+
+  <script type="application/json" id="fallbackData">
+  {
+    "version": 5,
+    "effective_date": "2026-09-01",
+    "meta": {
+      "name": "GS009 UGC Google Review Comments - September 2026",
+      "description": "350 pre-written review choices aligned with the UGC Google Review Guideline UTD September 2026.",
+      "language": "ms-MY",
+      "store": "Grand Senheng Temerloh",
+      "store_code": "GS009",
+      "usage_note": "Customer must choose only a comment that truthfully matches their own experience and submit it using their own account and device.",
+      "same_user_monthly_rule": "Repeated Google Reviews from the same user in the same month count as one review only.",
+      "template_count": 350,
+      "counts": {
+        "trusted_service": 50,
+        "scoin_issuance": 50,
+        "scoin_redemption": 50,
+        "plusone_entitlement": 50,
+        "plusone_claim": 50,
+        "replacement_entitlement": 50,
+        "replacement_claim": 50
+      },
+      "generation_structure": "Each category contains 10 distinct sentence structures with 5 distinct natural endings."
+    },
+    "categories": {
+      "trusted_service": {
+        "label": "Trusted Service",
+        "full_label": "Always Be With You: Trusted Service",
+        "requirements": [
+          "Sekurang-kurangnya satu pengalaman Trusted Service yang layak"
+        ],
+        "templates": [
+          "Pada pengalaman saya, Senheng memang jenama yang boleh dipercayai. Penerangan yang saya terima juga jelas dan terus kepada perkara penting. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Pengalaman membeli-belah saya di Grand Senheng Temerloh sangat baik. Dari mula masuk sampai urusan selesai, semuanya terasa mudah. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Saya puas hati dengan servis selepas jualan dan sokongan daripada Senheng. Staf dengar pertanyaan saya sebelum terangkan langkah seterusnya. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Saya semak maklumat secara online dahulu, kemudian sambung urusan di Grand Senheng Temerloh. Peralihan dari online ke kedai berjalan lancar. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Rangkaian kedai Senheng yang luas memang memudahkan saya. Bila perlukan bantuan, saya boleh datang ke outlet yang berdekatan. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Urusan saya hari ini buat saya lebih yakin dengan Senheng sebagai jenama yang boleh dipercayai. Maklumat diberikan dengan teratur dan mudah difahami. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Saya datang untuk melihat beberapa pilihan sebelum membuat keputusan. Pengalaman membeli di sini selesa kerana staf membantu tanpa mendesak. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Bila saya perlukan bantuan selepas pembelian, staf Senheng terangkan proses dengan sabar. Sokongan selepas jualan yang diberikan memang membantu. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Carian saya bermula secara online dan disambung di outlet. Saya tak perlu ulang banyak perkara kerana proses online ke offline Senheng mudah diikuti. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Kewujudan outlet Senheng di banyak lokasi memberi kemudahan kepada pelanggan. Urusan saya di Grand Senheng Temerloh juga berjalan baik. Staf yang membantu saya ramah dan mudah diajak berbincang.",
+          "Pada pengalaman saya, Senheng memang jenama yang boleh dipercayai. Penerangan yang saya terima juga jelas dan terus kepada perkara penting. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Pengalaman membeli-belah saya di Grand Senheng Temerloh sangat baik. Dari mula masuk sampai urusan selesai, semuanya terasa mudah. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Saya puas hati dengan servis selepas jualan dan sokongan daripada Senheng. Staf dengar pertanyaan saya sebelum terangkan langkah seterusnya. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Saya semak maklumat secara online dahulu, kemudian sambung urusan di Grand Senheng Temerloh. Peralihan dari online ke kedai berjalan lancar. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Rangkaian kedai Senheng yang luas memang memudahkan saya. Bila perlukan bantuan, saya boleh datang ke outlet yang berdekatan. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Urusan saya hari ini buat saya lebih yakin dengan Senheng sebagai jenama yang boleh dipercayai. Maklumat diberikan dengan teratur dan mudah difahami. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Saya datang untuk melihat beberapa pilihan sebelum membuat keputusan. Pengalaman membeli di sini selesa kerana staf membantu tanpa mendesak. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Bila saya perlukan bantuan selepas pembelian, staf Senheng terangkan proses dengan sabar. Sokongan selepas jualan yang diberikan memang membantu. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Carian saya bermula secara online dan disambung di outlet. Saya tak perlu ulang banyak perkara kerana proses online ke offline Senheng mudah diikuti. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Kewujudan outlet Senheng di banyak lokasi memberi kemudahan kepada pelanggan. Urusan saya di Grand Senheng Temerloh juga berjalan baik. Soalan saya dijawab satu persatu tanpa membuat saya rasa tergesa-gesa.",
+          "Pada pengalaman saya, Senheng memang jenama yang boleh dipercayai. Penerangan yang saya terima juga jelas dan terus kepada perkara penting. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Pengalaman membeli-belah saya di Grand Senheng Temerloh sangat baik. Dari mula masuk sampai urusan selesai, semuanya terasa mudah. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Saya puas hati dengan servis selepas jualan dan sokongan daripada Senheng. Staf dengar pertanyaan saya sebelum terangkan langkah seterusnya. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Saya semak maklumat secara online dahulu, kemudian sambung urusan di Grand Senheng Temerloh. Peralihan dari online ke kedai berjalan lancar. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Rangkaian kedai Senheng yang luas memang memudahkan saya. Bila perlukan bantuan, saya boleh datang ke outlet yang berdekatan. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Urusan saya hari ini buat saya lebih yakin dengan Senheng sebagai jenama yang boleh dipercayai. Maklumat diberikan dengan teratur dan mudah difahami. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Saya datang untuk melihat beberapa pilihan sebelum membuat keputusan. Pengalaman membeli di sini selesa kerana staf membantu tanpa mendesak. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Bila saya perlukan bantuan selepas pembelian, staf Senheng terangkan proses dengan sabar. Sokongan selepas jualan yang diberikan memang membantu. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Carian saya bermula secara online dan disambung di outlet. Saya tak perlu ulang banyak perkara kerana proses online ke offline Senheng mudah diikuti. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Kewujudan outlet Senheng di banyak lokasi memberi kemudahan kepada pelanggan. Urusan saya di Grand Senheng Temerloh juga berjalan baik. Saya hargai cara staf menerangkan perkara yang saya kurang faham.",
+          "Pada pengalaman saya, Senheng memang jenama yang boleh dipercayai. Penerangan yang saya terima juga jelas dan terus kepada perkara penting. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Pengalaman membeli-belah saya di Grand Senheng Temerloh sangat baik. Dari mula masuk sampai urusan selesai, semuanya terasa mudah. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Saya puas hati dengan servis selepas jualan dan sokongan daripada Senheng. Staf dengar pertanyaan saya sebelum terangkan langkah seterusnya. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Saya semak maklumat secara online dahulu, kemudian sambung urusan di Grand Senheng Temerloh. Peralihan dari online ke kedai berjalan lancar. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Rangkaian kedai Senheng yang luas memang memudahkan saya. Bila perlukan bantuan, saya boleh datang ke outlet yang berdekatan. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Urusan saya hari ini buat saya lebih yakin dengan Senheng sebagai jenama yang boleh dipercayai. Maklumat diberikan dengan teratur dan mudah difahami. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Saya datang untuk melihat beberapa pilihan sebelum membuat keputusan. Pengalaman membeli di sini selesa kerana staf membantu tanpa mendesak. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Bila saya perlukan bantuan selepas pembelian, staf Senheng terangkan proses dengan sabar. Sokongan selepas jualan yang diberikan memang membantu. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Carian saya bermula secara online dan disambung di outlet. Saya tak perlu ulang banyak perkara kerana proses online ke offline Senheng mudah diikuti. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Kewujudan outlet Senheng di banyak lokasi memberi kemudahan kepada pelanggan. Urusan saya di Grand Senheng Temerloh juga berjalan baik. Secara keseluruhan, pengalaman saya hari ini memang memuaskan.",
+          "Pada pengalaman saya, Senheng memang jenama yang boleh dipercayai. Penerangan yang saya terima juga jelas dan terus kepada perkara penting. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Pengalaman membeli-belah saya di Grand Senheng Temerloh sangat baik. Dari mula masuk sampai urusan selesai, semuanya terasa mudah. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Saya puas hati dengan servis selepas jualan dan sokongan daripada Senheng. Staf dengar pertanyaan saya sebelum terangkan langkah seterusnya. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Saya semak maklumat secara online dahulu, kemudian sambung urusan di Grand Senheng Temerloh. Peralihan dari online ke kedai berjalan lancar. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Rangkaian kedai Senheng yang luas memang memudahkan saya. Bila perlukan bantuan, saya boleh datang ke outlet yang berdekatan. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Urusan saya hari ini buat saya lebih yakin dengan Senheng sebagai jenama yang boleh dipercayai. Maklumat diberikan dengan teratur dan mudah difahami. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Saya datang untuk melihat beberapa pilihan sebelum membuat keputusan. Pengalaman membeli di sini selesa kerana staf membantu tanpa mendesak. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Bila saya perlukan bantuan selepas pembelian, staf Senheng terangkan proses dengan sabar. Sokongan selepas jualan yang diberikan memang membantu. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Carian saya bermula secara online dan disambung di outlet. Saya tak perlu ulang banyak perkara kerana proses online ke offline Senheng mudah diikuti. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu.",
+          "Kewujudan outlet Senheng di banyak lokasi memberi kemudahan kepada pelanggan. Urusan saya di Grand Senheng Temerloh juga berjalan baik. Prosesnya tersusun dan saya tahu apa yang perlu dibuat selepas itu."
+        ]
+      },
+      "scoin_issuance": {
+        "label": "S-Coin Issuance",
+        "full_label": "Dapat S-Coin daripada pembelian",
+        "requirements": [
+          "Produk",
+          "Peratus S-Coin Cashback",
+          "Nilai S-Coin dalam RM"
+        ],
+        "templates": [
+          "Saya beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai S-Coin yang saya terima ialah {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Untuk pembelian {product}, saya menerima S-Coin Cashback {cashbackPercent} dengan nilai S-Coin sebanyak {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Masa beli {product}, staf maklumkan promosi S-Coin Cashback {cashbackPercent}. S-Coin yang diterima bernilai {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Hari ini saya pilih {product} dan pembelian ini beri S-Coin Cashback {cashbackPercent}, bersamaan nilai {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Staf terangkan bahawa {product} layak menerima S-Coin Cashback {cashbackPercent}. Nilai S-Coin untuk pembelian ini ialah {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Selepas beli {product}, saya menerima S-Coin Cashback {cashbackPercent}. Jumlah nilai S-Coin yang diberikan ialah {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Pembelian {product} saya datang dengan S-Coin Cashback {cashbackPercent}. Bila disemak, nilai S-Coin tersebut ialah {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Saya datang untuk beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai yang masuk dalam bentuk S-Coin ialah {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Urusan pembelian {product} berjalan lancar dan saya turut menerima S-Coin Cashback {cashbackPercent} bernilai {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Produk yang saya beli ialah {product}. Pembelian ini memberi S-Coin Cashback {cashbackPercent} dengan nilai S-Coin {scoinValue}. Staf terangkan cara S-Coin berfungsi dengan bahasa yang mudah.",
+          "Saya beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai S-Coin yang saya terima ialah {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Untuk pembelian {product}, saya menerima S-Coin Cashback {cashbackPercent} dengan nilai S-Coin sebanyak {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Masa beli {product}, staf maklumkan promosi S-Coin Cashback {cashbackPercent}. S-Coin yang diterima bernilai {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Hari ini saya pilih {product} dan pembelian ini beri S-Coin Cashback {cashbackPercent}, bersamaan nilai {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Staf terangkan bahawa {product} layak menerima S-Coin Cashback {cashbackPercent}. Nilai S-Coin untuk pembelian ini ialah {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Selepas beli {product}, saya menerima S-Coin Cashback {cashbackPercent}. Jumlah nilai S-Coin yang diberikan ialah {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Pembelian {product} saya datang dengan S-Coin Cashback {cashbackPercent}. Bila disemak, nilai S-Coin tersebut ialah {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Saya datang untuk beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai yang masuk dalam bentuk S-Coin ialah {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Urusan pembelian {product} berjalan lancar dan saya turut menerima S-Coin Cashback {cashbackPercent} bernilai {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Produk yang saya beli ialah {product}. Pembelian ini memberi S-Coin Cashback {cashbackPercent} dengan nilai S-Coin {scoinValue}. Saya boleh nampak dengan jelas berapa nilai yang diterima.",
+          "Saya beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai S-Coin yang saya terima ialah {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Untuk pembelian {product}, saya menerima S-Coin Cashback {cashbackPercent} dengan nilai S-Coin sebanyak {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Masa beli {product}, staf maklumkan promosi S-Coin Cashback {cashbackPercent}. S-Coin yang diterima bernilai {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Hari ini saya pilih {product} dan pembelian ini beri S-Coin Cashback {cashbackPercent}, bersamaan nilai {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Staf terangkan bahawa {product} layak menerima S-Coin Cashback {cashbackPercent}. Nilai S-Coin untuk pembelian ini ialah {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Selepas beli {product}, saya menerima S-Coin Cashback {cashbackPercent}. Jumlah nilai S-Coin yang diberikan ialah {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Pembelian {product} saya datang dengan S-Coin Cashback {cashbackPercent}. Bila disemak, nilai S-Coin tersebut ialah {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Saya datang untuk beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai yang masuk dalam bentuk S-Coin ialah {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Urusan pembelian {product} berjalan lancar dan saya turut menerima S-Coin Cashback {cashbackPercent} bernilai {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Produk yang saya beli ialah {product}. Pembelian ini memberi S-Coin Cashback {cashbackPercent} dengan nilai S-Coin {scoinValue}. Penerangan tentang cashback dibuat sebelum pembelian diselesaikan.",
+          "Saya beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai S-Coin yang saya terima ialah {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Untuk pembelian {product}, saya menerima S-Coin Cashback {cashbackPercent} dengan nilai S-Coin sebanyak {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Masa beli {product}, staf maklumkan promosi S-Coin Cashback {cashbackPercent}. S-Coin yang diterima bernilai {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Hari ini saya pilih {product} dan pembelian ini beri S-Coin Cashback {cashbackPercent}, bersamaan nilai {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Staf terangkan bahawa {product} layak menerima S-Coin Cashback {cashbackPercent}. Nilai S-Coin untuk pembelian ini ialah {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Selepas beli {product}, saya menerima S-Coin Cashback {cashbackPercent}. Jumlah nilai S-Coin yang diberikan ialah {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Pembelian {product} saya datang dengan S-Coin Cashback {cashbackPercent}. Bila disemak, nilai S-Coin tersebut ialah {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Saya datang untuk beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai yang masuk dalam bentuk S-Coin ialah {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Urusan pembelian {product} berjalan lancar dan saya turut menerima S-Coin Cashback {cashbackPercent} bernilai {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Produk yang saya beli ialah {product}. Pembelian ini memberi S-Coin Cashback {cashbackPercent} dengan nilai S-Coin {scoinValue}. Prosesnya mudah dan saya tidak keliru tentang nilai S-Coin tersebut.",
+          "Saya beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai S-Coin yang saya terima ialah {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Untuk pembelian {product}, saya menerima S-Coin Cashback {cashbackPercent} dengan nilai S-Coin sebanyak {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Masa beli {product}, staf maklumkan promosi S-Coin Cashback {cashbackPercent}. S-Coin yang diterima bernilai {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Hari ini saya pilih {product} dan pembelian ini beri S-Coin Cashback {cashbackPercent}, bersamaan nilai {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Staf terangkan bahawa {product} layak menerima S-Coin Cashback {cashbackPercent}. Nilai S-Coin untuk pembelian ini ialah {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Selepas beli {product}, saya menerima S-Coin Cashback {cashbackPercent}. Jumlah nilai S-Coin yang diberikan ialah {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Pembelian {product} saya datang dengan S-Coin Cashback {cashbackPercent}. Bila disemak, nilai S-Coin tersebut ialah {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Saya datang untuk beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai yang masuk dalam bentuk S-Coin ialah {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Urusan pembelian {product} berjalan lancar dan saya turut menerima S-Coin Cashback {cashbackPercent} bernilai {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas.",
+          "Produk yang saya beli ialah {product}. Pembelian ini memberi S-Coin Cashback {cashbackPercent} dengan nilai S-Coin {scoinValue}. Saya puas hati kerana semua butiran promosi diterangkan dengan jelas."
+        ]
+      },
+      "scoin_redemption": {
+        "label": "S-Coin Redemption",
+        "full_label": "Redeem barang menggunakan S-Coin",
+        "requirements": [
+          "Produk yang ditebus",
+          "Nilai S-Coin yang digunakan dalam RM"
+        ],
+        "templates": [
+          "Saya redeem {product} menggunakan S-Coin bernilai {scoinValue}. Proses penebusan dibuat dengan mudah. Staf terangkan setiap langkah dengan jelas.",
+          "Hari ini saya berjaya tebus {product} dengan S-Coin bernilai {scoinValue}. Urusannya berjalan lancar dari awal. Staf terangkan setiap langkah dengan jelas.",
+          "Saya gunakan S-Coin bernilai {scoinValue} untuk redeem {product}. Staf bantu semak penebusan sebelum diteruskan. Staf terangkan setiap langkah dengan jelas.",
+          "Pengalaman redeem {product} memang senang. Nilai S-Coin yang saya gunakan untuk barang ini ialah {scoinValue}. Staf terangkan setiap langkah dengan jelas.",
+          "S-Coin yang saya kumpul digunakan untuk tebus {product}. Jumlah nilai S-Coin yang digunakan ialah {scoinValue}. Staf terangkan setiap langkah dengan jelas.",
+          "Saya datang ke outlet untuk redeem {product} menggunakan S-Coin bernilai {scoinValue}. Prosesnya tidak mengambil masa lama. Staf terangkan setiap langkah dengan jelas.",
+          "Berjaya dapatkan {product} melalui S-Coin Redemption. Saya menggunakan S-Coin bernilai {scoinValue} untuk penebusan tersebut. Staf terangkan setiap langkah dengan jelas.",
+          "Untuk penebusan kali ini, saya pilih {product} dan gunakan S-Coin bernilai {scoinValue}. Semuanya dapat dibuat di outlet. Staf terangkan setiap langkah dengan jelas.",
+          "Saya tebus {product} dengan baki S-Coin yang ada. Nilai S-Coin yang digunakan untuk transaksi ini ialah {scoinValue}. Staf terangkan setiap langkah dengan jelas.",
+          "Urusan redeem {product} selesai menggunakan S-Coin bernilai {scoinValue}. Staf semak maklumat terlebih dahulu sebelum meneruskan. Staf terangkan setiap langkah dengan jelas.",
+          "Saya redeem {product} menggunakan S-Coin bernilai {scoinValue}. Proses penebusan dibuat dengan mudah. Saya puas hati sebab prosesnya senang difahami.",
+          "Hari ini saya berjaya tebus {product} dengan S-Coin bernilai {scoinValue}. Urusannya berjalan lancar dari awal. Saya puas hati sebab prosesnya senang difahami.",
+          "Saya gunakan S-Coin bernilai {scoinValue} untuk redeem {product}. Staf bantu semak penebusan sebelum diteruskan. Saya puas hati sebab prosesnya senang difahami.",
+          "Pengalaman redeem {product} memang senang. Nilai S-Coin yang saya gunakan untuk barang ini ialah {scoinValue}. Saya puas hati sebab prosesnya senang difahami.",
+          "S-Coin yang saya kumpul digunakan untuk tebus {product}. Jumlah nilai S-Coin yang digunakan ialah {scoinValue}. Saya puas hati sebab prosesnya senang difahami.",
+          "Saya datang ke outlet untuk redeem {product} menggunakan S-Coin bernilai {scoinValue}. Prosesnya tidak mengambil masa lama. Saya puas hati sebab prosesnya senang difahami.",
+          "Berjaya dapatkan {product} melalui S-Coin Redemption. Saya menggunakan S-Coin bernilai {scoinValue} untuk penebusan tersebut. Saya puas hati sebab prosesnya senang difahami.",
+          "Untuk penebusan kali ini, saya pilih {product} dan gunakan S-Coin bernilai {scoinValue}. Semuanya dapat dibuat di outlet. Saya puas hati sebab prosesnya senang difahami.",
+          "Saya tebus {product} dengan baki S-Coin yang ada. Nilai S-Coin yang digunakan untuk transaksi ini ialah {scoinValue}. Saya puas hati sebab prosesnya senang difahami.",
+          "Urusan redeem {product} selesai menggunakan S-Coin bernilai {scoinValue}. Staf semak maklumat terlebih dahulu sebelum meneruskan. Saya puas hati sebab prosesnya senang difahami.",
+          "Saya redeem {product} menggunakan S-Coin bernilai {scoinValue}. Proses penebusan dibuat dengan mudah. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Hari ini saya berjaya tebus {product} dengan S-Coin bernilai {scoinValue}. Urusannya berjalan lancar dari awal. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Saya gunakan S-Coin bernilai {scoinValue} untuk redeem {product}. Staf bantu semak penebusan sebelum diteruskan. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Pengalaman redeem {product} memang senang. Nilai S-Coin yang saya gunakan untuk barang ini ialah {scoinValue}. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "S-Coin yang saya kumpul digunakan untuk tebus {product}. Jumlah nilai S-Coin yang digunakan ialah {scoinValue}. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Saya datang ke outlet untuk redeem {product} menggunakan S-Coin bernilai {scoinValue}. Prosesnya tidak mengambil masa lama. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Berjaya dapatkan {product} melalui S-Coin Redemption. Saya menggunakan S-Coin bernilai {scoinValue} untuk penebusan tersebut. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Untuk penebusan kali ini, saya pilih {product} dan gunakan S-Coin bernilai {scoinValue}. Semuanya dapat dibuat di outlet. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Saya tebus {product} dengan baki S-Coin yang ada. Nilai S-Coin yang digunakan untuk transaksi ini ialah {scoinValue}. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Urusan redeem {product} selesai menggunakan S-Coin bernilai {scoinValue}. Staf semak maklumat terlebih dahulu sebelum meneruskan. Pertanyaan saya tentang baki dan penebusan dijawab dengan baik.",
+          "Saya redeem {product} menggunakan S-Coin bernilai {scoinValue}. Proses penebusan dibuat dengan mudah. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Hari ini saya berjaya tebus {product} dengan S-Coin bernilai {scoinValue}. Urusannya berjalan lancar dari awal. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Saya gunakan S-Coin bernilai {scoinValue} untuk redeem {product}. Staf bantu semak penebusan sebelum diteruskan. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Pengalaman redeem {product} memang senang. Nilai S-Coin yang saya gunakan untuk barang ini ialah {scoinValue}. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "S-Coin yang saya kumpul digunakan untuk tebus {product}. Jumlah nilai S-Coin yang digunakan ialah {scoinValue}. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Saya datang ke outlet untuk redeem {product} menggunakan S-Coin bernilai {scoinValue}. Prosesnya tidak mengambil masa lama. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Berjaya dapatkan {product} melalui S-Coin Redemption. Saya menggunakan S-Coin bernilai {scoinValue} untuk penebusan tersebut. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Untuk penebusan kali ini, saya pilih {product} dan gunakan S-Coin bernilai {scoinValue}. Semuanya dapat dibuat di outlet. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Saya tebus {product} dengan baki S-Coin yang ada. Nilai S-Coin yang digunakan untuk transaksi ini ialah {scoinValue}. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Urusan redeem {product} selesai menggunakan S-Coin bernilai {scoinValue}. Staf semak maklumat terlebih dahulu sebelum meneruskan. Urusan dibuat dengan teratur tanpa banyak menunggu.",
+          "Saya redeem {product} menggunakan S-Coin bernilai {scoinValue}. Proses penebusan dibuat dengan mudah. Pengalaman guna S-Coin kali ini memang lancar.",
+          "Hari ini saya berjaya tebus {product} dengan S-Coin bernilai {scoinValue}. Urusannya berjalan lancar dari awal. Pengalaman guna S-Coin kali ini memang lancar.",
+          "Saya gunakan S-Coin bernilai {scoinValue} untuk redeem {product}. Staf bantu semak penebusan sebelum diteruskan. Pengalaman guna S-Coin kali ini memang lancar.",
+          "Pengalaman redeem {product} memang senang. Nilai S-Coin yang saya gunakan untuk barang ini ialah {scoinValue}. Pengalaman guna S-Coin kali ini memang lancar.",
+          "S-Coin yang saya kumpul digunakan untuk tebus {product}. Jumlah nilai S-Coin yang digunakan ialah {scoinValue}. Pengalaman guna S-Coin kali ini memang lancar.",
+          "Saya datang ke outlet untuk redeem {product} menggunakan S-Coin bernilai {scoinValue}. Prosesnya tidak mengambil masa lama. Pengalaman guna S-Coin kali ini memang lancar.",
+          "Berjaya dapatkan {product} melalui S-Coin Redemption. Saya menggunakan S-Coin bernilai {scoinValue} untuk penebusan tersebut. Pengalaman guna S-Coin kali ini memang lancar.",
+          "Untuk penebusan kali ini, saya pilih {product} dan gunakan S-Coin bernilai {scoinValue}. Semuanya dapat dibuat di outlet. Pengalaman guna S-Coin kali ini memang lancar.",
+          "Saya tebus {product} dengan baki S-Coin yang ada. Nilai S-Coin yang digunakan untuk transaksi ini ialah {scoinValue}. Pengalaman guna S-Coin kali ini memang lancar.",
+          "Urusan redeem {product} selesai menggunakan S-Coin bernilai {scoinValue}. Staf semak maklumat terlebih dahulu sebelum meneruskan. Pengalaman guna S-Coin kali ini memang lancar."
+        ]
+      },
+      "plusone_entitlement": {
+        "label": "PlusOne Warranty Entitlement",
+        "full_label": "Pembelian dengan PlusOne Warranty",
+        "requirements": [
+          "Produk",
+          "Pengalaman membeli item yang layak menerima PlusOne Warranty"
+        ],
+        "templates": [
+          "Saya beli {product} dan item ini layak mendapat PlusOne Warranty. Kelayakan waranti diterangkan sebelum pembelian selesai. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Pembelian {product} saya disertakan PlusOne Warranty. Staf semak kelayakan produk dan terangkan perlindungan yang diterima. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Saya puas hati beli {product} kerana produk ini layak untuk PlusOne Warranty. Maklumat waranti diberikan dengan jelas. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Semasa membeli {product}, staf maklumkan bahawa item ini mendapat PlusOne Warranty. Saya diberi masa untuk faham penerangannya. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Saya pilih {product} yang mempunyai kelayakan PlusOne Warranty. Staf terangkan perkara penting tentang waranti tersebut. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Pengalaman membeli {product} berjalan lancar. Produk ini layak mendapat PlusOne Warranty dan kelayakannya disahkan oleh staf. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Untuk pembelian {product}, saya dimaklumkan tentang PlusOne Warranty yang disertakan. Penerangannya mudah saya fahami. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Saya selesai membeli {product} yang layak menerima PlusOne Warranty. Proses semakan kelayakan dibuat dengan baik. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Sebelum bayar untuk {product}, staf terangkan bahawa produk ini mendapat PlusOne Warranty. Maklumat yang diberi tidak mengelirukan. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Produk yang saya beli ialah {product} dan ia datang dengan kelayakan PlusOne Warranty. Staf bantu saya faham manfaat waranti itu. Soalan saya tentang tempoh perlindungan dijawab dengan jelas.",
+          "Saya beli {product} dan item ini layak mendapat PlusOne Warranty. Kelayakan waranti diterangkan sebelum pembelian selesai. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Pembelian {product} saya disertakan PlusOne Warranty. Staf semak kelayakan produk dan terangkan perlindungan yang diterima. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Saya puas hati beli {product} kerana produk ini layak untuk PlusOne Warranty. Maklumat waranti diberikan dengan jelas. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Semasa membeli {product}, staf maklumkan bahawa item ini mendapat PlusOne Warranty. Saya diberi masa untuk faham penerangannya. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Saya pilih {product} yang mempunyai kelayakan PlusOne Warranty. Staf terangkan perkara penting tentang waranti tersebut. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Pengalaman membeli {product} berjalan lancar. Produk ini layak mendapat PlusOne Warranty dan kelayakannya disahkan oleh staf. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Untuk pembelian {product}, saya dimaklumkan tentang PlusOne Warranty yang disertakan. Penerangannya mudah saya fahami. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Saya selesai membeli {product} yang layak menerima PlusOne Warranty. Proses semakan kelayakan dibuat dengan baik. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Sebelum bayar untuk {product}, staf terangkan bahawa produk ini mendapat PlusOne Warranty. Maklumat yang diberi tidak mengelirukan. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Produk yang saya beli ialah {product} dan ia datang dengan kelayakan PlusOne Warranty. Staf bantu saya faham manfaat waranti itu. Saya tahu apa yang dilindungi selepas mendengar penerangan staf.",
+          "Saya beli {product} dan item ini layak mendapat PlusOne Warranty. Kelayakan waranti diterangkan sebelum pembelian selesai. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Pembelian {product} saya disertakan PlusOne Warranty. Staf semak kelayakan produk dan terangkan perlindungan yang diterima. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Saya puas hati beli {product} kerana produk ini layak untuk PlusOne Warranty. Maklumat waranti diberikan dengan jelas. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Semasa membeli {product}, staf maklumkan bahawa item ini mendapat PlusOne Warranty. Saya diberi masa untuk faham penerangannya. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Saya pilih {product} yang mempunyai kelayakan PlusOne Warranty. Staf terangkan perkara penting tentang waranti tersebut. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Pengalaman membeli {product} berjalan lancar. Produk ini layak mendapat PlusOne Warranty dan kelayakannya disahkan oleh staf. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Untuk pembelian {product}, saya dimaklumkan tentang PlusOne Warranty yang disertakan. Penerangannya mudah saya fahami. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Saya selesai membeli {product} yang layak menerima PlusOne Warranty. Proses semakan kelayakan dibuat dengan baik. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Sebelum bayar untuk {product}, staf terangkan bahawa produk ini mendapat PlusOne Warranty. Maklumat yang diberi tidak mengelirukan. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Produk yang saya beli ialah {product} dan ia datang dengan kelayakan PlusOne Warranty. Staf bantu saya faham manfaat waranti itu. Proses pendaftaran dan penerangan dibuat dengan teratur.",
+          "Saya beli {product} dan item ini layak mendapat PlusOne Warranty. Kelayakan waranti diterangkan sebelum pembelian selesai. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Pembelian {product} saya disertakan PlusOne Warranty. Staf semak kelayakan produk dan terangkan perlindungan yang diterima. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Saya puas hati beli {product} kerana produk ini layak untuk PlusOne Warranty. Maklumat waranti diberikan dengan jelas. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Semasa membeli {product}, staf maklumkan bahawa item ini mendapat PlusOne Warranty. Saya diberi masa untuk faham penerangannya. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Saya pilih {product} yang mempunyai kelayakan PlusOne Warranty. Staf terangkan perkara penting tentang waranti tersebut. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Pengalaman membeli {product} berjalan lancar. Produk ini layak mendapat PlusOne Warranty dan kelayakannya disahkan oleh staf. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Untuk pembelian {product}, saya dimaklumkan tentang PlusOne Warranty yang disertakan. Penerangannya mudah saya fahami. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Saya selesai membeli {product} yang layak menerima PlusOne Warranty. Proses semakan kelayakan dibuat dengan baik. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Sebelum bayar untuk {product}, staf terangkan bahawa produk ini mendapat PlusOne Warranty. Maklumat yang diberi tidak mengelirukan. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Produk yang saya beli ialah {product} dan ia datang dengan kelayakan PlusOne Warranty. Staf bantu saya faham manfaat waranti itu. Saya hargai staf yang menerangkan dahulu tanpa tergesa-gesa.",
+          "Saya beli {product} dan item ini layak mendapat PlusOne Warranty. Kelayakan waranti diterangkan sebelum pembelian selesai. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Pembelian {product} saya disertakan PlusOne Warranty. Staf semak kelayakan produk dan terangkan perlindungan yang diterima. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Saya puas hati beli {product} kerana produk ini layak untuk PlusOne Warranty. Maklumat waranti diberikan dengan jelas. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Semasa membeli {product}, staf maklumkan bahawa item ini mendapat PlusOne Warranty. Saya diberi masa untuk faham penerangannya. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Saya pilih {product} yang mempunyai kelayakan PlusOne Warranty. Staf terangkan perkara penting tentang waranti tersebut. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Pengalaman membeli {product} berjalan lancar. Produk ini layak mendapat PlusOne Warranty dan kelayakannya disahkan oleh staf. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Untuk pembelian {product}, saya dimaklumkan tentang PlusOne Warranty yang disertakan. Penerangannya mudah saya fahami. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Saya selesai membeli {product} yang layak menerima PlusOne Warranty. Proses semakan kelayakan dibuat dengan baik. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Sebelum bayar untuk {product}, staf terangkan bahawa produk ini mendapat PlusOne Warranty. Maklumat yang diberi tidak mengelirukan. Secara keseluruhan, urusan pembelian saya memang mudah.",
+          "Produk yang saya beli ialah {product} dan ia datang dengan kelayakan PlusOne Warranty. Staf bantu saya faham manfaat waranti itu. Secara keseluruhan, urusan pembelian saya memang mudah."
+        ]
+      },
+      "plusone_claim": {
+        "label": "PlusOne Warranty Claim",
+        "full_label": "Tuntutan PlusOne Warranty",
+        "requirements": [
+          "Produk",
+          "Pengalaman membuat tuntutan PlusOne Warranty"
+        ],
+        "templates": [
+          "Saya buat tuntutan PlusOne Warranty untuk {product}. Staf terangkan proses claim dan perkara yang perlu disediakan. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Pengalaman claim PlusOne Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang jelas sejak awal. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Saya datang untuk urusan tuntutan PlusOne Warranty bagi {product}. Staf semak maklumat sebelum menerangkan langkah seterusnya. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Proses tuntutan PlusOne Warranty untuk {product} mudah diikuti. Setiap peringkat diterangkan dengan bahasa yang senang faham. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Saya mendapatkan bantuan untuk claim PlusOne Warranty bagi {product}. Pertanyaan saya dijawab satu persatu. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Urusan claim PlusOne Warranty untuk {product} dibuat dengan teratur. Staf beritahu dokumen dan proses yang diperlukan. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Saya hubungi outlet berkaitan tuntutan PlusOne Warranty untuk {product}. Staf bantu semak kelayakan sebelum meneruskan urusan. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Tuntutan PlusOne Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas mendapat penerangan. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Hari ini saya uruskan claim PlusOne Warranty untuk {product}. Proses awal dibuat tanpa membuat saya tertanya-tanya. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Saya minta bantuan tentang tuntutan PlusOne Warranty bagi {product}. Staf dengar masalah saya dahulu sebelum memberi panduan. Layanan staf baik dan saya tidak rasa dibiarkan menunggu tanpa maklumat.",
+          "Saya buat tuntutan PlusOne Warranty untuk {product}. Staf terangkan proses claim dan perkara yang perlu disediakan. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Pengalaman claim PlusOne Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang jelas sejak awal. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Saya datang untuk urusan tuntutan PlusOne Warranty bagi {product}. Staf semak maklumat sebelum menerangkan langkah seterusnya. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Proses tuntutan PlusOne Warranty untuk {product} mudah diikuti. Setiap peringkat diterangkan dengan bahasa yang senang faham. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Saya mendapatkan bantuan untuk claim PlusOne Warranty bagi {product}. Pertanyaan saya dijawab satu persatu. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Urusan claim PlusOne Warranty untuk {product} dibuat dengan teratur. Staf beritahu dokumen dan proses yang diperlukan. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Saya hubungi outlet berkaitan tuntutan PlusOne Warranty untuk {product}. Staf bantu semak kelayakan sebelum meneruskan urusan. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Tuntutan PlusOne Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas mendapat penerangan. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Hari ini saya uruskan claim PlusOne Warranty untuk {product}. Proses awal dibuat tanpa membuat saya tertanya-tanya. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Saya minta bantuan tentang tuntutan PlusOne Warranty bagi {product}. Staf dengar masalah saya dahulu sebelum memberi panduan. Saya hargai penerangan yang terus dan tidak berbelit-belit.",
+          "Saya buat tuntutan PlusOne Warranty untuk {product}. Staf terangkan proses claim dan perkara yang perlu disediakan. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Pengalaman claim PlusOne Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang jelas sejak awal. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Saya datang untuk urusan tuntutan PlusOne Warranty bagi {product}. Staf semak maklumat sebelum menerangkan langkah seterusnya. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Proses tuntutan PlusOne Warranty untuk {product} mudah diikuti. Setiap peringkat diterangkan dengan bahasa yang senang faham. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Saya mendapatkan bantuan untuk claim PlusOne Warranty bagi {product}. Pertanyaan saya dijawab satu persatu. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Urusan claim PlusOne Warranty untuk {product} dibuat dengan teratur. Staf beritahu dokumen dan proses yang diperlukan. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Saya hubungi outlet berkaitan tuntutan PlusOne Warranty untuk {product}. Staf bantu semak kelayakan sebelum meneruskan urusan. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Tuntutan PlusOne Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas mendapat penerangan. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Hari ini saya uruskan claim PlusOne Warranty untuk {product}. Proses awal dibuat tanpa membuat saya tertanya-tanya. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Saya minta bantuan tentang tuntutan PlusOne Warranty bagi {product}. Staf dengar masalah saya dahulu sebelum memberi panduan. Status urusan diterangkan supaya saya tahu apa yang sedang berlaku.",
+          "Saya buat tuntutan PlusOne Warranty untuk {product}. Staf terangkan proses claim dan perkara yang perlu disediakan. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Pengalaman claim PlusOne Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang jelas sejak awal. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Saya datang untuk urusan tuntutan PlusOne Warranty bagi {product}. Staf semak maklumat sebelum menerangkan langkah seterusnya. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Proses tuntutan PlusOne Warranty untuk {product} mudah diikuti. Setiap peringkat diterangkan dengan bahasa yang senang faham. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Saya mendapatkan bantuan untuk claim PlusOne Warranty bagi {product}. Pertanyaan saya dijawab satu persatu. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Urusan claim PlusOne Warranty untuk {product} dibuat dengan teratur. Staf beritahu dokumen dan proses yang diperlukan. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Saya hubungi outlet berkaitan tuntutan PlusOne Warranty untuk {product}. Staf bantu semak kelayakan sebelum meneruskan urusan. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Tuntutan PlusOne Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas mendapat penerangan. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Hari ini saya uruskan claim PlusOne Warranty untuk {product}. Proses awal dibuat tanpa membuat saya tertanya-tanya. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Saya minta bantuan tentang tuntutan PlusOne Warranty bagi {product}. Staf dengar masalah saya dahulu sebelum memberi panduan. Pengalaman membuat tuntutan kali ini lebih mudah daripada yang saya jangka.",
+          "Saya buat tuntutan PlusOne Warranty untuk {product}. Staf terangkan proses claim dan perkara yang perlu disediakan. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Pengalaman claim PlusOne Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang jelas sejak awal. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Saya datang untuk urusan tuntutan PlusOne Warranty bagi {product}. Staf semak maklumat sebelum menerangkan langkah seterusnya. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Proses tuntutan PlusOne Warranty untuk {product} mudah diikuti. Setiap peringkat diterangkan dengan bahasa yang senang faham. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Saya mendapatkan bantuan untuk claim PlusOne Warranty bagi {product}. Pertanyaan saya dijawab satu persatu. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Urusan claim PlusOne Warranty untuk {product} dibuat dengan teratur. Staf beritahu dokumen dan proses yang diperlukan. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Saya hubungi outlet berkaitan tuntutan PlusOne Warranty untuk {product}. Staf bantu semak kelayakan sebelum meneruskan urusan. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Tuntutan PlusOne Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas mendapat penerangan. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Hari ini saya uruskan claim PlusOne Warranty untuk {product}. Proses awal dibuat tanpa membuat saya tertanya-tanya. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya.",
+          "Saya minta bantuan tentang tuntutan PlusOne Warranty bagi {product}. Staf dengar masalah saya dahulu sebelum memberi panduan. Secara keseluruhan, bantuan yang diberikan memang memudahkan urusan saya."
+        ]
+      },
+      "replacement_entitlement": {
+        "label": "Replacement Warranty Entitlement",
+        "full_label": "Pembelian dengan Replacement Warranty",
+        "requirements": [
+          "Produk",
+          "Pengalaman membeli item dengan Replacement Warranty"
+        ],
+        "templates": [
+          "Saya beli {product} dan staf terangkan kelayakan Replacement Warranty untuk produk ini. Maklumat perlindungan diberikan sebelum pembelian selesai. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Pembelian {product} saya mempunyai Replacement Warranty. Staf bantu semak kelayakan dan terangkan cara perlindungan itu berfungsi. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Saya puas hati beli {product} kerana maklumat tentang Replacement Warranty diterangkan dengan jelas sejak awal. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Semasa membeli {product}, saya dimaklumkan tentang Replacement Warranty yang berkaitan dengan produk ini. Soalan saya turut dijawab. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Saya pilih {product} dengan Replacement Warranty. Penerangan tentang kelayakan dibuat sebelum saya meneruskan bayaran. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Pengalaman membeli {product} berjalan lancar. Staf turut menerangkan Replacement Warranty supaya saya faham perlindungan yang diterima. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Untuk pembelian {product}, staf semak dan terangkan kelayakan Replacement Warranty. Maklumat yang diberi mudah difahami. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Saya selesai membeli {product} dan menerima penerangan tentang Replacement Warranty. Proses semakan dibuat dengan teratur. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Sebelum buat keputusan membeli {product}, staf terangkan Replacement Warranty untuk produk tersebut. Saya dapat faham syarat asasnya. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Produk yang saya beli ialah {product} dan ia mempunyai Replacement Warranty. Staf pastikan saya tahu tentang perlindungan itu. Saya hargai penerangan yang dibuat tanpa tergesa-gesa.",
+          "Saya beli {product} dan staf terangkan kelayakan Replacement Warranty untuk produk ini. Maklumat perlindungan diberikan sebelum pembelian selesai. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Pembelian {product} saya mempunyai Replacement Warranty. Staf bantu semak kelayakan dan terangkan cara perlindungan itu berfungsi. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Saya puas hati beli {product} kerana maklumat tentang Replacement Warranty diterangkan dengan jelas sejak awal. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Semasa membeli {product}, saya dimaklumkan tentang Replacement Warranty yang berkaitan dengan produk ini. Soalan saya turut dijawab. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Saya pilih {product} dengan Replacement Warranty. Penerangan tentang kelayakan dibuat sebelum saya meneruskan bayaran. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Pengalaman membeli {product} berjalan lancar. Staf turut menerangkan Replacement Warranty supaya saya faham perlindungan yang diterima. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Untuk pembelian {product}, staf semak dan terangkan kelayakan Replacement Warranty. Maklumat yang diberi mudah difahami. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Saya selesai membeli {product} dan menerima penerangan tentang Replacement Warranty. Proses semakan dibuat dengan teratur. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Sebelum buat keputusan membeli {product}, staf terangkan Replacement Warranty untuk produk tersebut. Saya dapat faham syarat asasnya. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Produk yang saya beli ialah {product} dan ia mempunyai Replacement Warranty. Staf pastikan saya tahu tentang perlindungan itu. Perkara penting dijelaskan supaya saya tidak salah faham.",
+          "Saya beli {product} dan staf terangkan kelayakan Replacement Warranty untuk produk ini. Maklumat perlindungan diberikan sebelum pembelian selesai. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Pembelian {product} saya mempunyai Replacement Warranty. Staf bantu semak kelayakan dan terangkan cara perlindungan itu berfungsi. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Saya puas hati beli {product} kerana maklumat tentang Replacement Warranty diterangkan dengan jelas sejak awal. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Semasa membeli {product}, saya dimaklumkan tentang Replacement Warranty yang berkaitan dengan produk ini. Soalan saya turut dijawab. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Saya pilih {product} dengan Replacement Warranty. Penerangan tentang kelayakan dibuat sebelum saya meneruskan bayaran. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Pengalaman membeli {product} berjalan lancar. Staf turut menerangkan Replacement Warranty supaya saya faham perlindungan yang diterima. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Untuk pembelian {product}, staf semak dan terangkan kelayakan Replacement Warranty. Maklumat yang diberi mudah difahami. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Saya selesai membeli {product} dan menerima penerangan tentang Replacement Warranty. Proses semakan dibuat dengan teratur. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Sebelum buat keputusan membeli {product}, staf terangkan Replacement Warranty untuk produk tersebut. Saya dapat faham syarat asasnya. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Produk yang saya beli ialah {product} dan ia mempunyai Replacement Warranty. Staf pastikan saya tahu tentang perlindungan itu. Urusan pembelian terasa lebih mudah dengan bantuan staf.",
+          "Saya beli {product} dan staf terangkan kelayakan Replacement Warranty untuk produk ini. Maklumat perlindungan diberikan sebelum pembelian selesai. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Pembelian {product} saya mempunyai Replacement Warranty. Staf bantu semak kelayakan dan terangkan cara perlindungan itu berfungsi. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Saya puas hati beli {product} kerana maklumat tentang Replacement Warranty diterangkan dengan jelas sejak awal. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Semasa membeli {product}, saya dimaklumkan tentang Replacement Warranty yang berkaitan dengan produk ini. Soalan saya turut dijawab. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Saya pilih {product} dengan Replacement Warranty. Penerangan tentang kelayakan dibuat sebelum saya meneruskan bayaran. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Pengalaman membeli {product} berjalan lancar. Staf turut menerangkan Replacement Warranty supaya saya faham perlindungan yang diterima. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Untuk pembelian {product}, staf semak dan terangkan kelayakan Replacement Warranty. Maklumat yang diberi mudah difahami. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Saya selesai membeli {product} dan menerima penerangan tentang Replacement Warranty. Proses semakan dibuat dengan teratur. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Sebelum buat keputusan membeli {product}, staf terangkan Replacement Warranty untuk produk tersebut. Saya dapat faham syarat asasnya. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Produk yang saya beli ialah {product} dan ia mempunyai Replacement Warranty. Staf pastikan saya tahu tentang perlindungan itu. Saya boleh bertanya terus jika ada bahagian yang kurang jelas.",
+          "Saya beli {product} dan staf terangkan kelayakan Replacement Warranty untuk produk ini. Maklumat perlindungan diberikan sebelum pembelian selesai. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Pembelian {product} saya mempunyai Replacement Warranty. Staf bantu semak kelayakan dan terangkan cara perlindungan itu berfungsi. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Saya puas hati beli {product} kerana maklumat tentang Replacement Warranty diterangkan dengan jelas sejak awal. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Semasa membeli {product}, saya dimaklumkan tentang Replacement Warranty yang berkaitan dengan produk ini. Soalan saya turut dijawab. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Saya pilih {product} dengan Replacement Warranty. Penerangan tentang kelayakan dibuat sebelum saya meneruskan bayaran. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Pengalaman membeli {product} berjalan lancar. Staf turut menerangkan Replacement Warranty supaya saya faham perlindungan yang diterima. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Untuk pembelian {product}, staf semak dan terangkan kelayakan Replacement Warranty. Maklumat yang diberi mudah difahami. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Saya selesai membeli {product} dan menerima penerangan tentang Replacement Warranty. Proses semakan dibuat dengan teratur. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Sebelum buat keputusan membeli {product}, staf terangkan Replacement Warranty untuk produk tersebut. Saya dapat faham syarat asasnya. Secara keseluruhan, penerangan waranti itu memang membantu.",
+          "Produk yang saya beli ialah {product} dan ia mempunyai Replacement Warranty. Staf pastikan saya tahu tentang perlindungan itu. Secara keseluruhan, penerangan waranti itu memang membantu."
+        ]
+      },
+      "replacement_claim": {
+        "label": "Replacement Warranty Claim",
+        "full_label": "Tuntutan Replacement Warranty",
+        "requirements": [
+          "Produk",
+          "Pengalaman membuat tuntutan Replacement Warranty"
+        ],
+        "templates": [
+          "Saya buat tuntutan Replacement Warranty untuk {product}. Staf membantu semak maklumat dan menerangkan proses yang perlu diikuti. Layanan yang diberikan baik dan profesional.",
+          "Pengalaman claim Replacement Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang mudah difahami sejak awal. Layanan yang diberikan baik dan profesional.",
+          "Saya datang untuk urusan tuntutan Replacement Warranty bagi {product}. Staf terangkan langkah seterusnya selepas membuat semakan. Layanan yang diberikan baik dan profesional.",
+          "Proses tuntutan Replacement Warranty untuk {product} mudah diikuti. Saya diberitahu perkara yang perlu disediakan. Layanan yang diberikan baik dan profesional.",
+          "Saya mendapatkan bantuan untuk claim Replacement Warranty bagi {product}. Semua pertanyaan saya dijawab dengan baik. Layanan yang diberikan baik dan profesional.",
+          "Urusan claim Replacement Warranty untuk {product} dibuat dengan teratur. Staf terangkan dokumen dan proses yang diperlukan. Layanan yang diberikan baik dan profesional.",
+          "Saya hubungi outlet tentang tuntutan Replacement Warranty untuk {product}. Staf dengar masalah saya sebelum membuat semakan. Layanan yang diberikan baik dan profesional.",
+          "Tuntutan Replacement Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas menerima penerangan. Layanan yang diberikan baik dan profesional.",
+          "Hari ini saya uruskan claim Replacement Warranty untuk {product}. Proses awalnya senang dan tidak mengelirukan. Layanan yang diberikan baik dan profesional.",
+          "Saya minta bantuan berkaitan tuntutan Replacement Warranty bagi {product}. Staf semak butiran terlebih dahulu sebelum memberi panduan. Layanan yang diberikan baik dan profesional.",
+          "Saya buat tuntutan Replacement Warranty untuk {product}. Staf membantu semak maklumat dan menerangkan proses yang perlu diikuti. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Pengalaman claim Replacement Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang mudah difahami sejak awal. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Saya datang untuk urusan tuntutan Replacement Warranty bagi {product}. Staf terangkan langkah seterusnya selepas membuat semakan. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Proses tuntutan Replacement Warranty untuk {product} mudah diikuti. Saya diberitahu perkara yang perlu disediakan. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Saya mendapatkan bantuan untuk claim Replacement Warranty bagi {product}. Semua pertanyaan saya dijawab dengan baik. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Urusan claim Replacement Warranty untuk {product} dibuat dengan teratur. Staf terangkan dokumen dan proses yang diperlukan. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Saya hubungi outlet tentang tuntutan Replacement Warranty untuk {product}. Staf dengar masalah saya sebelum membuat semakan. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Tuntutan Replacement Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas menerima penerangan. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Hari ini saya uruskan claim Replacement Warranty untuk {product}. Proses awalnya senang dan tidak mengelirukan. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Saya minta bantuan berkaitan tuntutan Replacement Warranty bagi {product}. Staf semak butiran terlebih dahulu sebelum memberi panduan. Saya hargai staf yang menerangkan status urusan dengan jelas.",
+          "Saya buat tuntutan Replacement Warranty untuk {product}. Staf membantu semak maklumat dan menerangkan proses yang perlu diikuti. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Pengalaman claim Replacement Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang mudah difahami sejak awal. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Saya datang untuk urusan tuntutan Replacement Warranty bagi {product}. Staf terangkan langkah seterusnya selepas membuat semakan. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Proses tuntutan Replacement Warranty untuk {product} mudah diikuti. Saya diberitahu perkara yang perlu disediakan. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Saya mendapatkan bantuan untuk claim Replacement Warranty bagi {product}. Semua pertanyaan saya dijawab dengan baik. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Urusan claim Replacement Warranty untuk {product} dibuat dengan teratur. Staf terangkan dokumen dan proses yang diperlukan. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Saya hubungi outlet tentang tuntutan Replacement Warranty untuk {product}. Staf dengar masalah saya sebelum membuat semakan. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Tuntutan Replacement Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas menerima penerangan. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Hari ini saya uruskan claim Replacement Warranty untuk {product}. Proses awalnya senang dan tidak mengelirukan. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Saya minta bantuan berkaitan tuntutan Replacement Warranty bagi {product}. Staf semak butiran terlebih dahulu sebelum memberi panduan. Prosesnya lebih mudah bila setiap langkah diterangkan satu persatu.",
+          "Saya buat tuntutan Replacement Warranty untuk {product}. Staf membantu semak maklumat dan menerangkan proses yang perlu diikuti. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Pengalaman claim Replacement Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang mudah difahami sejak awal. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Saya datang untuk urusan tuntutan Replacement Warranty bagi {product}. Staf terangkan langkah seterusnya selepas membuat semakan. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Proses tuntutan Replacement Warranty untuk {product} mudah diikuti. Saya diberitahu perkara yang perlu disediakan. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Saya mendapatkan bantuan untuk claim Replacement Warranty bagi {product}. Semua pertanyaan saya dijawab dengan baik. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Urusan claim Replacement Warranty untuk {product} dibuat dengan teratur. Staf terangkan dokumen dan proses yang diperlukan. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Saya hubungi outlet tentang tuntutan Replacement Warranty untuk {product}. Staf dengar masalah saya sebelum membuat semakan. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Tuntutan Replacement Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas menerima penerangan. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Hari ini saya uruskan claim Replacement Warranty untuk {product}. Proses awalnya senang dan tidak mengelirukan. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Saya minta bantuan berkaitan tuntutan Replacement Warranty bagi {product}. Staf semak butiran terlebih dahulu sebelum memberi panduan. Saya tidak perlu meneka apa yang perlu dibuat selepas itu.",
+          "Saya buat tuntutan Replacement Warranty untuk {product}. Staf membantu semak maklumat dan menerangkan proses yang perlu diikuti. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Pengalaman claim Replacement Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang mudah difahami sejak awal. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Saya datang untuk urusan tuntutan Replacement Warranty bagi {product}. Staf terangkan langkah seterusnya selepas membuat semakan. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Proses tuntutan Replacement Warranty untuk {product} mudah diikuti. Saya diberitahu perkara yang perlu disediakan. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Saya mendapatkan bantuan untuk claim Replacement Warranty bagi {product}. Semua pertanyaan saya dijawab dengan baik. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Urusan claim Replacement Warranty untuk {product} dibuat dengan teratur. Staf terangkan dokumen dan proses yang diperlukan. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Saya hubungi outlet tentang tuntutan Replacement Warranty untuk {product}. Staf dengar masalah saya sebelum membuat semakan. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Tuntutan Replacement Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas menerima penerangan. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Hari ini saya uruskan claim Replacement Warranty untuk {product}. Proses awalnya senang dan tidak mengelirukan. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya.",
+          "Saya minta bantuan berkaitan tuntutan Replacement Warranty bagi {product}. Staf semak butiran terlebih dahulu sebelum memberi panduan. Secara keseluruhan, bantuan staf memang memudahkan tuntutan saya."
+        ]
+      }
+    }
+  }
+  </script>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const CONFIG = Object.freeze({
+        placeId: "ChIJhUovtuy4zjERZlW96Pgwgec",
+        commentJsonUrl: "ugc_review_comments_september_2026.json",
+        tags: ["#GrandSenhengTemerloh", "#untungGila", "#SenhengMalaysia"]
+      });
+
+      const CATEGORY_UI = Object.freeze([
+        {id:"trusted_service",number:"01",title:"Trusted Service",description:"Jenama dipercayai, pengalaman membeli, selepas jualan, online ke kedai atau rangkaian outlet."},
+        {id:"scoin_issuance",number:"02",title:"Dapat S-Coin",description:"Pembelian produk dengan S-Coin Cashback dan nilai S-Coin dalam RM."},
+        {id:"scoin_redemption",number:"03",title:"Redeem guna S-Coin",description:"Penebusan produk menggunakan S-Coin yang telah dikumpul."},
+        {id:"plusone_entitlement",number:"04",title:"Dapat PlusOne Warranty",description:"Pengalaman membeli produk yang layak menerima PlusOne Warranty."},
+        {id:"plusone_claim",number:"05",title:"Claim PlusOne Warranty",description:"Pengalaman membuat tuntutan PlusOne Warranty untuk produk."},
+        {id:"replacement_entitlement",number:"06",title:"Dapat Replacement Warranty",description:"Pengalaman membeli produk dengan Replacement Warranty."},
+        {id:"replacement_claim",number:"07",title:"Claim Replacement Warranty",description:"Pengalaman membuat tuntutan Replacement Warranty untuk produk."}
+      ]);
+
+      const fallbackData = JSON.parse(document.getElementById("fallbackData").textContent);
+      const state = {
+        step:1,
+        category:"",
+        trustedVariant:"",
+        data:fallbackData,
+        source:"fallback",
+        selectedTemplate:"",
+        renderedTemplates:[],
+        busy:false
+      };
+
+      const $ = id => document.getElementById(id);
+      const $$ = selector => Array.from(document.querySelectorAll(selector));
+      const screens = $$(".screen");
+      const segments = $$(".progress-segment");
+
+      function showToast(title,message){
+        clearTimeout(window.__reviewToast);
+        $("toastTitle").textContent = title;
+        $("toastText").textContent = message;
+        $("toast").classList.add("is-visible");
+        window.__reviewToast = setTimeout(() => $("toast").classList.remove("is-visible"),4200);
+      }
+
+      function setError(id,visible){
+        const el = $(id);
+        if(el) el.classList.toggle("is-visible",Boolean(visible));
+      }
+
+      function clearErrors(){
+        ["errStaff","errMonthly","errCategory","errDetails","errTemplate","errTruth"].forEach(id => setError(id,false));
+      }
+
+      function normalizeStaffCode(value){
+        let clean = String(value || "").toUpperCase().replace(/^#+/,"").replace(/[^A-Z0-9]/g,"");
+        if(/^\d{3,8}$/.test(clean)) clean = "SH" + clean;
+        return clean.slice(0,12);
+      }
+
+      function parseNumber(value){
+        const number = Number.parseFloat(String(value || "").replace(/,/g,"").replace(/[^0-9.]/g,""));
+        return Number.isFinite(number) ? number : 0;
+      }
+
+      function formatMoney(value){
+        return "RM" + Number(value || 0).toLocaleString("en-MY",{minimumFractionDigits:2,maximumFractionDigits:2});
+      }
+
+      function categoryData(){
+        return state.data.categories && state.data.categories[state.category]
+          ? state.data.categories[state.category]
+          : fallbackData.categories[state.category];
+      }
+
+      function renderCategories(){
+        const list = $("categoryList");
+        list.textContent = "";
+        CATEGORY_UI.forEach(item => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "option" + (state.category === item.id ? " is-selected" : "");
+          button.dataset.category = item.id;
+          button.setAttribute("role","radio");
+          button.setAttribute("aria-checked",String(state.category === item.id));
+
+          const icon = document.createElement("span");
+          icon.className = "option-icon";
+          icon.textContent = item.number;
+
+          const copy = document.createElement("span");
+          const title = document.createElement("strong");
+          title.textContent = item.title;
+          const description = document.createElement("small");
+          description.textContent = item.description;
+          copy.append(title,description);
+
+          const dot = document.createElement("span");
+          dot.className = "radio-dot";
+          dot.setAttribute("aria-hidden","true");
+          button.append(icon,copy,dot);
+          button.addEventListener("click",() => chooseCategory(item.id));
+          list.appendChild(button);
+        });
+      }
+
+      function chooseCategory(category){
+        state.category = category;
+        state.trustedVariant = "";
+        state.savedDetails = {};
+        resetTemplates();
+        renderCategories();
+        saveSession();
+        setTimeout(() => goToStep(3),100);
+      }
+
+      function renderRequirements(){
+        const category = categoryData();
+        const card = $("requirementCard");
+        card.textContent = "";
+        const title = document.createElement("strong");
+        title.textContent = "Komen yang sah mesti sebut:";
+        const list = document.createElement("ul");
+        (category.requirements || []).forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          list.appendChild(li);
+        });
+        card.append(title,list);
+      }
+
+      function renderDetails(){
+        renderRequirements();
+        const holder = $("dynamicFields");
+        holder.textContent = "";
+        const category = categoryData();
+        $("title3").textContent = category.full_label || "Lengkapkan butiran ringkas";
+
+        if(state.category === "trusted_service"){
+          $("detailsLead").textContent = "Kategori ini tak perlukan maklumat produk. Pada langkah seterusnya, pilih ayat yang paling tepat dengan pengalaman anda.";
+          const notice = document.createElement("div");
+          notice.className = "notice";
+          const icon = document.createElement("div");
+          icon.className = "notice-icon";
+          icon.textContent = "✓";
+          const copy = document.createElement("div");
+          const title = document.createElement("strong");
+          title.textContent = "50 ayat Trusted Service tersedia";
+          const text = document.createElement("p");
+          text.textContent = "Ayat meliputi jenama dipercayai, pengalaman membeli, servis selepas jualan, online ke kedai dan kemudahan rangkaian outlet.";
+          copy.append(title,text);
+          notice.append(icon,copy);
+          holder.appendChild(notice);
+          return;
+        }
+
+        $("detailsLead").textContent = "Isi butiran sebenar. Sistem akan masukkan maklumat ini ke dalam ayat yang anda pilih.";
+        holder.appendChild(makeTextField("product","Produk","Contoh: TV TCL 55 inci"));
+
+        if(state.category === "scoin_issuance"){
+          holder.appendChild(makePercentField());
+          holder.appendChild(makeMoneyField("scoinValue","Nilai S-Coin yang diterima","Masukkan nilai sebenar yang dipaparkan"));
+        }else if(state.category === "scoin_redemption"){
+          holder.appendChild(makeMoneyField("scoinValue","Nilai S-Coin yang digunakan","Masukkan nilai penebusan dalam RM"));
+        }
+
+        holder.querySelectorAll("input").forEach(input => input.addEventListener("input",() => {
+          resetTemplates();
+          clearErrors();
+          saveSession();
+        }));
+      }
+
+      function makeTextField(id,labelText,placeholder){
+        const wrap = document.createElement("div");
+        wrap.className = "field";
+        const label = document.createElement("label");
+        label.htmlFor = id;
+        label.textContent = labelText;
+        const input = document.createElement("input");
+        input.id = id;
+        input.type = "text";
+        input.autocomplete = "off";
+        input.placeholder = placeholder;
+        input.value = (state.savedDetails && state.savedDetails[id]) || "";
+        wrap.append(label,input);
+        return wrap;
+      }
+
+      function makeMoneyField(id,labelText,placeholder){
+        const wrap = document.createElement("div");
+        wrap.className = "field";
+        const label = document.createElement("label");
+        label.htmlFor = id;
+        label.textContent = labelText;
+        const prefix = document.createElement("div");
+        prefix.className = "input-prefix";
+        const rm = document.createElement("span");
+        rm.textContent = "RM";
+        const input = document.createElement("input");
+        input.id = id;
+        input.type = "text";
+        input.inputMode = "decimal";
+        input.autocomplete = "off";
+        input.placeholder = placeholder;
+        input.value = (state.savedDetails && state.savedDetails[id]) || "";
+        input.addEventListener("blur",() => {
+          const value = parseNumber(input.value);
+          if(value > 0) input.value = value.toFixed(2);
+          saveSession();
+        });
+        prefix.append(rm,input);
+        wrap.append(label,prefix);
+        return wrap;
+      }
+
+      function makePercentField(){
+        const wrap = document.createElement("div");
+        wrap.className = "field";
+        const label = document.createElement("label");
+        label.htmlFor = "cashbackPercent";
+        label.textContent = "S-Coin Cashback (%)";
+        const input = document.createElement("input");
+        input.id = "cashbackPercent";
+        input.type = "number";
+        input.min = "1";
+        input.max = "100";
+        input.inputMode = "numeric";
+        input.placeholder = "Contoh: 50";
+        input.value = (state.savedDetails && state.savedDetails.cashbackPercent) || "";
+        const chips = document.createElement("div");
+        chips.className = "chips";
+        [20,30,50,70].forEach(percent => {
+          const chip = document.createElement("button");
+          chip.type = "button";
+          chip.className = "chip" + (Number(input.value) === percent ? " is-selected" : "");
+          chip.textContent = percent + "%";
+          chip.addEventListener("click",() => {
+            input.value = String(percent);
+            chips.querySelectorAll(".chip").forEach(item => item.classList.toggle("is-selected",item === chip));
+            resetTemplates();
+            clearErrors();
+            saveSession();
+          });
+          chips.appendChild(chip);
+        });
+        wrap.append(label,input,chips);
+        return wrap;
+      }
+
+      function captureDetails(){
+        const details = {};
+        ["product","cashbackPercent","scoinValue"].forEach(id => {
+          const input = $(id);
+          if(input) details[id] = input.value;
+        });
+        state.savedDetails = details;
+        return details;
+      }
+
+      function validateDetails(){
+        if(state.category === "trusted_service"){
+          setError("errDetails",false);
+          return true;
+        }
+
+        const details = captureDetails();
+        let valid = Boolean(String(details.product || "").trim());
+        if(state.category === "scoin_issuance"){
+          const percent = parseNumber(details.cashbackPercent);
+          valid = valid && percent > 0 && percent <= 100 && parseNumber(details.scoinValue) > 0;
+        }else if(state.category === "scoin_redemption"){
+          valid = valid && parseNumber(details.scoinValue) > 0;
+        }
+        setError("errDetails",!valid);
+        return valid;
+      }
+
+      function templateValues(){
+        const details = captureDetails();
+        return {
+          product:String(details.product || "").trim(),
+          cashbackPercent:parseNumber(details.cashbackPercent) + "%",
+          scoinValue:formatMoney(parseNumber(details.scoinValue))
+        };
+      }
+
+      function fillTemplate(template){
+        const values = templateValues();
+        return String(template || "").replace(/\{(product|cashbackPercent|scoinValue)\}/g,(match,key) => values[key] || "").trim();
+      }
+
+      function getTemplateBank(){
+        const category = categoryData();
+        return Array.isArray(category.templates) ? category.templates : [];
+      }
+
+      function shuffle(values){
+        const copy = [...values];
+        for(let index=copy.length-1;index>0;index--){
+          const random = Math.floor(Math.random() * (index + 1));
+          [copy[index],copy[random]] = [copy[random],copy[index]];
+        }
+        return copy;
+      }
+
+      function diverseSample(values,count){
+        if(values.length !== 50) return shuffle(values).slice(0,count);
+
+        const groups = Array.from({length:10},() => []);
+        values.forEach((value,index) => groups[index % 10].push(value));
+        return shuffle(groups)
+          .slice(0,count)
+          .map(group => shuffle(group)[0]);
+      }
+
+      function resetTemplates(){
+        state.selectedTemplate = "";
+        state.renderedTemplates = [];
+        $("truthConfirm").checked = false;
+      }
+
+      function renderTemplates(force){
+        const bank = getTemplateBank();
+        if(force || !state.renderedTemplates.length){
+          state.renderedTemplates = diverseSample(bank,4).map(fillTemplate);
+          state.selectedTemplate = "";
+        }
+
+        const list = $("templateList");
+        list.textContent = "";
+        state.renderedTemplates.forEach((text,index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "template-card";
+          button.setAttribute("role","radio");
+          button.setAttribute("aria-checked","false");
+          button.textContent = text;
+          button.addEventListener("click",() => selectTemplate(index));
+          list.appendChild(button);
+        });
+
+        $("templateStatus").textContent = bank.length + " ayat tersedia" + (state.source === "fallback" ? " · mode backup" : "");
+      }
+
+      function selectTemplate(index){
+        state.selectedTemplate = state.renderedTemplates[index] || "";
+        $$(".template-card").forEach((card,cardIndex) => {
+          const selected = cardIndex === index;
+          card.classList.toggle("is-selected",selected);
+          card.setAttribute("aria-checked",String(selected));
+        });
+        setError("errTemplate",false);
+        saveSession();
+      }
+
+      function validateTemplate(){
+        const valid = state.selectedTemplate.length >= 20;
+        setError("errTemplate",!valid);
+        return valid;
+      }
+
+      function staffTag(){
+        const code = normalizeStaffCode($("staffCode").value);
+        return code ? "#" + code : "";
+      }
+
+      function buildTags(){
+        return [CONFIG.tags[0],staffTag(),...CONFIG.tags.slice(1)].filter(Boolean).join(" ");
+      }
+
+      function renderFinal(){
+        $("finalPreview").textContent = state.selectedTemplate;
+        $("finalTags").textContent = buildTags();
+      }
+
+      function fullReview(){
+        return (state.selectedTemplate + "\n\n" + buildTags()).trim();
+      }
+
+      function validateStaffAndMonth(){
+        $("staffCode").value = normalizeStaffCode($("staffCode").value);
+        const validStaff = /^SH\d{3,8}$/.test($("staffCode").value);
+        const validMonth = $("monthlyConfirm").checked;
+        setError("errStaff",!validStaff);
+        setError("errMonthly",!validMonth);
+        if(!validStaff) $("staffCode").focus();
+        return validStaff && validMonth;
+      }
+
+      function validateCategory(){
+        const valid = Boolean(state.category && state.data.categories[state.category]);
+        setError("errCategory",!valid);
+        return valid;
+      }
+
+      function goToStep(nextStep){
+        state.step = Math.max(1,Math.min(5,nextStep));
+        clearErrors();
+        screens.forEach(screen => {
+          const active = Number(screen.dataset.step) === state.step;
+          screen.classList.toggle("is-active",active);
+          screen.setAttribute("aria-hidden",String(!active));
+        });
+        segments.forEach((segment,index) => segment.classList.toggle("is-done",index < state.step));
+        $("stepCount").textContent = `Langkah ${state.step} / 5`;
+        if(state.step === 2) renderCategories();
+        if(state.step === 3) renderDetails();
+        if(state.step === 4) renderTemplates(false);
+        if(state.step === 5) renderFinal();
+        updateFooter();
+        saveSession();
+        requestAnimationFrame(() => {
+          window.scrollTo({top:0,behavior:"smooth"});
+          const heading = document.querySelector(`.screen[data-step="${state.step}"] h1, .screen[data-step="${state.step}"] h2`);
+          if(heading){heading.setAttribute("tabindex","-1");heading.focus({preventScroll:true});}
+        });
+      }
+
+      function updateFooter(){
+        const first = state.step === 1;
+        $("nav").classList.toggle("is-single",first);
+        $("backBtn").hidden = first;
+        $("nextBtn").disabled = state.busy;
+        if(state.step === 1){
+          $("nextBtn").textContent = "Mula";
+          $("nextBtn").className = "btn btn-primary";
+        }else if(state.step === 4){
+          $("nextBtn").textContent = "Semak review";
+          $("nextBtn").className = "btn btn-primary";
+        }else if(state.step === 5){
+          $("nextBtn").textContent = state.busy ? "Membuka Google Review..." : "Copy & buka Google Review";
+          $("nextBtn").className = "btn btn-dark";
+        }else{
+          $("nextBtn").textContent = "Seterusnya";
+          $("nextBtn").className = "btn btn-primary";
+        }
+      }
+
+      function next(){
+        if(state.step === 1 && !validateStaffAndMonth()) return;
+        if(state.step === 2 && !validateCategory()) return;
+        if(state.step === 3 && !validateDetails()) return;
+        if(state.step === 4 && !validateTemplate()) return;
+        if(state.step === 5){copyAndOpen();return;}
+        goToStep(state.step + 1);
+      }
+
+      function previous(){
+        if(state.busy) return;
+        if(state.step === 3) captureDetails();
+        goToStep(state.step - 1);
+      }
+
+      async function copyText(text){
+        if(navigator.clipboard && window.isSecureContext){
+          await navigator.clipboard.writeText(text);
+          return;
+        }
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.setAttribute("readonly","");
+        textarea.style.position = "fixed";
+        textarea.style.top = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
+        const copied = document.execCommand("copy");
+        textarea.remove();
+        if(!copied) throw new Error("Copy failed");
+      }
+
+      async function copyAndOpen(){
+        const agreed = $("truthConfirm").checked;
+        setError("errTruth",!agreed);
+        if(!agreed || state.busy) return;
+        state.busy = true;
+        updateFooter();
+        const reviewUrl = `https://search.google.com/local/writereview?placeid=${encodeURIComponent(CONFIG.placeId)}`;
+        try{
+          await copyText(fullReview());
+          showToast("Review sudah di-copy","Paste di Google Review dan pilih rating yang jujur.");
+        }catch(error){
+          console.warn(error);
+          showToast("Auto-copy disekat","Google Review tetap dibuka. Copy ayat secara manual jika perlu.");
+        }
+        setTimeout(() => {
+          window.location.assign(reviewUrl);
+          setTimeout(() => {state.busy=false;updateFooter();},1200);
+        },350);
+      }
+
+      async function loadComments(){
+        try{
+          const response = await fetch(CONFIG.commentJsonUrl,{cache:"no-store"});
+          if(!response.ok) throw new Error(`HTTP ${response.status}`);
+          const data = await response.json();
+          if(!data.categories || !CATEGORY_UI.every(item => data.categories[item.id])) throw new Error("Kategori JSON tidak lengkap");
+          state.data = data;
+          state.source = "json";
+        }catch(error){
+          console.warn("Fail komen tidak dapat dimuatkan. Ayat backup digunakan.",error);
+          state.data = fallbackData;
+          state.source = "fallback";
+        }
+        renderCategories();
+        if(state.step === 3 && state.category) renderDetails();
+        if(state.step === 4 && state.category) renderTemplates(true);
+      }
+
+      function saveSession(){
+        try{
+          if(state.step === 3) captureDetails();
+          const payload = {
+            category:state.category,
+            trustedVariant:state.trustedVariant,
+            staffCode:$("staffCode").value,
+            monthlyConfirm:$("monthlyConfirm").checked,
+            savedDetails:state.savedDetails || {}
+          };
+          sessionStorage.setItem("gs009-review-september-2026",JSON.stringify(payload));
+        }catch(error){console.debug("Session tidak dapat disimpan",error);}
+      }
+
+      function restoreSession(){
+        try{
+          const raw = sessionStorage.getItem("gs009-review-september-2026");
+          if(raw){
+            const saved = JSON.parse(raw);
+            state.category = saved.category || "";
+            state.trustedVariant = saved.trustedVariant || "";
+            state.savedDetails = saved.savedDetails || {};
+            $("staffCode").value = saved.staffCode || "";
+            $("monthlyConfirm").checked = Boolean(saved.monthlyConfirm);
+          }
+          const staffFromUrl = new URLSearchParams(window.location.search).get("staff");
+          if(staffFromUrl) $("staffCode").value = normalizeStaffCode(staffFromUrl);
+        }catch(error){console.debug("Session lama tidak dapat dipulihkan",error);}
+      }
+
+      function init(){
+        restoreSession();
+        renderCategories();
+        updateFooter();
+        loadComments();
+        $("nextBtn").addEventListener("click",next);
+        $("backBtn").addEventListener("click",previous);
+        $("refreshTemplates").addEventListener("click",() => renderTemplates(true));
+        $("staffCode").addEventListener("input",event => {event.target.value = normalizeStaffCode(event.target.value);clearErrors();saveSession();});
+        $("monthlyConfirm").addEventListener("change",() => {clearErrors();saveSession();});
+        $("truthConfirm").addEventListener("change",() => setError("errTruth",false));
+        window.addEventListener("pageshow",() => {state.busy=false;updateFooter();});
+        document.addEventListener("visibilitychange",() => {if(document.visibilityState === "visible"){state.busy=false;updateFooter();}});
+        setTimeout(() => $("staffCode").focus({preventScroll:true}),250);
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
