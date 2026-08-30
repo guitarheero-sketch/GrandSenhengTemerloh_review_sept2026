@@ -1,0 +1,179 @@
+{
+  "version": 4,
+  "effective_date": "2026-09-01",
+  "meta": {
+    "name": "GS009 UGC Google Review Comments - September 2026",
+    "description": "Pre-written review choices aligned with the UGC Google Review Guideline UTD September 2026.",
+    "language": "ms-MY",
+    "store": "Grand Senheng Temerloh",
+    "store_code": "GS009",
+    "usage_note": "Customer must choose only a comment that truthfully matches their own experience and submit it using their own account and device.",
+    "same_user_monthly_rule": "Repeated Google Reviews from the same user in the same month count as one review only.",
+    "template_count": 68
+  },
+  "categories": {
+    "trusted_service": {
+      "label": "Trusted Service",
+      "full_label": "Always Be With You: Trusted Service",
+      "requirements": [
+        "Sekurang-kurangnya satu pengalaman Trusted Service yang layak"
+      ],
+      "variants": {
+        "trusted_brand": {
+          "label": "Jenama dipercayai",
+          "templates": [
+            "Pada pengalaman saya, Senheng memang jenama yang boleh dipercayai. Staf beri penerangan yang jelas dan urusan saya hari ini berjalan lancar.",
+            "Saya selesa berurusan dengan Senheng kerana jenama ini boleh dipercayai. Staf di Grand Senheng Temerloh juga membantu dengan baik.",
+            "Bagi saya, Senheng ialah jenama yang boleh dipercayai untuk beli barangan elektrik. Maklumat yang diberi jelas dan saya tidak rasa keliru sepanjang urusan.",
+            "Pengalaman hari ini buat saya lebih yakin dengan Senheng sebagai jenama yang boleh dipercayai. Layanan staf baik dan prosesnya teratur."
+          ]
+        },
+        "buying_experience": {
+          "label": "Pengalaman membeli-belah",
+          "templates": [
+            "Pengalaman membeli-belah saya di Grand Senheng Temerloh sangat baik. Staf mudah didekati, penerangan jelas dan proses pembelian pun senang.",
+            "Saya puas hati dengan pengalaman membeli-belah di sini. Staf bantu saya faham pilihan yang ada tanpa mendesak.",
+            "Urusan membeli-belah hari ini berjalan lancar dari mula sampai selesai. Staf jawab soalan saya dengan jelas dan sabar.",
+            "Pengalaman beli barang di Grand Senheng Temerloh memang baik. Saya dapat penerangan yang mudah difahami dan urusan siap dengan cepat."
+          ]
+        },
+        "after_sales": {
+          "label": "Servis selepas jualan",
+          "templates": [
+            "Saya puas hati dengan servis selepas jualan dan sokongan daripada Senheng. Staf dengar masalah saya dan terangkan langkah seterusnya dengan jelas.",
+            "Servis selepas jualan di Grand Senheng Temerloh sangat membantu. Soalan saya dijawab dengan baik dan urusan susulan mudah difahami.",
+            "Pengalaman saya mendapatkan sokongan selepas jualan berjalan lancar. Staf beri panduan yang jelas dan tidak biarkan saya tertanya-tanya.",
+            "Sokongan selepas jualan yang saya terima memang baik. Staf bantu semak perkara yang diperlukan dan terangkan proses dengan sabar."
+          ]
+        },
+        "online_offline": {
+          "label": "Online ke kedai",
+          "templates": [
+            "Saya semak maklumat secara online dahulu sebelum datang ke Grand Senheng Temerloh. Pengalaman dari online ke kedai berjalan lancar dan staf terus bantu bila saya sampai.",
+            "Proses membeli dari semakan online hingga urusan di kedai sangat mudah. Maklumat senang dirujuk dan staf di outlet membantu dengan cepat.",
+            "Saya bermula dengan carian online, kemudian sambung urusan di Grand Senheng Temerloh. Prosesnya lancar dan tidak perlu ulang banyak perkara.",
+            "Pengalaman online ke offline dengan Senheng memudahkan urusan saya. Selepas semak secara online, saya boleh datang ke kedai dan dapat bantuan terus."
+          ]
+        },
+        "nationwide": {
+          "label": "Rangkaian kedai yang mudah",
+          "templates": [
+            "Senheng mempunyai rangkaian kedai yang luas dan mudah dikunjungi. Saya boleh datang ke Grand Senheng Temerloh dan uruskan keperluan saya dengan senang.",
+            "Rangkaian outlet Senheng yang banyak memang memudahkan pelanggan. Bagi saya, Grand Senheng Temerloh senang dikunjungi dan stafnya membantu.",
+            "Saya suka kemudahan rangkaian kedai Senheng di banyak tempat. Bila perlukan bantuan, saya boleh terus datang ke outlet yang berdekatan.",
+            "Liputan kedai Senheng yang luas memberi kemudahan kepada saya. Urusan di Grand Senheng Temerloh hari ini juga berjalan dengan baik."
+          ]
+        }
+      }
+    },
+    "scoin_issuance": {
+      "label": "S-Coin Issuance",
+      "full_label": "Dapat S-Coin daripada pembelian",
+      "requirements": [
+        "Produk",
+        "Peratus S-Coin Cashback",
+        "Nilai S-Coin dalam RM"
+      ],
+      "templates": [
+        "Saya beli {product} dan dapat S-Coin Cashback {cashbackPercent}. Nilai S-Coin yang saya terima ialah {scoinValue}. Staf terangkan semuanya dengan jelas.",
+        "Pembelian {product} saya datang dengan S-Coin Cashback {cashbackPercent}, bernilai {scoinValue}. Proses pembelian mudah dan penerangan staf senang difahami.",
+        "Saya puas hati beli {product} di Grand Senheng Temerloh. Saya dapat S-Coin Cashback {cashbackPercent} dengan nilai S-Coin {scoinValue}.",
+        "Staf maklumkan dengan jelas bahawa pembelian {product} ini dapat S-Coin Cashback {cashbackPercent}. Nilai S-Coin yang diterima ialah {scoinValue}.",
+        "Hari ini saya beli {product} dan menerima S-Coin Cashback {cashbackPercent} bernilai {scoinValue}. Urusan berjalan lancar dari mula sampai selesai.",
+        "Untuk pembelian {product}, saya dapat S-Coin Cashback {cashbackPercent}. S-Coin itu bernilai {scoinValue} dan boleh digunakan kemudian mengikut kelayakan.",
+        "Saya beli {product} dengan bantuan staf di sini. Promosi ini beri S-Coin Cashback {cashbackPercent}, bersamaan nilai S-Coin {scoinValue}.",
+        "Penerangan tentang S-Coin untuk {product} sangat jelas. Saya menerima S-Coin Cashback {cashbackPercent} dengan nilai {scoinValue}."
+      ]
+    },
+    "scoin_redemption": {
+      "label": "S-Coin Redemption",
+      "full_label": "Redeem barang menggunakan S-Coin",
+      "requirements": [
+        "Produk yang ditebus",
+        "Nilai S-Coin yang digunakan dalam RM"
+      ],
+      "templates": [
+        "Saya redeem {product} menggunakan S-Coin bernilai {scoinValue}. Proses penebusan mudah dan staf membantu sampai selesai.",
+        "Hari ini saya berjaya tebus {product} dengan menggunakan S-Coin bernilai {scoinValue}. Urusannya jelas dan cepat.",
+        "Saya gunakan S-Coin bernilai {scoinValue} untuk redeem {product}. Staf terangkan langkah penebusan dengan baik.",
+        "Pengalaman redeem {product} berjalan lancar. Saya bayar menggunakan S-Coin bernilai {scoinValue} dan staf membantu sepanjang proses.",
+        "S-Coin yang saya kumpul digunakan untuk tebus {product}. Nilai S-Coin yang digunakan ialah {scoinValue}.",
+        "Saya datang untuk redeem {product} dan menggunakan S-Coin bernilai {scoinValue}. Prosesnya senang dan tidak mengambil masa lama.",
+        "Berjaya dapatkan {product} melalui S-Coin Redemption. Saya menggunakan S-Coin bernilai {scoinValue} untuk penebusan ini.",
+        "Saya puas hati dengan proses penebusan {product}. S-Coin bernilai {scoinValue} digunakan dan staf beri penerangan yang mudah difahami."
+      ]
+    },
+    "plusone_entitlement": {
+      "label": "PlusOne Warranty Entitlement",
+      "full_label": "Pembelian dengan PlusOne Warranty",
+      "requirements": [
+        "Produk",
+        "Pengalaman membeli item yang layak menerima PlusOne Warranty"
+      ],
+      "templates": [
+        "Saya beli {product} dan item ini layak mendapat PlusOne Warranty. Staf terangkan kelayakan waranti itu dengan jelas sebelum pembelian selesai.",
+        "Pembelian {product} saya disertakan kelayakan PlusOne Warranty. Penerangan staf mudah difahami dan membantu saya tahu perlindungan yang diterima.",
+        "Saya puas hati beli {product} di sini kerana produk ini layak untuk PlusOne Warranty. Staf semak dan terangkan kelayakannya dengan baik.",
+        "Semasa membeli {product}, staf maklumkan bahawa item ini mendapat PlusOne Warranty. Proses penerangan dan pendaftaran berjalan lancar.",
+        "Saya beli {product} dengan kelayakan PlusOne Warranty. Staf terangkan perkara penting tentang waranti sebelum saya buat keputusan.",
+        "Pengalaman membeli {product} sangat baik. Produk ini layak mendapat PlusOne Warranty dan maklumatnya diterangkan dengan jelas.",
+        "Untuk pembelian {product}, saya dimaklumkan tentang kelayakan PlusOne Warranty. Saya hargai penerangan staf yang terus dan mudah difahami.",
+        "Saya selesai membeli {product} yang layak untuk PlusOne Warranty. Urusan mudah dan staf bantu semak kelayakan produk dengan baik."
+      ]
+    },
+    "plusone_claim": {
+      "label": "PlusOne Warranty Claim",
+      "full_label": "Tuntutan PlusOne Warranty",
+      "requirements": [
+        "Produk",
+        "Pengalaman membuat tuntutan PlusOne Warranty"
+      ],
+      "templates": [
+        "Saya buat tuntutan PlusOne Warranty untuk {product}. Staf terangkan proses claim dengan jelas dan membantu saya menyediakan perkara yang diperlukan.",
+        "Pengalaman claim PlusOne Warranty untuk {product} berjalan lancar. Staf beri panduan yang mudah difahami dari awal.",
+        "Saya datang untuk urusan tuntutan PlusOne Warranty bagi {product}. Layanan staf baik dan langkah seterusnya diterangkan dengan jelas.",
+        "Proses tuntutan PlusOne Warranty untuk {product} mudah difahami. Staf semak maklumat saya dan membantu sepanjang urusan.",
+        "Saya puas hati dengan bantuan untuk claim PlusOne Warranty bagi {product}. Pertanyaan saya dijawab dengan jelas.",
+        "Urusan claim PlusOne Warranty untuk {product} dibuat dengan baik. Staf terangkan dokumen dan proses yang perlu diikuti.",
+        "Saya mendapatkan bantuan bagi tuntutan PlusOne Warranty untuk {product}. Staf sabar menerangkan proses dan status urusan saya.",
+        "Tuntutan PlusOne Warranty bagi {product} diuruskan dengan jelas. Saya tahu apa yang perlu dibuat selepas mendapat penerangan staf."
+      ]
+    },
+    "replacement_entitlement": {
+      "label": "Replacement Warranty Entitlement",
+      "full_label": "Pembelian dengan Replacement Warranty",
+      "requirements": [
+        "Produk",
+        "Pengalaman membeli item dengan Replacement Warranty"
+      ],
+      "templates": [
+        "Saya beli {product} dan staf terangkan kelayakan Replacement Warranty untuk produk ini. Penerangannya jelas dan mudah difahami.",
+        "Pembelian {product} saya mempunyai Replacement Warranty. Staf terangkan perlindungan ini sebelum urusan pembelian selesai.",
+        "Saya puas hati beli {product} di sini kerana maklumat tentang Replacement Warranty diterangkan dengan baik.",
+        "Semasa membeli {product}, saya dimaklumkan tentang Replacement Warranty yang berkaitan dengan produk ini. Staf jawab soalan saya dengan jelas.",
+        "Saya beli {product} dengan Replacement Warranty. Proses penerangan dan semakan kelayakan dibuat dengan teratur.",
+        "Pengalaman membeli {product} berjalan lancar. Staf turut menerangkan Replacement Warranty supaya saya faham perlindungan yang diterima.",
+        "Untuk pembelian {product}, staf bantu semak dan terangkan Replacement Warranty. Maklumat yang diberi senang saya faham.",
+        "Saya selesai membeli {product} dan menerima penerangan tentang Replacement Warranty. Layanan staf baik dan tidak mengelirukan."
+      ]
+    },
+    "replacement_claim": {
+      "label": "Replacement Warranty Claim",
+      "full_label": "Tuntutan Replacement Warranty",
+      "requirements": [
+        "Produk",
+        "Pengalaman membuat tuntutan Replacement Warranty"
+      ],
+      "templates": [
+        "Saya buat tuntutan Replacement Warranty untuk {product}. Staf membantu semak maklumat dan terangkan proses dengan jelas.",
+        "Pengalaman claim Replacement Warranty bagi {product} berjalan lancar. Saya mendapat panduan yang mudah difahami daripada staf.",
+        "Saya datang untuk urusan tuntutan Replacement Warranty bagi {product}. Staf beri penerangan yang jelas tentang langkah seterusnya.",
+        "Proses tuntutan Replacement Warranty untuk {product} mudah diikuti. Staf membantu dari semakan awal hingga urusan selesai dibuat.",
+        "Saya puas hati dengan bantuan claim Replacement Warranty bagi {product}. Semua soalan saya dijawab dengan baik.",
+        "Urusan claim Replacement Warranty untuk {product} dibuat dengan teratur. Staf terangkan dokumen dan proses yang diperlukan.",
+        "Saya mendapatkan bantuan tuntutan Replacement Warranty untuk {product}. Penerangan staf jelas dan saya tahu apa yang perlu dibuat selepas itu.",
+        "Tuntutan Replacement Warranty bagi {product} diuruskan dengan baik. Staf sabar membantu dan menerangkan status urusan saya."
+      ]
+    }
+  }
+}
