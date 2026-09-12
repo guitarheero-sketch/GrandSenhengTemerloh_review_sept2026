@@ -771,10 +771,34 @@
     const wrap=document.createElement("div");wrap.className="field";const head=document.createElement("div");head.className="field-head";const label=document.createElement("label");label.htmlFor="scoinValue";label.textContent=state.category==="scoin_issuance"?"Nilai S-Coin yang dapat":"Nilai S-Coin yang digunakan";head.appendChild(label);
     const box=document.createElement("div");box.className="input-prefix";const rm=document.createElement("span");rm.textContent="RM";const input=document.createElement("input");input.type="text";input.inputMode="decimal";input.id="scoinValue";input.placeholder="Contoh: 150.00";input.value=state.details.scoinValue||"";box.append(rm,input);wrap.append(head,box);return wrap;
   }
+  function calculateScoin(price,percent){
+    const gross=parseAmount(price)*parseAmount(percent)/100;
+    const coins=Math.round(gross*0.95*100);
+    return {gross,fee:gross*0.05,net:coins/100,coins};
+  }
+  function priceField(){
+    const wrap=textField("purchasePrice","Harga produk (RM)","Contoh: 2000.00");
+    wrap.querySelector("input").inputMode="decimal";
+    return wrap;
+  }
+  function calculationCard(){
+    const box=document.createElement("div");box.className="quick-card";box.id="scoinCalculation";box.setAttribute("aria-live","polite");return box;
+  }
+  function updateCalculation(){
+    const box=$("scoinCalculation");if(!box)return;
+    const price=parseAmount($("purchasePrice")?.value),percent=parseAmount($("cashbackPercent")?.value);
+    box.textContent="";
+    if(price<=0||percent<=0||percent>100){box.textContent="Isi harga produk dan S-Coin Cashback (%) untuk kira jumlah yang dapat.";return}
+    const amount=calculateScoin(price,percent);
+    const title=document.createElement("strong");title.textContent=money(amount.net)+" nilai S-Coin";
+    const coins=document.createElement("strong");coins.textContent=amount.coins.toLocaleString("en-MY")+" S-Coins";
+    const detail=document.createElement("div");detail.textContent=money(price)+" × "+percent+"% = "+money(amount.gross)+". Tolak 5% maintenance fee ("+money(amount.fee)+").";
+    box.append(title,coins,detail);
+  }
   function percentField(){
     const wrap=document.createElement("div");wrap.className="field";const head=document.createElement("div");head.className="field-head";const label=document.createElement("label");label.htmlFor="cashbackPercent";label.textContent="S-Coin Cashback (%)";head.appendChild(label);
     const input=document.createElement("input");input.type="number";input.inputMode="numeric";input.min="1";input.max="100";input.id="cashbackPercent";input.placeholder="Contoh: 50";input.value=state.details.cashbackPercent||"";
-    const chips=document.createElement("div");chips.className="chips";[20,30,50,70].forEach(value=>{const chip=document.createElement("button");chip.type="button";chip.className="chip"+(Number(input.value)===value?" selected":"");chip.textContent=value+"%";chip.addEventListener("click",()=>{input.value=value;chips.querySelectorAll(".chip").forEach(x=>x.classList.toggle("selected",x===chip));captureDetails();clearErrors()});chips.appendChild(chip)});wrap.append(head,input,chips);return wrap;
+    const chips=document.createElement("div");chips.className="chips";[20,30,37,50,70].forEach(value=>{const chip=document.createElement("button");chip.type="button";chip.className="chip"+(Number(input.value)===value?" selected":"");chip.textContent=value+"%";chip.addEventListener("click",()=>{input.value=value;chips.querySelectorAll(".chip").forEach(x=>x.classList.toggle("selected",x===chip));captureDetails();clearErrors()});chips.appendChild(chip)});wrap.append(head,input,chips);return wrap;
   }
   function outcomeField(){
     const wrap=document.createElement("div");wrap.className="field";const title=document.createElement("div");title.className="field-title";title.textContent="Apa gantian yang customer dapat?";const hidden=document.createElement("input");hidden.type="hidden";hidden.id="replacementOutcome";hidden.value=state.details.replacementOutcome||"";const chips=document.createElement("div");chips.className="chips";
@@ -787,15 +811,16 @@
     const holder=$("dynamicFields");holder.textContent="";
     if(state.category==="trusted_service"){const box=document.createElement("div");box.className="quick-card";box.innerHTML="<strong>Tak perlu isi apa-apa.</strong>Teruskan dan pilih ayat servis yang paling kena dengan pengalaman anda.";holder.appendChild(box)}else{
       const placeholder=state.category.startsWith("replacement_")?"Contoh: blender Philips":state.category.startsWith("plusone_")?"Contoh: peti sejuk Panasonic":"Contoh: TV TCL 55 inci";holder.appendChild(textField("product","Produk",placeholder));
-      if(state.category==="scoin_issuance"){holder.appendChild(percentField());holder.appendChild(amountField())}
+      if(state.category==="scoin_issuance"){holder.appendChild(priceField());holder.appendChild(percentField());holder.appendChild(calculationCard())}
       if(state.category==="scoin_redemption")holder.appendChild(amountField());
       if(state.category==="replacement_claim")holder.appendChild(outcomeField());
     }
+    updateCalculation();
     holder.querySelectorAll("input").forEach(input=>input.addEventListener("input",()=>{captureDetails();clearErrors()}));
   }
 
   function captureDetails(){
-    const next={};["product","cashbackPercent","scoinValue","replacementOutcome"].forEach(id=>{const input=$(id);if(input)next[id]=input.value});state.details=next;state.rendered=[];state.selected="";saveSession();return next;
+    const next={};["product","purchasePrice","cashbackPercent","scoinValue","replacementOutcome"].forEach(id=>{const input=$(id);if(input)next[id]=input.value});state.details=next;updateCalculation();state.rendered=[];state.selected="";saveSession();return next;
   }
   function validateStepOne(){
     $("staffCode").value=normalizeStaff($("staffCode").value);const staff=/^SH\d{3,8}$/.test($("staffCode").value);const cat=!!state.category;showError("staffError",!staff);showError("categoryError",!cat);if(!staff)$("staffCode").focus();return staff&&cat;
@@ -803,7 +828,7 @@
   function validateDetails(){
     if(state.category==="trusted_service"){showError("detailsError",false);return true}
     const d=captureDetails();let valid=!!String(d.product||"").trim();let message="Lengkapkan maklumat yang diperlukan.";
-    if(state.category==="scoin_issuance")valid=valid&&parseAmount(d.cashbackPercent)>0&&parseAmount(d.cashbackPercent)<=100&&parseAmount(d.scoinValue)>0;
+    if(state.category==="scoin_issuance")valid=valid&&parseAmount(d.cashbackPercent)>0&&parseAmount(d.cashbackPercent)<=100&&parseAmount(d.purchasePrice)>0&&calculateScoin(d.purchasePrice,d.cashbackPercent).coins>0;
     if(state.category==="scoin_redemption")valid=valid&&parseAmount(d.scoinValue)>0;
     if(state.category==="replacement_claim")valid=valid&&!!d.replacementOutcome;
     if(state.category.startsWith("plusone_")&&/(^|\s)(tv|television|televisyen)(\s|$)/i.test(String(d.product||""))){valid=false;message="TV tak layak untuk PlusOne Warranty. Pilih kategori yang betul."}
@@ -811,7 +836,7 @@
   }
   function values(){
     const d=state.details;const outcomes=state.data.replacement_outcomes||fallbackData.replacement_outcomes||[];const outcome=outcomes.find(x=>x.id===d.replacementOutcome);
-    return {product:String(d.product||"").trim(),cashbackPercent:parseAmount(d.cashbackPercent)+"%",scoinValue:money(parseAmount(d.scoinValue)),replacementOutcome:outcome?.value||""};
+    return {product:String(d.product||"").trim(),cashbackPercent:parseAmount(d.cashbackPercent)+"%",scoinValue:state.category==="scoin_issuance"?money(calculateScoin(d.purchasePrice,d.cashbackPercent).net)+" ("+calculateScoin(d.purchasePrice,d.cashbackPercent).coins.toLocaleString("en-MY")+" S-Coins, selepas tolak 5% maintenance fee)":money(parseAmount(d.scoinValue)),replacementOutcome:outcome?.value||""};
   }
   function fill(text){const v=values();return String(text||"").replace(/\{(product|cashbackPercent|scoinValue|replacementOutcome)\}/g,(_,key)=>v[key]||"").replace(/\s+/g," ").trim()}
   function randomIndex(max){if(max<=1)return 0;if(window.crypto&&window.crypto.getRandomValues){const a=new Uint32Array(1);window.crypto.getRandomValues(a);return a[0]%max}return Math.floor(Math.random()*max)}
@@ -853,3 +878,4 @@
 </script>
 </body>
 </html>
+
