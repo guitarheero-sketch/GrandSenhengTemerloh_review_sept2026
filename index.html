@@ -156,28 +156,17 @@
 
 <script type="application/json" id="reviewData">
 {
- "version": 8,
+ "version": 9,
  "updated": "2026-11",
  "meta": {
   "store": "Grand Senheng Temerloh",
   "store_code": "GS009",
   "language": "ms-MY casual",
   "customer_note": "Customer pilih, edit dan hantar review guna akaun dan peranti sendiri, berdasarkan pengalaman sebenar.",
-  "monthly_rule": "Review berulang daripada akaun yang sama dalam bulan yang sama dikira sekali sahaja."
+  "monthly_rule": "Review berulang daripada akaun yang sama dalam bulan yang sama dikira sekali sahaja.",
+  "scoin_rate": "RM1 = 100 S-Coin"
  },
  "store_hashtag": "#GrandSenhengTemerloh",
- "replacement_outcomes": [
-  {
-   "id": "one_to_one",
-   "label": "Unit baru 1-to-1",
-   "value": "unit baru 1-to-1"
-  },
-  {
-   "id": "same_value",
-   "label": "Barang lain, sama nilai",
-   "value": "barang lain yang sama nilai"
-  }
- ],
  "categories": {
   "scoin_issuance": {
    "label": "S-Coin Issuance",
@@ -190,76 +179,125 @@
    "required": [
     "product",
     "purchasePrice",
-    "cashbackPercent",
-    "scoinCoins",
-    "scoinRM"
+    "cashbackPercent"
    ],
    "note": "",
    "templates": [
-    "Beli {product} harga {purchasePrice}, dapat {scoinCoins} ({scoinRM}). Cashback {cashbackPercent}. Boleh pakai lain kali.",
-    "Antara sebab saya beli kat Senheng, ada S-Coin. Ambil {product} {purchasePrice}, cashback {cashbackPercent}, dapat {scoinCoins} bernilai {scoinRM}. Rasa macam dapat balik sikit duit.",
-    "Mula-mula ingat cashback ni sikit je. Bila staf kira untuk {product} yang harga {purchasePrice}, {cashbackPercent} tu jadi {scoinCoins}, nilai {scoinRM}. Boleh tahan jugak. Simpan dulu, nanti nak beli barang lain boleh guna.",
-    "Harga {purchasePrice} untuk {product}, cashback S-Coin {cashbackPercent}. Dapat {scoinCoins} ({scoinRM}). Okay la tu.",
-    "Bayar {purchasePrice} untuk {product}, memang dalam bajet. Tambah pula S-Coin Cashback {cashbackPercent}, jadi ada {scoinCoins} ({scoinRM}) simpan untuk next purchase.",
-    "Saya bukan jenis kejar promo sangat, tapi bila beli {product} {purchasePrice} dan tahu dapat {cashbackPercent} S-Coin, memang rasa untung. Masuk {scoinCoins}, nilai {scoinRM}. Bukan potong harga terus, tapi boleh guna balik kat Senheng nanti.",
-    "Dapat {scoinCoins} lepas beli {product} ({purchasePrice}). Nilai {scoinRM}, cashback {cashbackPercent}.",
-    "Tak sangka beli {product} pun ada cashback. Harga {purchasePrice}, {cashbackPercent} jadi S-Coin, dapat {scoinCoins} atau {scoinRM}. Kira bonus la.",
-    "Bagus juga ada sistem S-Coin ni. Beli {product} {purchasePrice}, {cashbackPercent} pulang balik jadi {scoinCoins}, nilainya {scoinRM}.",
-    "Kalau nak tahu apa yang buat saya pilih Senheng untuk {product}, jawapannya S-Coin. Bayar {purchasePrice}, cashback {cashbackPercent}, dapat {scoinCoins} ({scoinRM}). Boleh guna balik nanti. Bagi saya itu yang buat beza.",
-    "S-Coin Cashback {cashbackPercent} untuk {product} {purchasePrice}: total {scoinCoins}, {scoinRM}. Next time boleh redeem.",
-    "Staf terangkan pasal S-Coin masa saya nak bayar {product}. Harga {purchasePrice}, cashback {cashbackPercent}, jadi dapat {scoinCoins} bernilai {scoinRM}. Senang faham.",
-    "Ni first time saya betul-betul dapat S-Coin yang banyak sikit. Beli {product} dengan harga {purchasePrice}, cashback {cashbackPercent}, terus dapat {scoinCoins}. Nilai dia {scoinRM}. Tengah fikir nak redeem apa nanti.",
-    "Beli {product} kat Senheng {purchasePrice}, dapat balik {scoinCoins} ({scoinRM}, cashback {cashbackPercent}). Ngam.",
-    "Duit {purchasePrice} untuk {product} tu memang keluar la, tapi sekurang-kurangnya {cashbackPercent} masuk balik sebagai S-Coin. Dapat {scoinCoins}, dalam {scoinRM}. Not bad.",
-    "Ambil {product} {purchasePrice} masa ada S-Coin Cashback {cashbackPercent}. Timing baik, dapat {scoinCoins} ({scoinRM}).",
-    "Orang selalu cakap beli kat Senheng ada S-Coin, baru hari ni rasa sendiri. Untuk {product} yang saya beli {purchasePrice}, dapat {cashbackPercent} cashback, masuk {scoinCoins} bernilai {scoinRM}. Faham la kenapa orang suka.",
-    "Untuk {product}: harga {purchasePrice}, S-Coin Cashback {cashbackPercent}, dapat {scoinCoins} ({scoinRM}). Simple.",
-    "Apa yang saya suka beli kat Senheng ni, ada balik sesuatu lepas bayar. Beli {product} {purchasePrice}, {cashbackPercent} cashback, dapat {scoinCoins} bernilai {scoinRM}.",
-    "Mula-mula datang nak tengok {product} je. Bila tahu harga {purchasePrice} dapat S-Coin Cashback {cashbackPercent}, terus decide beli. Masuk {scoinCoins}, nilai {scoinRM}, boleh simpan untuk barang lain.",
-    "Cashback {cashbackPercent} untuk {product} {purchasePrice}. Dah masuk {scoinCoins} ({scoinRM}).",
-    "Rezeki. Beli {product} {purchasePrice}, kebetulan ada S-Coin Cashback {cashbackPercent}. Jadi dapat {scoinCoins}, nilai {scoinRM}.",
-    "S-Coin ni macam simpanan kecil la. Untuk {product} harga {purchasePrice} dapat {cashbackPercent}, iaitu {scoinCoins} ({scoinRM}). Tak rugi beli kat sini.",
-    "Saya memang beli barang elektrik kat Senheng sebab boleh kumpul S-Coin. Kali ni {product}, bayar {purchasePrice}, cashback {cashbackPercent}, dapat {scoinCoins} bernilai {scoinRM}. Sikit-sikit lama-lama jadi bukit.",
-    "Puas hati, beli {product} {purchasePrice} dapat S-Coin Cashback {cashbackPercent}: {scoinCoins}, nilai {scoinRM}."
+    "Beli {product} harga {purchasePrice}, dapat cashback {cashbackPercent} dalam bentuk S-Coin. Masuk {scoinCoins}, nilai {scoinRM}. Boleh guna lain kali datang.",
+    "Ambil {product} kat sini {purchasePrice}. Staf bagitahu ada S-Coin cashback {cashbackPercent}, jadi saya dapat {scoinCoins} ({scoinRM}) untuk pembelian akan datang.",
+    "{product} {purchasePrice}, cashback {cashbackPercent}. Dapat {scoinCoins}, nilai {scoinRM}. Ok la tu.",
+    "Tak plan pun nak beli hari ni, singgah tengok-tengok je. Last-last ambil {product} sebab harga {purchasePrice} siap ada S-Coin cashback {cashbackPercent}. Dapat {scoinCoins}, kira {scoinRM} la simpan dalam akaun.",
+    "Dapat {scoinCoins} lepas beli {product}. Harga {purchasePrice}, cashback {cashbackPercent}, nilai dalam {scoinRM}. Nanti nak kumpul lagi.",
+    "Saya beli {product} untuk rumah, bayar {purchasePrice}. Cashback S-Coin {cashbackPercent} tu bagi {scoinCoins} yang bernilai {scoinRM}. Staf tolong kira siap-siap sebelum bayar.",
+    "Cashback {cashbackPercent} untuk {product} ni agak banyak sebenarnya. Bayar {purchasePrice}, dapat balik {scoinCoins}, lebih kurang {scoinRM}.",
+    "First time dapat S-Coin. Beli {product} {purchasePrice}, cashback {cashbackPercent}, terus ada {scoinCoins} ({scoinRM}). Tak sabar nak tengok boleh tebus apa nanti.",
+    "Harga {product} {purchasePrice}. Lepas tu dapat {scoinCoins} sebab cashback {cashbackPercent}, nilai {scoinRM}. Bagus la ada benda macam ni untuk customer.",
+    "Orang rumah yang nak sangat {product} ni. Kami beli {purchasePrice}, dapat S-Coin cashback {cashbackPercent}, total {scoinCoins} bernilai {scoinRM}. Staf layan baik dari mula sampai bayar.",
+    "Beli {product} {purchasePrice}. S-Coin {cashbackPercent} masuk {scoinCoins}, nilai {scoinRM}. Simpan dulu.",
+    "Dah lama survey {product} kat beberapa kedai. Akhirnya beli kat Senheng Temerloh sebab dapat S-Coin cashback {cashbackPercent}. Bayar {purchasePrice}, dapat {scoinCoins} bernilai {scoinRM}, boleh tebus barang lain nanti.",
+    "Puas hati beli {product} kat sini. {purchasePrice}, cashback {cashbackPercent}, dapat {scoinCoins} ({scoinRM}).",
+    "Lepas bayar {purchasePrice} untuk {product}, staf terangkan S-Coin yang saya dapat: {cashbackPercent} cashback, jadi {scoinCoins}. Nilai dia {scoinRM}. Senang faham cara dia explain.",
+    "{scoinCoins} masuk akaun lepas beli {product} ({purchasePrice}, cashback {cashbackPercent}). Lebih kurang {scoinRM}, boleh guna nanti.",
+    "S-Coin cashback {cashbackPercent} memang membantu. Saya beli {product} {purchasePrice} dan dapat {scoinCoins}. Nilai {scoinRM} tu saya simpan, nak kumpul sampai cukup untuk tebus barang.",
+    "Beli {product} masa ada cashback {cashbackPercent}. Harga {purchasePrice}, S-Coin dapat {scoinCoins} ({scoinRM}). Rasa macam dapat diskaun untuk next time.",
+    "Mak suruh beli {product}, saya pun pergi Senheng Temerloh. Harga {purchasePrice}, dapat cashback S-Coin {cashbackPercent}. {scoinCoins} tu nilai {scoinRM}, saya simpan untuk beli barang lain pulak.",
+    "Terima kasih staf yang tolong kira S-Coin. {product} {purchasePrice}, cashback {cashbackPercent}, dapat {scoinCoins} atau {scoinRM}.",
+    "Selalu beli barang elektrik kat Senheng, kali ni {product}. Bayar {purchasePrice}, S-Coin cashback {cashbackPercent}, dapat {scoinCoins}. Dah ada {scoinRM} untuk tebus barang nanti.",
+    "Ingatkan cashback ni sikit je, tapi untuk {product} harga {purchasePrice} dengan {cashbackPercent}, dapat {scoinCoins}. Tu dah {scoinRM}.",
+    "Beli {product} {purchasePrice}. Cashback {cashbackPercent}, {scoinCoins} ({scoinRM}). Tq Senheng Temerloh.",
+    "Proses beli {product} cepat, staf pun ramah. Harga {purchasePrice} dan saya dapat S-Coin {cashbackPercent}, iaitu {scoinCoins} bernilai {scoinRM}.",
+    "Bajet saya memang sekitar {purchasePrice} untuk {product}. Bila tahu ada cashback {cashbackPercent} jadi S-Coin, terus ambil. Dapat {scoinCoins}, nilai {scoinRM}.",
+    "Hari ni beli {product}. Bayar {purchasePrice}, dapat balik {scoinCoins} sebagai cashback {cashbackPercent}, lebih kurang {scoinRM}.",
+    "Kawan yang suggest beli kat Senheng sebab ada S-Coin. Betul la, beli {product} {purchasePrice}, cashback {cashbackPercent}, dapat {scoinCoins}. Nilai {scoinRM}.",
+    "Beli {product} dengan harga {purchasePrice}. Yang best, ada cashback S-Coin {cashbackPercent}, jadi {scoinCoins} masuk akaun saya. Kira-kira {scoinRM} la.",
+    "Staf check dulu {product} ni dapat cashback berapa. Rupanya {cashbackPercent}. Bayar {purchasePrice}, dapat {scoinCoins} ({scoinRM}).",
+    "Ok la beli kat sini, ada S-Coin. {product} {purchasePrice}, dapat {scoinCoins} bernilai {scoinRM} hasil cashback {cashbackPercent}.",
+    "Dah lama kumpul S-Coin. Hari ni tambah lagi {scoinCoins} lepas beli {product} {purchasePrice} dengan cashback {cashbackPercent}. Nilai {scoinRM}, makin dekat nak cukup untuk tebus barang yang saya nak.",
+    "Terbaik Senheng Temerloh. Beli {product} {purchasePrice}, S-Coin masuk {scoinCoins} hasil cashback {cashbackPercent}. Nilai {scoinRM}.",
+    "Datang nak ganti {product} lama. Beli yang baru {purchasePrice}, dapat S-Coin cashback {cashbackPercent} sekali, {scoinCoins} bernilai {scoinRM}.",
+    "Beli {product} kat Grand Senheng Temerloh, {purchasePrice}. S-Coin yang dapat {scoinCoins} (cashback {cashbackPercent}, nilai {scoinRM}). Staf layan elok.",
+    "Untuk {product} yang saya beli {purchasePrice}, cashback S-Coin {cashbackPercent} bagi saya {scoinCoins}. {scoinRM} tu boleh tebus barang kemudian, so ok sangat.",
+    "Masa bayar baru staf bagitahu {product} ni ada S-Coin cashback {cashbackPercent}. Harga {purchasePrice}, dapat {scoinCoins}. Nilai {scoinRM}, bonus la untuk saya.",
+    "Beli {product}, {purchasePrice}. Dapat {scoinCoins} ({scoinRM}) dari cashback {cashbackPercent}. Nanti datang lagi.",
+    "Saya suka sistem S-Coin ni sebab duit yang dah keluar ada balik sikit. Beli {product} {purchasePrice}, cashback {cashbackPercent}, dapat {scoinCoins} bernilai {scoinRM}.",
+    "Cashback {cashbackPercent} untuk {product} harga {purchasePrice}. Total S-Coin {scoinCoins}, nilai {scoinRM}. Thanks staf yang bantu.",
+    "Beli {product} untuk anak, harga {purchasePrice}. Dapat {scoinCoins} hasil cashback {cashbackPercent}, nilai {scoinRM}. Ada rezeki lebih sikit.",
+    "Tengah ada cashback {cashbackPercent}, jadi saya ambil {product} terus. {purchasePrice}, dapat {scoinCoins} ({scoinRM}).",
+    "S-Coin yang saya dapat hari ni {scoinCoins}, nilai {scoinRM}. Itu cashback {cashbackPercent} dari {product} yang saya beli {purchasePrice}.",
+    "Dulu tak ambil port pasal S-Coin. Kali ni beli {product} {purchasePrice}, dapat cashback {cashbackPercent}, dalam {scoinCoins}. Bila tengok nilai {scoinRM}, rasa rugi pulak tak kumpul dari dulu.",
+    "Barang ok, servis ok. Dapat juga {scoinCoins} lepas beli {product}, harga {purchasePrice} dengan cashback {cashbackPercent}. Nilai dalam {scoinRM}.",
+    "Bayar {purchasePrice} untuk {product} dan dapat {scoinCoins} sebagai cashback {cashbackPercent}. Nilai {scoinRM}, boleh guna bila datang lagi.",
+    "Beli {product} kat sini sebab dekat dengan rumah, lepas tu ada S-Coin pulak. Harga {purchasePrice}, cashback {cashbackPercent}, dapat {scoinCoins} bernilai {scoinRM}.",
+    "{product} dah dapat, S-Coin pun dapat. {purchasePrice} dengan cashback {cashbackPercent}, total {scoinCoins} ({scoinRM}).",
+    "Staf terangkan cashback S-Coin sebelum saya bayar {product}. Untuk {purchasePrice}, {cashbackPercent} cashback jadi {scoinCoins}. Nilainya {scoinRM}. Saya appreciate sebab dia bagitahu tanpa saya tanya.",
+    "Beli {product} {purchasePrice} tadi. Ada S-Coin cashback {cashbackPercent}, dapat {scoinCoins}, kira macam {scoinRM} simpanan untuk lain kali.",
+    "Alhamdulillah, beli {product} {purchasePrice} dapat S-Coin cashback {cashbackPercent}. {scoinCoins} bernilai {scoinRM} dah ada untuk tebus barang lain nanti.",
+    "Harga {product} {purchasePrice}, ok untuk saya. Cashback S-Coin {cashbackPercent}, dapat {scoinCoins}. Nilai {scoinRM}. Next time datang lagi."
    ]
   },
   "scoin_redemption": {
    "label": "S-Coin Redemption",
    "requirements": [
-    "Produk yang ditebus",
-    "Nilai S-Coin digunakan (RM)"
+    "Barang yang ditebus",
+    "Nilai barang (RM)",
+    "S-Coin digunakan (RM × 100)"
    ],
    "required": [
     "product",
-    "scoinRM"
+    "itemValue"
    ],
-   "note": "",
+   "note": "Tebus barang terpilih 100% guna S-Coin, jadi barang ni free untuk anda. RM1 = 100 S-Coin.",
    "templates": [
-    "Redeem {product} guna S-Coin {scoinRM}. Senang je.",
-    "Akhirnya guna juga S-Coin yang dah lama simpan. Tebus {product}, pakai {scoinRM}.",
-    "Dulu tak ambil kisah sangat pasal S-Coin. Bila check baki, rupanya cukup untuk {product}. Guna {scoinRM}. Baru nampak faedah kumpul S-Coin.",
-    "Tebus {product} dengan S-Coin bernilai {scoinRM}. Settle.",
-    "Ini la best beli kat Senheng, S-Coin yang dapat boleh guna balik. Saya redeem {product}, guna {scoinRM}.",
-    "Redeem kat kaunter cepat. {scoinRM} S-Coin untuk {product}, staf tolong check baki sekali.",
-    "Simpan S-Coin dari pembelian sebelum ni, hari ni baru guna. Ambil {product} dengan S-Coin bernilai {scoinRM}. Kalau tak ada S-Coin, mungkin saya tangguh dulu nak beli.",
-    "Guna {scoinRM} S-Coin, dapat {product}. Okay.",
-    "Tak sangka S-Coin saya dah cukup untuk {product}. Redeem {scoinRM}, prosesnya pendek.",
-    "Ada orang tanya S-Coin ni betul-betul boleh guna ke. Boleh. Saya baru redeem {product}, nilai S-Coin {scoinRM}. Staf tunjuk baki sebelum dan lepas, jadi jelas.",
-    "S-Coin {scoinRM} bertukar jadi {product}. Berbaloi kumpul.",
-    "Kali ni bayar {product} guna S-Coin, {scoinRM}. Rasa lain sikit bila guna S-Coin, bukan duit poket.",
-    "Lepas beberapa kali beli kat Senheng, S-Coin dah terkumpul. Saya tebus {product}, {scoinRM}.",
-    "Mula-mula ingat redeem ni leceh, kena isi borang bagai. Rupanya tak. Pilih {product}, staf guna S-Coin {scoinRM}, siap.",
-    "Redeem {product}. {scoinRM} S-Coin. Cepat.",
-    "Saya guna S-Coin bernilai {scoinRM} untuk {product}. Kumpul sikit-sikit, akhirnya ada guna.",
-    "Tak ramai tahu S-Coin boleh tebus barang terus kat outlet. Saya cuba redeem {product}, habis {scoinRM}. Untuk yang selalu beli kat Senheng, rugi kalau tak guna.",
-    "Puas hati dapat {product} guna S-Coin {scoinRM}.",
-    "Baki S-Coin saya cukup-cukup untuk {product}. Guna {scoinRM}, baki yang tinggal pun staf tunjuk.",
-    "Saya jenis lupa ada S-Coin. Masa datang tengok barang, staf ingatkan. Terus redeem {product}, nilai {scoinRM}. Nasib baik diingatkan.",
-    "S-Coin yang terkumpul akhirnya jadi {product}. Pakai {scoinRM}.",
-    "Redeem {product} kat Grand Senheng Temerloh. Guna S-Coin {scoinRM}, tak lama pun.",
-    "Tak kisah barang besar ke kecil, boleh redeem guna S-Coin. Saya ambil {product}, pakai {scoinRM}.",
-    "S-Coin ni la yang buat saya setia beli kat Senheng. Bila dah terkumpul, boleh tebus barang. Kali ni {product}, guna {scoinRM}.",
-    "Tebus {product} hari ni. S-Coin terpakai {scoinRM}."
+    "Tebus {product} guna {redeemCoins}. Barang ni nilai {itemRM}, saya tak keluar duit langsung.",
+    "Dah lama kumpul S-Coin dari beli barang kat Senheng. Hari ni guna {redeemCoins} untuk tebus {product} yang bernilai {itemRM}. Dapat free.",
+    "Redeem {product} ({itemRM}) pakai {redeemCoins}. Free je.",
+    "Tak sangka S-Coin saya dah cukup untuk {product}. Harga {itemRM}, jadi guna {redeemCoins}. Bawa balik tanpa bayar sesen pun.",
+    "S-Coin yang terkumpul dari pembelian sebelum ni saya guna untuk {product}. Habis {redeemCoins}, nilai {itemRM}.",
+    "Dapat {product} free hari ni. Tebus guna {redeemCoins}, nilai barang {itemRM}. Semua tu dari S-Coin yang saya kumpul masa beli barang dulu.",
+    "Staf tolong check baki S-Coin saya, cukup untuk {product}. Guna {redeemCoins} ({itemRM}), siap dalam beberapa minit.",
+    "Pakai {redeemCoins} untuk tebus {product}. Barang {itemRM} dapat percuma.",
+    "Saya ingat S-Coin ni boleh guna untuk potong harga je. Staf terangkan boleh tebus barang terpilih terus. Jadi saya ambil {product} bernilai {itemRM}, guna {redeemCoins}.",
+    "{product} ni saya dapat dengan {redeemCoins} sahaja. Kalau nak beli, harga dia {itemRM}.",
+    "Redeem kat Grand Senheng Temerloh. {product}, {itemRM}, guna {redeemCoins}. Staf layan baik.",
+    "Bila datang, staf ingatkan saya ada S-Coin yang belum guna. Rupanya cukup untuk {product}. Terus tebus guna {redeemCoins}, nilai {itemRM}.",
+    "Tebus {product} hari ni dengan {redeemCoins}. Nilai {itemRM}, satu sen tak bayar.",
+    "Pilihan barang untuk redeem S-Coin banyak juga. Saya pilih {product}, nilai {itemRM}, guna {redeemCoins}.",
+    "Lepas beberapa kali beli barang kat sini, S-Coin saya dah banyak. Kali ni tebus {product} bernilai {itemRM}. Terpakai {redeemCoins}.",
+    "Guna {redeemCoins} untuk {product}. Free, nilai {itemRM}.",
+    "Rasa macam dapat hadiah. {product} bernilai {itemRM} saya bawa balik guna {redeemCoins}, tak bayar apa-apa.",
+    "Orang rumah dah lama nak {product}. Saya check S-Coin, ada cukup. Redeem guna {redeemCoins} untuk barang {itemRM}, free terus.",
+    "Proses redeem {product} cepat. Staf semak baki, tolak {redeemCoins}, siap. Nilai barang {itemRM}.",
+    "Dapat {product} free guna {redeemCoins}. Kalau beli biasa {itemRM}.",
+    "Beli barang kat Senheng sebelum ni ada S-Coin cashback, hari ni saya guna semua tu. {redeemCoins} untuk {product}, nilai {itemRM}.",
+    "{redeemCoins} saya tukar jadi {product}. Barang ni {itemRM}, saya dapat tanpa keluar duit.",
+    "Mula-mula tak percaya boleh dapat barang free dengan S-Coin. Hari ni saya tebus {product} bernilai {itemRM}, guna {redeemCoins}. Memang betul free.",
+    "Tebus {product} ({itemRM}). {redeemCoins} terpakai. Puas hati.",
+    "Saya jenis lupa ada S-Coin. Masa check dengan staf, baki cukup untuk {product}. Guna {redeemCoins}, dapat barang {itemRM} free.",
+    "Ni kali kedua saya redeem kat sini. Kali ni {product}, guna {redeemCoins}. Nilai {itemRM}.",
+    "Kumpul S-Coin tu memang berbaloi. Saya baru tebus {product} bernilai {itemRM} guna {redeemCoins}, tak payah tambah duit.",
+    "Habis {redeemCoins}, tapi dapat {product} bernilai {itemRM} tanpa bayar. Berbaloi.",
+    "Senang je redeem. Bagitahu staf nak {product}, dia check S-Coin, {redeemCoins} ditolak dan barang terus dapat. Nilai {itemRM}.",
+    "Hadiah untuk diri sendiri. {product} bernilai {itemRM}, tebus guna {redeemCoins} hasil beli barang kat Senheng sebelum ni.",
+    "Ada S-Coin terkumpul, cukup untuk {product} yang nilai {itemRM}. Terus redeem, guna {redeemCoins}.",
+    "Terima kasih Senheng. {product} ({itemRM}) dapat free guna {redeemCoins}.",
+    "Saya tebus {product} guna {redeemCoins} sebab memang tengah perlukan barang ni. Nilai {itemRM}, dapat free.",
+    "Satu sen pun tak keluar untuk {product} ni. Semua bayar guna {redeemCoins}, untuk barang bernilai {itemRM}.",
+    "Datang nak tengok barang, staf tanya ada S-Coin ke tak. Ada. Terus redeem {product} bernilai {itemRM}, guna {redeemCoins}.",
+    "Redeem {product} guna {redeemCoins}. Nilai {itemRM}. Staf terangkan baki yang tinggal sekali.",
+    "S-Coin ni hasil saya beli barang besar dulu. Sekarang dapat tebus {product} bernilai {itemRM}, guna {redeemCoins}.",
+    "Barang free memang best. {product}, {itemRM}, tebus dengan {redeemCoins}.",
+    "Saya guna {redeemCoins} untuk {product} hari ni. Kalau bayar cash, {itemRM}. Nasib baik rajin kumpul S-Coin.",
+    "Redeem senang, tak ada borang panjang. Saya ambil {product} bernilai {itemRM}, guna {redeemCoins}.",
+    "Lama simpan S-Coin, akhirnya guna. {product}, {redeemCoins}, nilai {itemRM}. Free.",
+    "Anak saya yang pilih {product} ni untuk redeem. Guna {redeemCoins}, barang {itemRM}, kami tak bayar apa-apa.",
+    "Siapa yang selalu beli kat Senheng, check la baki S-Coin. Saya baru tebus {product} bernilai {itemRM} dengan {redeemCoins}.",
+    "Tebus {product} pakai {redeemCoins} kat Senheng Temerloh. Barang {itemRM} jadi free.",
+    "Untuk {product} ni saya guna {redeemCoins}. Nilai {itemRM}. Rasa berbaloi beli barang kat sini selama ni.",
+    "Staf bantu pilih barang yang boleh redeem ikut baki S-Coin saya. Akhirnya ambil {product}, {itemRM}, guna {redeemCoins}.",
+    "Dapat {product} hari ni tanpa bayar. Guna {redeemCoins}, nilai barang {itemRM}.",
+    "{product} bernilai {itemRM}. Saya tebus 100% guna {redeemCoins}, tak tambah duit.",
+    "Mula kumpul S-Coin pun tak sengaja, sebab beli barang kat sini je. Tup tup dah cukup untuk {product}. Guna {redeemCoins}, nilai {itemRM}.",
+    "Redeem S-Coin berjaya. {redeemCoins} untuk {product} ({itemRM}). Thank you staf Senheng Temerloh."
    ]
   },
   "plusone_entitlement": {
@@ -273,31 +311,56 @@
    ],
    "note": "PlusOne beri extra warranty 1 tahun free untuk ahli dan produk terpilih. TV tak layak.",
    "templates": [
-    "Beli {product}, dapat PlusOne Warranty. Extra setahun, free.",
-    "Sebagai member, {product} saya dapat tambah 1 tahun warranty bawah PlusOne. Tak caj apa-apa.",
-    "Barang elektrik ni kita tak tahu bila nak rosak. Sebab tu saya suka bila {product} yang saya beli layak PlusOne Warranty, tambah setahun lagi, percuma untuk member. Lega sikit.",
-    "PlusOne Warranty untuk {product}: extra 1 tahun. Okay la.",
-    "Satu benda yang buat saya pilih Senheng, ada PlusOne. Untuk {product} ni dapat warranty lebih setahun, free.",
-    "Staf check dulu, {product} ni memang layak PlusOne Warranty. Jadi warranty asal tambah setahun.",
-    "Saya tak tahu pun pasal PlusOne sebelum ni. Masa bayar {product}, baru tahu dapat extra 1 tahun warranty sebab saya member. Benda macam ni patut lebih ramai tahu.",
-    "Extra setahun warranty untuk {product}, tak bayar lebih. Thanks PlusOne.",
-    "Beli {product} kat Senheng dapat bonus PlusOne Warranty 1 tahun. Benda free macam ni, siapa tak nak.",
-    "Bila beli barang macam {product} ni, saya memang tengok warranty dulu. Dengan PlusOne, dapat tambah setahun tanpa caj. Itu antara sebab saya beli kat sini.",
-    "Layak PlusOne untuk {product}. Warranty tambah 1 tahun.",
-    "Rasa lebih tenang guna {product} sebab ada PlusOne Warranty. Setahun tambahan tu free untuk member.",
-    "Member Senheng ada PlusOne rupanya. Beli {product}, terus dapat warranty extra 1 tahun.",
-    "Ramai tak perasan benda ni. Beli barang yang layak kat Senheng, member dapat PlusOne Warranty extra setahun, free. Saya dapat untuk {product}. Simpan resit elok-elok.",
-    "PlusOne bagi {product} saya extra 1 tahun warranty. Free.",
-    "Staf explain pasal PlusOne masa saya beli {product}. Ringkas je, extra setahun warranty, tak payah bayar.",
-    "Saya memang selalu risau pasal warranty bila beli barang elektrik. Untuk {product} ni, warranty asal ditambah lagi setahun melalui PlusOne. Tak perlu top up apa-apa. Okay la, satu kerisauan kurang.",
-    "Untung jadi member, {product} dapat warranty tambahan setahun lewat PlusOne.",
-    "Beli {product} hari tu, dapat PlusOne Warranty. Tambah 1 tahun, tanpa caj. Bagi saya ini nilai tambah beli kat Senheng.",
-    "Barang rosak lepas warranty habis memang menyakitkan hati. Jadi bila {product} ni dapat PlusOne Warranty extra 1 tahun free, saya appreciate sangat.",
-    "Warranty {product} panjang setahun lagi sebab PlusOne. Nice.",
-    "PlusOne Warranty ni free untuk member, cuma untuk produk yang layak. Nasib baik {product} saya layak, dapat extra 1 tahun.",
-    "Bukan selalu dapat warranty tambahan free. Kat Senheng, {product} saya dapat PlusOne, setahun lagi.",
-    "Beli {product} kat Grand Senheng Temerloh. Staf check eligibility, confirm layak PlusOne. Jadi warranty lebih panjang setahun, tak keluar duit lebih. Benda macam ni yang buat saya datang balik.",
-    "Extra 1 tahun warranty untuk {product}, kelebihan jadi member."
+    "Beli {product}, dapat PlusOne Warranty. Warranty tambah setahun, free sebab saya member.",
+    "Staf check dulu {product} ni layak PlusOne ke tak. Layak, jadi saya dapat extra 1 tahun warranty tanpa bayar.",
+    "Extra 1 tahun warranty untuk {product}, percuma. Terima kasih PlusOne.",
+    "Saya memang risau pasal warranty bila beli barang elektrik. Untuk {product} ni ada PlusOne, warranty asal ditambah lagi setahun. Tak ada caj tambahan.",
+    "Member Senheng dapat PlusOne untuk barang yang layak. {product} saya dapat tambahan setahun warranty.",
+    "Dapat PlusOne untuk {product}. Lega sikit, setahun lagi warranty.",
+    "Tak tahu pun ada PlusOne sampai staf bagitahu masa saya bayar {product}. Extra setahun warranty, free untuk member.",
+    "Beli {product} kat Grand Senheng Temerloh. Staf confirm layak PlusOne Warranty, tambah 1 tahun.",
+    "PlusOne bagi warranty {product} saya setahun lagi. Tak bayar apa pun.",
+    "Barang macam {product} ni nak pakai lama. Bila dapat PlusOne, warranty jadi lebih panjang setahun. Satu sebab saya beli kat sini.",
+    "{product} saya layak PlusOne. Warranty extra setahun, free.",
+    "Saya tanya staf pasal warranty {product}. Dia terangkan ada PlusOne untuk member, tambah setahun lagi lepas warranty asal habis.",
+    "Untung jadi member. Beli {product} terus dapat PlusOne Warranty 1 tahun tambahan.",
+    "Tambahan setahun warranty untuk {product} melalui PlusOne. Staf uruskan masa beli.",
+    "PlusOne ni free, tapi untuk barang yang layak je. Nasib baik {product} saya layak, dapat extra 1 tahun.",
+    "Beli {product} hari ni. Staf bagitahu dapat PlusOne Warranty, setahun lagi lepas warranty asal. Saya appreciate staf yang explain.",
+    "Warranty {product} panjang setahun lagi sebab PlusOne. Free untuk member.",
+    "Dah beli {product}, dapat PlusOne sekali. Kurang la risau kalau ada masalah lepas setahun.",
+    "Benda free macam PlusOne ni patut ramai tahu. Saya beli {product} dan dapat extra setahun warranty sebagai member.",
+    "Saya simpan resit {product} elok-elok sebab ada PlusOne Warranty. Setahun tambahan tu tak bayar.",
+    "Staf terang ringkas pasal PlusOne masa saya beli {product}. Senang faham, extra 1 tahun warranty.",
+    "{product} dah dapat PlusOne. Warranty tambah setahun, member tak payah bayar.",
+    "Mak ayah suruh beli kat Senheng sebab ada PlusOne. Betul, {product} yang saya beli dapat warranty tambahan 1 tahun, free.",
+    "Bagi saya PlusOne ni nilai tambah bila beli {product} kat sini. Setahun lagi warranty tanpa caj.",
+    "Ambil {product}, staf check eligibility PlusOne. Layak. Extra 1 tahun warranty.",
+    "Sebelum beli {product} saya bandingkan beberapa kedai. Pilih Senheng sebab member dapat PlusOne, tambah setahun warranty free.",
+    "Barang elektrik ni kadang rosak lepas warranty habis. Dengan PlusOne, {product} saya ada setahun lagi.",
+    "Thanks staf Senheng Temerloh, PlusOne untuk {product} dah settle. Extra setahun warranty.",
+    "Beli {product} dapat PlusOne Warranty. Warranty jadi lebih lama setahun.",
+    "Saya tak perlu tambah apa-apa bayaran untuk PlusOne. Beli {product}, member, terus dapat 1 tahun warranty tambahan.",
+    "First time dapat PlusOne. {product} ni warranty dia tambah setahun, free.",
+    "Rasa lebih tenang guna {product} sebab warranty ada setahun lagi dari PlusOne.",
+    "Staf ramah, siap check {product} layak PlusOne. Dapat extra setahun, tak bayar.",
+    "PlusOne untuk {product}. Setahun warranty lagi, untuk member Senheng.",
+    "Dulu beli barang tak fikir pasal warranty. Sekarang ada PlusOne kat Senheng, beli {product} pun dapat setahun extra. Senang hati.",
+    "Beli {product} kat sini dapat PlusOne, warranty tambah 1 tahun. Saya rasa berbaloi.",
+    "Warranty tambahan setahun untuk {product}. PlusOne ni free untuk member, cuma kena barang yang layak.",
+    "Dapat PlusOne untuk {product} yang saya beli. Staf terangkan tempoh warranty baru dengan jelas.",
+    "Satu lagi sebab saya suka beli kat Senheng, PlusOne. {product} saya dapat setahun warranty tambahan.",
+    "Beli {product}. Free PlusOne Warranty 1 tahun.",
+    "Saya ingat extra warranty mesti kena bayar. Untuk {product} ni, sebab saya member, PlusOne bagi setahun tambahan tanpa caj.",
+    "Layak PlusOne. {product} saya ada warranty extra setahun.",
+    "Senang hati beli {product}. Warranty asal ada, PlusOne tambah setahun lagi.",
+    "Staf yang serve saya bagitahu pasal PlusOne tanpa saya tanya. {product} dapat extra 1 tahun warranty.",
+    "Untuk {product} ni saya dapat PlusOne. Tak payah fikir sangat kalau rosak lepas warranty asal habis.",
+    "Beli {product} kat Grand Senheng Temerloh, dapat PlusOne. Setahun warranty tambahan, free, untuk member.",
+    "Alhamdulillah {product} layak PlusOne. Extra setahun warranty, satu kerisauan kurang.",
+    "Tak sangka {product} dapat warranty lebih panjang. PlusOne tambah setahun, free untuk member.",
+    "Masa nak bayar {product}, staf tanya saya member ke tak. Sebab member, dapat PlusOne Warranty tambah setahun.",
+    "PlusOne Warranty ni memang berguna. Beli {product}, terus dapat extra 1 tahun tanpa bayar lebih."
    ]
   },
   "plusone_claim": {
@@ -311,31 +374,56 @@
    ],
    "note": "Untuk claim dalam tempoh PlusOne Warranty. TV tak layak PlusOne.",
    "templates": [
-    "Claim PlusOne untuk {product}. Proses dia okay.",
-    "Bila {product} buat hal, saya bawa claim bawah PlusOne Warranty. Staf semak dulu, lepas tu terangkan langkah seterusnya.",
-    "Jujur, saya ingat dah tak boleh claim sebab warranty asal dah habis. Rupanya {product} masih dalam tempoh PlusOne. Staf terus uruskan. Kalau tak ada PlusOne, mesti kena bayar sendiri.",
-    "Claim {product} bawah PlusOne. Tak berbelit.",
-    "First time claim PlusOne. Bawa {product} dengan resit, staf check tempoh, terus proses.",
-    "Lega ada PlusOne sebab {product} rosak masa tempoh tambahan, jadi masih boleh claim.",
-    "Mula-mula risau juga, takut kena pusing sana sini. Tapi claim PlusOne untuk {product} ni staf yang uruskan dari awal. Saya cuma perlu bagi maklumat dan tunggu update.",
-    "Extra warranty tu memang berguna. Baru claim untuk {product}.",
-    "Tak semua orang tahu PlusOne boleh claim kat outlet. Saya bawa {product} ke sini, staf terus semak rekod.",
-    "Warranty asal {product} dah lepas, tapi PlusOne masih cover. Hantar kat outlet, staf explain apa jadi lepas ni dan berapa lama. Sekurang-kurangnya tak tertanya-tanya.",
-    "PlusOne cover {product} saya. Claim jalan.",
-    "Claim PlusOne Warranty untuk {product}. Staf dengar masalah dulu, baru proses. Tak rasa dilayan acuh tak acuh.",
-    "Masa beli dulu tak fikir sangat pasal PlusOne. Bila {product} ada masalah, baru nampak gunanya.",
-    "Saya bawa {product} datang tanpa expect apa-apa. Staf check, confirm masih bawah PlusOne Warranty, dan claim terus dibuka. Tak perlu ulang cerita banyak kali.",
-    "Senang urus claim PlusOne untuk {product}.",
-    "Benda paling saya hargai, staf terangkan proses claim {product} dari awal sampai habis. PlusOne memang ada fungsi.",
-    "Kalau ada orang tanya kenapa saya beli kat Senheng, salah satu sebab dia PlusOne. Bila {product} saya rosak, saya cuma bawa ke outlet, staf yang bantu uruskan claim.",
-    "PlusOne claim untuk {product}, staf bantu sampai faham.",
-    "Bawa {product} untuk claim PlusOne. Prosesnya lebih mudah dari yang saya sangka.",
-    "Satu je saya nak cakap, simpan resit. Claim PlusOne untuk {product} saya jalan lancar sebab dokumen lengkap, dan staf pun cepat semak.",
-    "Claim PlusOne Warranty untuk {product}, bahagian saya dah settle.",
-    "Warranty tambahan dari PlusOne ni bukan gimik. Saya dah guna untuk claim {product}.",
-    "Datang dengan {product} yang ada masalah. Staf semak tempoh PlusOne, lepas tu bagitahu step seterusnya. Jelas.",
-    "Saya ingat claim warranty ni mesti renyah. Untuk {product}, bawah PlusOne, staf yang banyak tolong: semak rekod, isi borang, terangkan tempoh. Bahagian saya cuma datang dan tunggu.",
-    "Bersyukur ada PlusOne masa {product} rosak."
+    "Claim PlusOne untuk {product}. Staf uruskan dengan baik.",
+    "{product} saya rosak lepas warranty asal habis. Nasib baik ada PlusOne, masih boleh claim. Staf terus proses.",
+    "Bawa {product} dengan resit, staf check tempoh PlusOne. Masih dalam tempoh, terus buka claim.",
+    "Lega ada PlusOne. {product} buat hal masa tahun tambahan, dan claim jalan.",
+    "Mula-mula risau kena pusing sana sini. Staf yang uruskan claim PlusOne {product} saya dari awal, saya tunggu update je.",
+    "Claim PlusOne {product}, staf layan baik dan explain langkah seterusnya.",
+    "Warranty asal {product} dah habis, tapi PlusOne masih cover. Hantar kat outlet, staf bagitahu berapa lama nak siap.",
+    "Masa beli {product} dulu tak fikir sangat pasal PlusOne. Bila rosak, baru rasa berbaloi.",
+    "Senang claim PlusOne kat Senheng Temerloh. {product} saya diterima untuk claim tanpa banyak soal.",
+    "Staf dengar dulu masalah {product}, semak rekod PlusOne, baru proses claim. Saya appreciate.",
+    "PlusOne cover {product} saya. Claim dah diproses.",
+    "Simpan resit tu penting. Claim PlusOne untuk {product} lancar sebab dokumen lengkap.",
+    "Ingatkan dah kena bayar repair sendiri. Rupanya {product} masih dalam tempoh PlusOne. Jimat duit.",
+    "Datang dengan {product} yang ada masalah. Staf check, confirm bawah PlusOne, terus buka claim. Tak perlu ulang cerita banyak kali.",
+    "Claim PlusOne {product}. Staf terangkan proses dari mula sampai habis.",
+    "Saya beli {product} kat sini dulu dengan PlusOne. Bila rosak, terus bawa ke outlet dan claim.",
+    "Terima kasih staf Senheng yang bantu claim PlusOne untuk {product}.",
+    "Proses claim PlusOne {product} lebih mudah dari yang saya sangka.",
+    "{product} rosak dalam tempoh tambahan PlusOne. Bawa ke kedai, staf ambil alih urusan claim.",
+    "Satu sebab saya beli barang kat Senheng, PlusOne. Hari ni guna untuk claim {product}.",
+    "Claim untuk {product} bawah PlusOne. Staf bagi update dan saya tak perlu tertanya-tanya.",
+    "Tak payah call banyak tempat. Bawa {product} ke outlet, staf uruskan claim PlusOne.",
+    "PlusOne Warranty betul-betul boleh guna. Saya baru claim untuk {product}.",
+    "Staf check tarikh beli {product}, masih dalam PlusOne. Claim dibuka masa tu juga.",
+    "Saya ingat claim warranty mesti renyah. Untuk {product} bawah PlusOne ni staf yang banyak tolong, saya cuma datang dan tunggu.",
+    "Bersyukur ada PlusOne masa {product} rosak.",
+    "{product} ada masalah, claim PlusOne. Staf peramah dan sabar layan soalan saya.",
+    "Kalau tak ada PlusOne, mesti saya kena bayar sendiri untuk {product}. Claim kat Senheng Temerloh, staf bantu.",
+    "Claim PlusOne untuk {product}. Staf explain apa yang cover dan berapa lama.",
+    "Nasib baik daftar member masa beli {product}. Sekarang boleh claim PlusOne.",
+    "Hantar {product} untuk claim PlusOne. Staf bagitahu jangka masa siap dengan jelas.",
+    "Pengalaman claim PlusOne {product} ok. Staf cepat semak rekod.",
+    "Dah lepas setahun, {product} buat hal. PlusOne masih cover, claim jalan.",
+    "Staf tak buat saya tunggu lama. Claim PlusOne untuk {product} dibuat masa saya kat kaunter.",
+    "Mula-mula tak pasti {product} layak claim. Staf semak, memang bawah PlusOne.",
+    "Warranty tambahan PlusOne dah tolong saya. Claim {product} diuruskan staf.",
+    "Bawa {product} ke Grand Senheng Temerloh untuk claim PlusOne. Layanan baik.",
+    "Saya cadangkan simpan resit dan ambil PlusOne. Bila {product} saya rosak, claim senang.",
+    "{product} saya claim bawah PlusOne. Proses jelas, staf membantu.",
+    "Ramai tak tahu PlusOne boleh claim terus kat outlet. Saya bawa {product} ke sini, staf terus semak.",
+    "Claim PlusOne {product}. Staf ambil butiran dan terangkan bila boleh datang ambil.",
+    "Dulu beli {product} dapat PlusOne free. Sekarang dah guna untuk claim.",
+    "Staf yang handle claim PlusOne {product} saya sangat membantu.",
+    "Tak sangka claim PlusOne {product} senang macam ni.",
+    "{product} rosak, saya datang kedai. Staf check, masih dalam PlusOne, claim terus diproses.",
+    "Lega bila staf confirm {product} masih bawah PlusOne.",
+    "Urusan claim PlusOne untuk {product} teratur. Saya tahu apa nak buat lepas ni.",
+    "Bawa resit dengan {product}, staf buat selebihnya. Claim PlusOne siap dibuka.",
+    "PlusOne berbaloi. {product} saya rosak masa tempoh tambahan dan masih boleh claim.",
+    "Terima kasih Senheng Temerloh. Claim PlusOne untuk {product} diuruskan elok."
    ]
   },
   "replacement_entitlement": {
@@ -347,73 +435,122 @@
    "required": [
     "product"
    ],
-   "note": "RW ialah add-on berbayar untuk small appliances yang layak sahaja.",
+   "note": "RW add-on berbayar untuk small appliance terpilih. Warranty asal 1 tahun + RW 1 tahun = 2 tahun. Rosak dalam 2 tahun, tukar baru.",
    "templates": [
-    "Tambah RW untuk {product}. Caj sikit, tapi senang hati.",
-    "Ambil add-on Replacement Warranty untuk {product}. Kalau rosak dalam tempoh cover, boleh tukar, tak payah tunggu repair.",
-    "Small appliance ni kalau rosak, hantar repair pun lama. Sebab tu saya ambil RW untuk {product}. Bayar sikit sekarang, nanti kalau ada apa-apa dalam tempoh cover boleh terus urus gantian kat outlet.",
-    "Dah ambil RW untuk {product}. Peace of mind.",
-    "Staf bagitahu bukan semua small appliance boleh ambil RW. Yang saya beli, {product}, kebetulan layak, jadi saya tambah sekali.",
-    "Caj RW untuk {product} diberitahu awal sebelum bayar. Tak ada caj tersembunyi.",
-    "Saya jarang ambil add-on, selalunya rasa tak perlu. Tapi bila staf terangkan RW untuk {product}, kalau rosak boleh terus ganti, saya rasa berbaloi. Keputusan tetap saya yang buat, tak dipaksa.",
-    "Just in case, saya ambil Replacement Warranty sekali dengan {product}.",
-    "RW ni pilihan, bukan wajib. Saya ambil untuk {product} sebab nak elak pening kalau rosak nanti.",
-    "Yang saya suka pasal RW, kalau {product} rosak dalam tempoh cover, prosesnya gantian, bukan repair. Bagi barang yang hari-hari guna, tu penting. Sebab tu saya ambil add-on ni.",
-    "Harga add-on RW untuk {product} pun reasonable. Ambil terus.",
-    "Beli {product} kat Senheng, ada pilihan tambah RW. Saya ambil, staf terangkan syarat dan tempoh dengan jelas.",
-    "Barang yang hari-hari guna macam {product} ni memang senang haus. Ambil RW, sedap hati sikit.",
-    "Tak pernah dengar pasal Replacement Warranty sebelum ni. Staf explain masa saya beli {product}: add-on berbayar, untuk small appliance yang layak, dan kalau rosak dalam tempoh boleh ganti. Saya fikir sekejap, then ambil.",
-    "Satu benda kurang nak risau: {product} dah ada RW.",
-    "Saya ambil RW untuk {product} lepas faham cara claim dia. Senang kalau ada apa-apa nanti.",
-    "Bagi saya, kelebihan beli small appliance kat Senheng ialah ada RW. Bayar sikit untuk {product}, dan kalau rosak dalam tempoh cover, boleh terus urus kat outlet. Senang cerita.",
-    "Replacement Warranty? Ambil. Untuk {product} memang patut.",
-    "Rasa berbaloi tambah RW untuk {product}. Kalau tak guna, tak apa. Kalau perlu, ada.",
-    "Staf tak paksa langsung. Dia cuma bagitahu ada pilihan RW untuk {product}, berapa caj, apa yang cover. Saya sendiri yang decide nak ambil sebab malas nak pening kepala kemudian.",
-    "Ada RW untuk {product}, so tak la risau sangat kalau rosak.",
-    "Masa bayar {product}, saya tambah Replacement Warranty. Tak lama pun proses dia.",
-    "Kali ni saya cuba ambil RW untuk {product}. Harap tak perlu guna, tapi ada pun bagus.",
-    "Barang kecil pun ada masa rosak awal. Dengan RW, {product} saya ada perlindungan gantian dalam tempoh cover. Caj tambahan tu saya anggap macam insurans kecil.",
-    "RW untuk {product} dah settle. Syarat pun jelas."
+    "Tambah RW untuk {product}. Warranty asal 1 tahun, RW tambah lagi 1 tahun, jadi 2 tahun. Kalau rosak dalam tempoh tu, tukar baru.",
+    "Staf terangkan pasal RW masa saya beli {product}. Bayar sikit lagi, warranty yang asalnya setahun jadi 2 tahun. Rosak dalam 2 tahun, dapat tukar baru terus.",
+    "Ambil RW untuk {product}. Warranty 1 tahun + 1 tahun, total 2 tahun. Rosak, tukar baru.",
+    "Barang yang hari-hari guna macam {product} ni senang rosak. Sebab tu saya tambah RW. Warranty asal setahun, dengan RW jadi 2 tahun, dan kalau rosak dalam 2 tahun tu boleh tukar baru.",
+    "Tambah sikit duit je untuk RW. {product} saya sekarang ada warranty 2 tahun (1 tahun asal + 1 tahun RW). Kalau rosak, tukar baru.",
+    "RW untuk {product} dah ambil. Dalam 2 tahun kalau rosak, terus tukar baru. Tanpa RW warranty dia 1 tahun je.",
+    "Saya jarang ambil add-on. Bila staf cakap RW boleh panjangkan warranty {product} dari 1 tahun ke 2 tahun, dan rosak dapat tukar baru, saya ambil.",
+    "Warranty {product} jadi 2 tahun lepas tambah RW. Setahun dari kilang, setahun lagi dari RW. Rosak dalam masa tu, tukar baru.",
+    "Ambil RW sekali dengan {product}. Senang hati, kalau rosak dalam 2 tahun dapat tukar baru. Asal warranty setahun je.",
+    "{product} + RW. Asal 1 tahun, sekarang 2 tahun. Rosak tukar baru.",
+    "Caj RW untuk {product} staf bagitahu awal. Dengan bayaran tu, warranty setahun ditambah setahun lagi. Total 2 tahun, kalau rosak tukar baru.",
+    "Malas nak pening kalau barang rosak. Jadi saya tambah RW untuk {product}. 2 tahun warranty (1 tahun asal, 1 tahun lagi dari RW), rosak terus tukar baru.",
+    "Beli {product} kat Senheng Temerloh, staf offer RW. Tambah sikit bayaran, warranty jadi 2 tahun berbanding 1 tahun. Rosak dalam 2 tahun boleh tukar baru.",
+    "RW ni berbaloi untuk {product}. 1 tahun warranty asal, RW tambah 1 tahun, jadi 2 tahun. Kalau rosak, tukar baru.",
+    "Saya tambah RW sebab nak tenang. {product} ni kalau rosak dalam 2 tahun boleh tukar baru. Asalnya warranty setahun sahaja.",
+    "Harga RW untuk {product} pun ok. Warranty extra setahun atas 1 tahun asal, total 2 tahun. Rosak, tukar baru.",
+    "Staf terang ringkas: tambah RW, warranty {product} dari setahun jadi 2 tahun, kalau rosak dalam tempoh tu tukar baru. Saya fikir sekejap, lepas tu ambil.",
+    "Dah ada RW untuk {product}. Warranty 2 tahun, rosak tukar baru. Tanpa RW, setahun je.",
+    "First time ambil RW. Untuk {product} ni, warranty yang biasanya 1 tahun jadi 2 tahun. Kalau rosak, tukar baru, tak payah tunggu repair.",
+    "Tambah RW untuk {product}. Setahun warranty asal plus setahun RW. Dalam 2 tahun kalau rosak, staf cakap terus tukar baru.",
+    "Kalau rosak dalam 2 tahun, {product} saya boleh tukar baru. Itu sebab saya ambil RW. Warranty asal setahun je.",
+    "Untuk small appliance macam {product}, RW memang patut. Bayar sikit, warranty 1 tahun jadi 2 tahun, rosak tukar baru.",
+    "Saya ambil RW lepas faham cara dia. Warranty {product} 1 tahun ditambah 1 tahun, jadi 2 tahun. Rosak dalam tempoh tu, tukar baru.",
+    "Ambil RW untuk {product}, harap tak perlu guna. Kalau rosak dalam 2 tahun, tukar baru. Asal warranty 1 tahun.",
+    "RW untuk {product}: warranty jadi 2 tahun dari 1 tahun. Rosak dapat tukar baru. Ok untuk saya.",
+    "{product} saya beli dengan RW. Warranty asal setahun, RW tambah setahun. Kalau ada rosak dalam 2 tahun ni, terus tukar baru.",
+    "Tambah duit sikit untuk RW, dapat warranty 2 tahun untuk {product}. Asal setahun. Rosak tukar baru, senang.",
+    "Orang rumah suruh ambil RW untuk {product}. Bagus juga, warranty setahun jadi 2 tahun, rosak boleh tukar baru.",
+    "Saya rasa RW ni macam insurans kecil untuk {product}. Warranty asal 1 tahun, tambah RW dapat 1 tahun lagi. Total 2 tahun, rosak tukar baru.",
+    "Staf Senheng Temerloh explain RW dengan jelas. {product} saya sekarang warranty 2 tahun (asal 1 tahun). Rosak dalam 2 tahun dapat tukar baru.",
+    "Beli {product} siap tambah RW. 2 tahun warranty, rosak tukar baru. Kalau tak ambil, 1 tahun je.",
+    "Sebelum ni beli barang tak pernah ambil add-on. Kali ni ambil RW untuk {product} sebab rosak dalam 2 tahun boleh tukar baru. Warranty asal setahun, RW tambah setahun.",
+    "Bayaran RW untuk {product} tak mahal. Dapat warranty extra 1 tahun, jadi 2 tahun semua. Kalau rosak, tukar baru.",
+    "Kira senang je: warranty {product} 1 tahun, tambah RW 1 tahun lagi, dapat 2 tahun. Dalam tempoh tu kalau rosak, dapat tukar baru.",
+    "Yang saya suka pasal RW, kalau {product} rosak dalam 2 tahun dapat tukar baru. Warranty biasa setahun je.",
+    "Dah lama dengar pasal RW Senheng, hari ni baru ambil untuk {product}. Warranty asal 1 tahun, extra 1 tahun dari RW. Rosak dalam 2 tahun, tukar baru.",
+    "{product} dengan RW, warranty 2 tahun. Setahun asal, setahun tambahan. Rosak, tukar baru.",
+    "Saya pilih tambah RW untuk {product}. Staf cakap kalau rosak dalam 2 tahun, bawa sini, tukar baru. Warranty biasa dia 1 tahun.",
+    "Tak nak la barang baru beli rosak lepas setahun, kena repair sendiri. Ambil RW untuk {product}, warranty jadi 2 tahun dan rosak boleh tukar baru.",
+    "Add-on RW untuk {product}: tambah 1 tahun atas warranty asal 1 tahun. 2 tahun, rosak tukar baru.",
+    "Lepas fikir-fikir, saya ambil RW untuk {product}. Warranty asal setahun, sekarang dah 2 tahun. Kalau ada rosak, bawa ke kedai, tukar baru.",
+    "Ambil RW untuk {product} kat Grand Senheng Temerloh. Warranty jadi 2 tahun, dari setahun. Kalau rosak, dapat tukar baru.",
+    "Staf bagitahu ada RW untuk {product}. Saya tambah, warranty asal 1 tahun jadi 2 tahun. Rosak dalam 2 tahun tukar baru.",
+    "Lepas tambah RW, {product} saya ada warranty 2 tahun, setahun lebih panjang dari warranty asal 1 tahun. Kalau rosak, tukar baru.",
+    "RW berbaloi untuk barang kecil yang selalu guna. {product} saya dah ada 2 tahun warranty (1 tahun asal + 1 tahun RW), rosak tukar baru.",
+    "Beli {product} dengan RW. Kalau rosak dalam 2 tahun, terus tukar baru. Warranty asal setahun.",
+    "Saya ambil RW lepas staf kira caj dia. Untuk {product}, warranty setahun jadi 2 tahun, rosak tukar baru.",
+    "Peace of mind. {product} warranty 2 tahun dengan RW, asal 1 tahun. Rosak tukar baru.",
+    "Tambah RW masa bayar {product}, proses sekejap je. Warranty asal 1 tahun, RW tambah 1 tahun. Total 2 tahun, rosak tukar baru.",
+    "Ambil RW untuk {product}. Lepas ni kalau rosak dalam 2 tahun, tak payah risau sebab boleh tukar baru. Warranty asal cuma setahun."
    ]
   },
   "replacement_claim": {
    "label": "Replacement Warranty Claim",
    "requirements": [
     "Produk",
-    "Claim Replacement Warranty",
-    "Hasil gantian"
+    "Rosak dalam tempoh 2 tahun",
+    "Dapat tukar baru"
    ],
    "required": [
-    "product",
-    "replacementOutcome"
+    "product"
    ],
-   "note": "RW hanya untuk small appliances yang layak. Pilih hasil gantian yang betul-betul anda dapat.",
+   "note": "Untuk barang yang ada RW dan rosak dalam tempoh 2 tahun.",
    "templates": [
-    "Claim RW untuk {product}, dapat {replacementOutcome}. Laju.",
-    "Bila {product} rosak, saya bawa ke outlet. Bawah RW, terus dapat {replacementOutcome}. Tak payah tunggu repair.",
-    "Ingatkan kena hantar repair berminggu. Rupanya sebab ada RW, {product} saya diganti dengan {replacementOutcome}. Masa tu baru rasa berbaloi ambil add-on ni.",
-    "RW memang berfungsi: {product} rosak, dapat {replacementOutcome}.",
-    "Staf check {product} dulu, sahkan kerosakan, lepas tu proses RW. Saya dapat {replacementOutcome}.",
-    "Simpan resit itu penting. Claim RW untuk {product} jalan lancar, akhirnya dapat {replacementOutcome}.",
-    "Small appliance kalau rosak memang menyusahkan sebab hari-hari guna. Nasib baik {product} ada RW. Bawa ke Grand Senheng Temerloh, lepas semakan dapat {replacementOutcome}. Tak perlu ulang-alik banyak kali.",
-    "Dapat {replacementOutcome} untuk {product} lepas claim RW.",
-    "Ini first time saya claim Replacement Warranty, untuk {product}. Hasilnya {replacementOutcome}.",
-    "Masa ambil RW dulu, saya ragu-ragu juga nak bayar lebih. Bila {product} buat hal, baru nampak beza: tak tunggu repair, terus dapat {replacementOutcome}.",
-    "Claim RW lancar, {product} diganti dengan {replacementOutcome}.",
-    "Tak banyak soal. Staf semak {product}, confirm rosak dalam tempoh RW, dan saya terima {replacementOutcome}.",
-    "RW ni la sebab saya beli small appliance kat Senheng. Claim untuk {product} settle dengan {replacementOutcome}.",
-    "Saya datang dengan {product} yang tak boleh guna langsung. Staf dengar dulu, check barang, semak rekod RW. Lepas semua confirm, saya dapat {replacementOutcome}. Ambil masa sikit, tapi berbaloi.",
-    "Lega bila {product} diganti dengan {replacementOutcome}.",
-    "Proses claim RW straightforward. Bawa {product} dan resit, tunggu semakan, dapat {replacementOutcome}.",
-    "Kalau ada yang tanya RW berbaloi ke tak, saya cakap berbaloi. Saya baru claim untuk {product} dan dapat {replacementOutcome}. Lagi senang dari cari kedai repair sendiri.",
-    "Guna RW untuk {product}, hasilnya {replacementOutcome}.",
-    "Mula-mula risau juga kalau claim ditolak. Tapi claim RW untuk {product} diluluskan dan saya dapat {replacementOutcome}.",
-    "Tak sangka urusan gantian boleh jadi semudah ni. Bawa {product}, staf bantu dari mula, last-last dapat {replacementOutcome}. Satu kerja kurang.",
-    "Rosak dalam tempoh RW, jadi {product} saya ditukar dengan {replacementOutcome}.",
-    "Pengalaman claim RW untuk {product} okay. Dapat {replacementOutcome}, staf terangkan apa yang perlu tahu.",
-    "Add-on RW yang saya ambil dulu akhirnya berguna bila {product} rosak. Dapat {replacementOutcome}.",
-    "Saya tak expect cepat sebab biasa dengar claim warranty lambat. Tapi untuk {product} bawah RW, lepas semakan terus dapat {replacementOutcome}. Kena la dengan apa yang dijanjikan masa beli.",
-    "Fair la. Claim RW {product}, dapat {replacementOutcome}."
+    "{product} saya rosak, masih dalam 2 tahun sebab ada RW. Bawa ke outlet, dapat tukar baru.",
+    "Claim RW untuk {product}. Rosak dalam tempoh 2 tahun, staf terus tukar baru.",
+    "Untung ambil RW dulu. {product} rosak masuk tahun kedua, warranty asal dah habis tapi RW cover sampai 2 tahun. Dapat tukar baru.",
+    "Bawa {product} yang rosak dengan resit. Staf semak, masih dalam 2 tahun RW. Terus dapat unit baru.",
+    "Tak payah tunggu repair. {product} rosak dalam 2 tahun, RW bagi tukar baru.",
+    "Masa ambil RW dulu ragu-ragu juga nak bayar lebih. Bila {product} rosak dalam 2 tahun dan dapat tukar baru, baru rasa berbaloi.",
+    "Claim RW {product}, dapat yang baru. Masih dalam 2 tahun.",
+    "{product} tiba-tiba tak boleh guna. Nasib baik ada RW, rosak dalam 2 tahun boleh tukar baru. Staf uruskan cepat.",
+    "Staf check {product}, confirm rosak dan masih dalam tempoh 2 tahun. Saya dapat tukar baru.",
+    "RW memang boleh pakai. {product} saya rosak dalam 2 tahun, terus tukar baru.",
+    "Lega. {product} rosak dalam 2 tahun dan saya dapat yang baru bawah RW.",
+    "Ingatkan kena hantar repair berminggu-minggu. Sebab ada RW, {product} saya ditukar baru. Masih dalam 2 tahun warranty.",
+    "Pengalaman claim RW kat Senheng Temerloh ok. {product} rosak dalam 2 tahun, dapat tukar baru.",
+    "Kalau korang fikir RW berbaloi ke tak, saya baru claim untuk {product}. Rosak dalam 2 tahun, dapat tukar baru.",
+    "Tukar baru untuk {product} saya lepas claim RW. Rosak dalam tempoh 2 tahun.",
+    "{product} rosak, saya bawa resit ke outlet. RW masih ada sebab belum cukup 2 tahun. Dapat tukar baru.",
+    "Proses claim RW straightforward. Bawa {product}, staf semak, rosak dalam 2 tahun, dapat tukar baru.",
+    "Warranty asal {product} setahun dah habis, tapi saya ambil RW, jadi cover sampai 2 tahun. Rosak, dapat tukar baru.",
+    "Claim RW untuk {product} lulus. Dapat unit baru, masih bawah 2 tahun.",
+    "Tak banyak soal. {product} rosak dalam 2 tahun, staf proses RW, saya dapat tukar baru.",
+    "Nasib baik dulu tambah RW untuk {product}. Rosak dalam 2 tahun, terus tukar baru, tak keluar duit repair.",
+    "Saya datang dengan {product} yang dah tak berfungsi. Staf dengar, check barang, semak RW. Masih dalam 2 tahun, jadi dapat tukar baru.",
+    "Small appliance ni kalau rosak memang menyusahkan sebab hari-hari guna. {product} saya ada RW, rosak dalam 2 tahun, dapat tukar baru.",
+    "Thanks Senheng. {product} rosak dalam 2 tahun, RW tukar baru.",
+    "RW yang saya ambil dulu akhirnya berguna. {product} rosak, masih dalam 2 tahun, dapat tukar baru.",
+    "Mula-mula risau claim ditolak. Rupanya mudah, {product} rosak dalam 2 tahun dan RW bagi tukar baru.",
+    "Claim RW untuk {product}, masih dalam 2 tahun, dapat tukar baru. Puas hati.",
+    "Staf terangkan proses RW dengan jelas. {product} saya yang rosak dalam 2 tahun ditukar baru.",
+    "{product} saya ditukar baru bawah RW. Rosak dalam tempoh 2 tahun, staf uruskan semua.",
+    "Untuk yang tengah fikir nak ambil RW ke tak, ambil la. Saya baru claim {product}, rosak dalam 2 tahun, dapat tukar baru.",
+    "Barang rosak memang buat sakit kepala. Tapi {product} saya ada RW, rosak dalam 2 tahun, tukar baru je.",
+    "Bawa {product} ke Grand Senheng Temerloh untuk claim RW. Masih dalam 2 tahun, jadi dapat tukar baru.",
+    "Tak sangka urusan tukar baru semudah ni. {product} rosak dalam 2 tahun, ada RW, staf bantu dari mula.",
+    "RW ni la sebab saya beli small appliance kat Senheng. {product} rosak dalam 2 tahun, dapat tukar baru.",
+    "{product} rosak lepas setahun lebih. Warranty asal dah tamat, tapi RW sambung sampai 2 tahun. Dapat tukar baru.",
+    "Senang betul urusan RW. Hantar {product} yang rosak, staf semak masih dalam 2 tahun, lepas tu uruskan tukar baru.",
+    "Simpan resit memang penting. Claim RW {product} lancar, rosak dalam 2 tahun, dapat tukar baru.",
+    "Lepas {product} rosak, saya terus ke outlet. RW masih aktif dalam 2 tahun, jadi tukar baru.",
+    "Bersyukur ambil RW untuk {product}. Rosak dalam 2 tahun, tukar baru.",
+    "Saya tak expect cepat sebab biasa dengar claim warranty lambat. Untuk {product} bawah RW, rosak dalam 2 tahun, staf terus proses tukar baru.",
+    "RW berfungsi macam yang staf janji masa beli. {product} rosak dalam 2 tahun, tukar baru.",
+    "Hari ni pergi claim RW. {product} rosak dalam 2 tahun, staf layan baik dan saya dapat tukar baru.",
+    "Dapat {product} baru lepas claim RW. Yang lama rosak dalam tempoh 2 tahun.",
+    "Fair la. Bayar RW dulu, bila {product} rosak dalam 2 tahun dapat tukar baru.",
+    "Tak perlu ulang-alik. Bawa {product} sekali, staf semak RW, masih dalam 2 tahun, dapat tukar baru.",
+    "{product} saya rosak sebelum cukup 2 tahun. RW cover, tukar baru, urusan senang.",
+    "Pertama kali saya guna RW. {product} buat hal sebelum 2 tahun, bawa ke Senheng, dapat tukar baru tanpa bayar.",
+    "Staf Senheng Temerloh cepat proses claim RW. {product} saya rosak dalam 2 tahun, tukar baru.",
+    "Dulu tambah RW untuk {product}, warranty jadi 2 tahun. Bila rosak, betul-betul dapat tukar baru.",
+    "Puas hati dengan RW. {product} rosak dalam 2 tahun, terus tukar baru tanpa tunggu repair."
    ]
   }
  }
@@ -422,17 +559,17 @@
 <script>
 (() => {
   "use strict";
-  const CONFIG = {placeId:"ChIJhUovtuy4zjERZlW96Pgwgec", bagKey:"gs009-bag-v3", sessionKey:"gs009-session-v3", count:3, maintenanceFee:0.05};
+  const CONFIG = {placeId:"ChIJhUovtuy4zjERZlW96Pgwgec", bagKey:"gs009-bag-v4", sessionKey:"gs009-session-v4", count:3, maintenanceFee:0.05};
   const GROUPS = [
     {title:"S-Coin", items:[
       {id:"scoin_issuance", icon:"🪙", title:"Dapat S-Coin", desc:"Cashback lepas beli barang"},
-      {id:"scoin_redemption", icon:"🎁", title:"Redeem S-Coin", desc:"Tebus barang guna S-Coin"}]},
+      {id:"scoin_redemption", icon:"🎁", title:"Redeem S-Coin", desc:"Barang free guna S-Coin"}]},
     {title:"PlusOne Warranty", items:[
       {id:"plusone_entitlement", icon:"🛡️", title:"Dapat PlusOne", desc:"Extra warranty 1 tahun (bukan TV)"},
       {id:"plusone_claim", icon:"🧾", title:"Claim PlusOne", desc:"Tuntut bawah PlusOne"}]},
     {title:"Replacement Warranty (RW)", items:[
-      {id:"replacement_entitlement", icon:"➕", title:"Tambah RW", desc:"Add-on small appliance"},
-      {id:"replacement_claim", icon:"🔄", title:"Claim RW", desc:"Dapat gantian barang"}]}
+      {id:"replacement_entitlement", icon:"➕", title:"Tambah RW", desc:"Warranty jadi 2 tahun"},
+      {id:"replacement_claim", icon:"🔄", title:"Claim RW", desc:"Rosak, tukar baru"}]}
   ];
   const ITEMS = Object.fromEntries(GROUPS.flatMap(g => g.items).map(i => [i.id, i]));
   const DATA = JSON.parse(document.getElementById("reviewData").textContent);
@@ -455,6 +592,7 @@
     const coins = Math.round(gross * (1 - CONFIG.maintenanceFee) * 100);
     return {gross, fee: gross * CONFIG.maintenanceFee, net: coins / 100, coins};
   }
+  const redeemCoins = value => Math.round(parseAmount(value) * 100);
 
   /* ---------- step 1: categories ---------- */
   function renderCategories(){
@@ -504,7 +642,7 @@
     const note = $("categoryNote"); note.textContent = "";
     if (c.note){const n = el("div", "notice"); n.style.margin = "0 0 16px"; n.append(el("b", "", "!"), el("span", "", c.note)); note.appendChild(n)}
     const h = $("dynamicFields"); h.textContent = "";
-    const ph = id.startsWith("replacement_") ? "Contoh: blender Philips" : id.startsWith("plusone_") ? "Contoh: peti sejuk Panasonic" : "Contoh: TV TCL 55 inci";
+    const ph = (id.startsWith("replacement_") || id === "scoin_redemption") ? "Contoh: blender Philips" : id.startsWith("plusone_") ? "Contoh: peti sejuk Panasonic" : "Contoh: TV TCL 55 inci";
     h.appendChild(field("product", id === "scoin_redemption" ? "Barang yang ditebus" : "Produk", ph));
     if (id === "scoin_issuance"){
       h.appendChild(field("purchasePrice", "Harga produk", "Contoh: 1,200.00", {prefix:"RM", decimal:true}));
@@ -514,26 +652,34 @@
       pf.appendChild(chips.querySelector(".chips")); h.appendChild(pf);
       const calc = el("div", "calc"); calc.id = "scoinCalc"; calc.setAttribute("aria-live", "polite"); h.appendChild(calc);
     }
-    if (id === "scoin_redemption") h.appendChild(field("scoinValue", "Nilai S-Coin yang digunakan", "Contoh: 150.00", {prefix:"RM", decimal:true}));
-    if (id === "replacement_claim"){
-      const hidden = el("input"); hidden.type = "hidden"; hidden.id = "replacementOutcome"; hidden.value = state.details.replacementOutcome || "";
-      const f = chipField("Apa gantian yang anda dapat?", DATA.replacement_outcomes.map(o => ({label:o.label, value:o.id})), hidden.value, v => {hidden.value = v; capture()});
-      f.appendChild(hidden); h.appendChild(f);
+    if (id === "scoin_redemption"){
+      h.appendChild(field("itemValue", "Nilai barang yang ditebus", "Contoh: 200.00", {prefix:"RM", decimal:true}));
+      const calc = el("div", "calc"); calc.id = "scoinCalc"; calc.setAttribute("aria-live", "polite"); h.appendChild(calc);
     }
     h.querySelectorAll("input").forEach(i => i.addEventListener("input", capture));
     updateCalc();
   }
   function capture(){
-    const d = {}; ["product","purchasePrice","cashbackPercent","scoinValue","replacementOutcome"].forEach(id => {const i = $(id); if (i) d[id] = i.value});
+    const d = {}; ["product","purchasePrice","cashbackPercent","itemValue"].forEach(id => {const i = $(id); if (i) d[id] = i.value});
     state.details = d; state.original = ""; clearErrors(); updateCalc(); saveSession();
   }
   function updateCalc(){
     const box = $("scoinCalc"); if (!box) return; box.textContent = "";
+    if (state.category === "scoin_redemption"){
+      const v = parseAmount(state.details.itemValue);
+      if (v <= 0){box.textContent = "Isi nilai barang untuk kira S-Coin yang digunakan."; return}
+      box.append(
+        el("strong", "", redeemCoins(v).toLocaleString("en-MY") + " S-Coin digunakan"),
+        el("span", "", money(v) + " × 100 = " + redeemCoins(v).toLocaleString("en-MY") + " S-Coin"),
+        el("span", "fee", "Kadar: RM1 = 100 S-Coin. Jumlah ni akan masuk dalam ayat review.")
+      );
+      return;
+    }
     const price = parseAmount(state.details.purchasePrice), pct = parseAmount(state.details.cashbackPercent);
     if (price <= 0 || pct <= 0 || pct > 100){box.textContent = "Isi harga dan % cashback untuk kira nilai S-Coin."; return}
     const r = calcScoin(price, pct);
     box.append(
-      el("strong", "", money(r.net) + " · " + r.coins.toLocaleString("en-MY") + " S-Coins"),
+      el("strong", "", money(r.net) + " · " + r.coins.toLocaleString("en-MY") + " S-Coin"),
       el("span", "", money(price) + " × " + pct + "% = " + money(r.gross)),
       el("span", "fee", "Selepas tolak 5% maintenance fee (" + money(r.fee) + "). Untuk makluman sahaja, tak masuk dalam ayat review.")
     );
@@ -541,23 +687,23 @@
   function validateDetails(){
     const d = state.details, id = state.category; let ok = !!String(d.product || "").trim(), msg = "Lengkapkan maklumat yang diperlukan.";
     if (id === "scoin_issuance"){const p = parseAmount(d.cashbackPercent); ok = ok && p > 0 && p <= 100 && parseAmount(d.purchasePrice) > 0 && calcScoin(d.purchasePrice, p).coins > 0}
-    if (id === "scoin_redemption") ok = ok && parseAmount(d.scoinValue) > 0;
-    if (id === "replacement_claim") ok = ok && !!d.replacementOutcome;
+    if (id === "scoin_redemption") ok = ok && redeemCoins(d.itemValue) > 0;
     if (id.startsWith("plusone_") && /(^|\s)(tv|television|televisyen)(\s|$)/i.test(String(d.product || ""))){ok = false; msg = "TV tak layak untuk PlusOne Warranty. Pilih kategori yang betul."}
     showError("detailsError", !ok, msg); return ok;
   }
 
   /* ---------- step 3: one suggestion at a time (shuffle bag, rotating lengths) ---------- */
   function values(){
-    const d = state.details, outcome = DATA.replacement_outcomes.find(o => o.id === d.replacementOutcome);
+    const d = state.details;
     const pct = parseAmount(d.cashbackPercent), r = calcScoin(d.purchasePrice, pct);
     return {
       product: String(d.product || "").trim().replace(/\s+/g, " "),
       purchasePrice: money(parseAmount(d.purchasePrice)),
       cashbackPercent: pct + "%",
-      scoinCoins: r.coins.toLocaleString("en-MY") + " S-Coins",
-      scoinRM: state.category === "scoin_issuance" ? money(r.net) : money(parseAmount(d.scoinValue)),
-      replacementOutcome: outcome ? outcome.value : ""
+      scoinCoins: r.coins.toLocaleString("en-MY") + " S-Coin",
+      scoinRM: money(r.net),
+      itemRM: money(parseAmount(d.itemValue)),
+      redeemCoins: redeemCoins(d.itemValue).toLocaleString("en-MY") + " S-Coin"
     };
   }
   function fill(t){
@@ -580,12 +726,12 @@
     const pick = rest.find(i => bucket[i] === want) ?? rest[0];
     bags[state.category] = rest.filter(i => i !== pick);
     try{localStorage.setItem(CONFIG.bagKey, JSON.stringify(bags))}catch{}
-    state.lastIndex = pick;
+    state.lastIndex = pick; state.seen = n - bags[state.category].length;
     return fill(T[pick]);
   }
   function showSuggestion(){
     state.original = drawOne(); $("editor").value = state.original; updateFinal();
-    $("sugStatus").textContent = cat().templates.length + " pilihan ayat";
+    $("sugStatus").textContent = "Ayat " + state.seen + " / " + cat().templates.length;
   }
   function swapSuggestion(){
     const edited = $("editor").value.trim() && $("editor").value !== state.original;
