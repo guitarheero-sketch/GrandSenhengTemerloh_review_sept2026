@@ -156,7 +156,7 @@
 
 <script type="application/json" id="reviewData">
 {
- "version": 10,
+ "version": 11,
  "updated": "2026-11",
  "meta": {
   "store": "Grand Senheng Temerloh",
@@ -182,7 +182,7 @@
     "purchasePrice",
     "cashbackPercent"
    ],
-   "note": "",
+   "note": "S-Coin sah setahun dari tarikh dapat.",
    "opener": "purchase",
    "cores": [
     "Akhirnya ambil {product} dengan harga {purchasePrice}, dan dapat S-Coin cashback {cashbackPercent}. Masuk {scoinCoins}, nilainya {scoinRM}.",
@@ -230,7 +230,7 @@
     "Nanti nak kumpul lagi, sebab boleh tebus barang terus kat kedai.",
     "Sebab tu la saya suka beli barang elektrik kat Senheng.",
     "S-Coin ni saya simpan, nanti campur dengan yang akan datang untuk redeem barang.",
-    "Rasa macam dapat bonus untuk pembelian akan datang.",
+    "S-Coin ni valid setahun, jadi saya plan guna sebelum luput.",
     "Kalau rajin kumpul, boleh dapat barang free nanti.",
     "Terima kasih Senheng, berbaloi datang.",
     "Saya ingat nak guna S-Coin ni untuk tebus barang dapur nanti.",
@@ -240,8 +240,8 @@
     "Bila dah terkumpul nanti, boleh redeem barang tanpa keluar duit.",
     "Berbaloi la, duit yang keluar ada pulang balik sikit dalam bentuk S-Coin.",
     "Saya akan simpan S-Coin ni sampai cukup untuk barang yang saya berkenan.",
-    "Sesuai sangat untuk yang selalu beli barang kat Senheng.",
-    "Puas hati dengan pembelian hari ni."
+    "Dalam setahun ni kalau datang beli lagi, S-Coin makin banyak dan boleh tebus barang.",
+    "Kena ingat S-Coin luput lepas setahun, jadi jangan simpan lama sangat. Saya dah ada target nak redeem apa."
    ]
   },
   "scoin_redemption": {
@@ -308,12 +308,12 @@
     "Pengalaman ni buat saya nak terus kumpul S-Coin.",
     "Baki yang tinggal saya simpan untuk redeem lain kali.",
     "Untung jadi customer Senheng.",
-    "Bawa balik barang dengan senyum.",
+    "Nasib baik sempat guna sebelum S-Coin luput, sebab valid setahun je.",
     "Lain kali nak cuba redeem barang yang lebih besar pulak.",
     "Siapa sangka beli barang dulu-dulu boleh bagi barang free hari ni.",
     "Senang, dan memang free.",
     "Recommend sangat untuk yang dah ada S-Coin terkumpul.",
-    "Rasa dihargai sebagai customer.",
+    "Yang ada S-Coin, check tarikh luput, sebab dia valid setahun dari tarikh dapat.",
     "Memang berbaloi beli barang kat Senheng selama ni."
    ]
   },
@@ -321,119 +321,137 @@
    "label": "PlusOne Warranty Entitlement",
    "requirements": [
     "Produk",
-    "Pembelian produk yang layak"
+    "Harga beli",
+    "Warranty kilang (tahun)"
    ],
    "required": [
-    "product"
+    "product",
+    "purchasePrice",
+    "factoryYears"
    ],
-   "note": "PlusOne beri extra warranty 1 tahun free untuk ahli dan produk terpilih. TV tak layak.",
+   "note": "Benefit Senheng PlusOne® Membership (yuran dari RM12, sah setahun). Barang besar atau lebih RM500 dapat extra 1 tahun warranty free atas warranty kilang. TV tak layak.",
    "opener": "purchase",
    "cores": [
-    "Saya beli {product} dan dapat PlusOne Warranty. Warranty asal ditambah setahun lagi, free sebab saya member.",
-    "Staf check dulu {product} ni layak PlusOne ke tak. Layak, jadi saya dapat extra 1 tahun warranty tanpa bayar.",
-    "{product} yang saya beli dapat PlusOne, iaitu extra 1 tahun warranty percuma untuk member Senheng.",
-    "Sebagai member, {product} saya layak PlusOne. Warranty jadi lebih panjang setahun, tak ada caj.",
-    "Masa bayar {product}, staf bagitahu saya dapat PlusOne Warranty. Tambah setahun warranty, free.",
-    "Untuk {product} ni saya dapat PlusOne. Bila warranty asal habis, masih ada setahun lagi cover.",
-    "Tak tahu pun ada PlusOne sampai staf terangkan masa beli {product}. Extra 1 tahun warranty, percuma untuk member.",
-    "Beli {product}, staf confirm layak PlusOne. Warranty tambah 1 tahun tanpa saya bayar lebih.",
-    "PlusOne bagi {product} saya warranty tambahan setahun. Member je dapat, dan barang kena yang layak.",
-    "Saya ambil {product} dan terus dapat PlusOne Warranty, setahun extra lepas warranty pengeluar habis.",
-    "{product} saya dapat warranty extra 1 tahun melalui PlusOne. Free untuk member.",
-    "Staf terangkan PlusOne masa saya beli {product}: member dapat tambahan setahun warranty untuk barang yang layak.",
-    "Dapat PlusOne untuk {product}. Maksudnya warranty saya panjang setahun lagi, tanpa caj tambahan.",
-    "Untung jadi member Senheng. Beli {product} terus dapat PlusOne, warranty extra 1 tahun.",
-    "Saya tanya pasal warranty {product}, staf cakap ada PlusOne untuk member. Setahun tambahan, free.",
-    "{product} ni layak PlusOne Warranty, jadi saya ada setahun lagi warranty selepas yang asal tamat.",
-    "Beli {product} kat sini dapat PlusOne. Warranty tambahan setahun tu saya tak perlu bayar.",
-    "Warranty {product} saya jadi lebih panjang setahun sebab PlusOne. Member Senheng dapat secara percuma.",
-    "Staf yang serve saya sebut pasal PlusOne tanpa saya tanya. {product} dapat extra 1 tahun warranty.",
-    "Saya ingat extra warranty mesti kena bayar. Untuk {product}, sebab saya member, PlusOne bagi setahun tambahan free.",
-    "PlusOne Warranty untuk {product} dah settle masa bayar. Setahun extra, tak ada bayaran.",
-    "{product} saya dapat PlusOne. Warranty asal ada, PlusOne tambah setahun lagi atasnya.",
-    "Masa nak bayar {product}, staf tanya saya member ke tak. Sebab member, terus dapat PlusOne, warranty extra setahun.",
-    "Barang macam {product} ni nak pakai lama. Dengan PlusOne, warranty dia tambah setahun, free.",
-    "Dapat PlusOne untuk {product} yang saya beli, jadi ada setahun warranty tambahan tanpa caj.",
-    "Staf check eligibility {product}, layak PlusOne. Saya dapat extra 1 tahun warranty percuma.",
-    "Beli {product} dan dapat PlusOne Warranty sekali. Setahun lagi warranty untuk member, tak payah top up.",
-    "PlusOne ni free, cuma untuk barang yang layak. Nasib baik {product} saya layak, dapat extra 1 tahun.",
-    "{product} yang saya ambil hari ni ada PlusOne, tambahan setahun warranty untuk member Senheng.",
-    "Masa beli {product}, baru saya tahu pasal PlusOne. Member dapat warranty extra 1 tahun, free."
+    "Beli {product} {purchasePrice}. Warranty kilang {factoryYears}, dan sebab saya member Senheng PlusOne, dapat extra setahun. Jadi total {totalYears}.",
+    "Warranty kilang untuk {product} ni {factoryYears}. Sebagai member PlusOne, saya dapat tambahan 1 tahun free, jadi semua {totalYears}.",
+    "Staf check {product} saya layak extra warranty PlusOne. Kilang bagi {factoryYears}, PlusOne tambah setahun, total {totalYears}.",
+    "Saya beli {product} harga {purchasePrice}. Kilang bagi {factoryYears}, member PlusOne dapat setahun lagi, jadi {totalYears}. Staf terangkan, kalau rosak dalam tahun tambahan tu, kos repair ditanggung sampai {purchasePrice}.",
+    "{product} saya sekarang ada warranty {totalYears}: {factoryYears} dari kilang, setahun lagi dari PlusOne. Extra warranty tu free untuk member.",
+    "Jadi member Senheng PlusOne, beli {product} terus dapat extra 1 tahun warranty. Asalnya {factoryYears}, sekarang {totalYears}.",
+    "Masa bayar {product}, staf tanya saya member PlusOne ke tak. Ya, jadi warranty {factoryYears} dari kilang ditambah setahun, total {totalYears}.",
+    "Yang saya suka, extra warranty PlusOne untuk {product} ni free. Warranty kilang {factoryYears}, campur PlusOne jadi {totalYears}.",
+    "Staf terangkan cara PlusOne untuk {product} yang saya beli {purchasePrice}. Lepas warranty kilang {factoryYears} habis, ada setahun lagi, jadi total {totalYears}. Kalau rosak masa tu, kos repair ditanggung ikut harga beli.",
+    "Beli {product} kat sini dapat extra 1 tahun warranty sebab saya member PlusOne. Total warranty {totalYears}, kilang cuma bagi {factoryYears}.",
+    "{product} harga {purchasePrice}, layak extra warranty PlusOne. Jadi {factoryYears} kilang tambah setahun, total {totalYears}.",
+    "Saya baru tahu member PlusOne dapat extra warranty untuk barang besar. {product} saya dapat {totalYears} semua, berbanding {factoryYears} dari kilang.",
+    "Yuran member PlusOne dari RM12 setahun je, dan untuk {product} ni saya dapat extra 1 tahun warranty. Kilang bagi {factoryYears}, jadi total {totalYears}.",
+    "Warranty {product} saya jadi {totalYears}. {factoryYears} dari kilang, setahun tambahan dari Senheng PlusOne, free.",
+    "Staf cakap kalau {product} rosak dalam tahun tambahan dan tak boleh repair sebab parts takde atau kos terlalu mahal, nanti boleh dapat baru. Warranty kilang {factoryYears}, dengan PlusOne jadi {totalYears}.",
+    "Beli {product} {purchasePrice}, dan sebab saya member PlusOne, warranty extra setahun. Daripada {factoryYears} jadi {totalYears}.",
+    "Untuk barang mahal macam {product}, extra warranty memang penting. Kilang bagi {factoryYears}, PlusOne tambah 1 tahun, total {totalYears}.",
+    "Saya renew member PlusOne sebelum beli {product}, jadi dapat extra warranty setahun. Warranty kilang {factoryYears}, total jadi {totalYears}.",
+    "{product} ni warranty kilang {factoryYears}. Member PlusOne macam saya dapat tambahan 1 tahun tanpa caj, jadi semua {totalYears}.",
+    "Staf check member saya masih aktif, terus {product} dapat extra warranty PlusOne. Asal {factoryYears}, sekarang {totalYears}.",
+    "Harga {product} {purchasePrice}. Selain warranty kilang {factoryYears}, saya dapat extra setahun dari PlusOne, total {totalYears}. Kalau rosak dalam tahun tu, repair ditanggung sampai nilai {purchasePrice}.",
+    "Dapat extra 1 tahun warranty untuk {product} sebab member PlusOne. Total {totalYears}, kilang {factoryYears} je.",
+    "Bila beli {product}, staf terangkan benefit member PlusOne: warranty kilang {factoryYears} dapat tambah setahun, jadi {totalYears}, free.",
+    "Saya ingat extra warranty kena bayar asing. Untuk member PlusOne rupanya free, {product} saya dari {factoryYears} jadi {totalYears}.",
+    "Member PlusOne dapat extra warranty untuk barang yang layak. {product} saya layak, warranty {factoryYears} jadi {totalYears}.",
+    "{product} yang saya ambil {purchasePrice} ni ada warranty {totalYears} sekarang. Setahun tu datang dari PlusOne, selebihnya {factoryYears} dari kilang.",
+    "Staf bagitahu, lepas warranty kilang {factoryYears} habis, PlusOne cover {product} setahun lagi. Jadi total {totalYears}, dan kos repair ditanggung ikut harga beli.",
+    "Untung jadi member PlusOne. {product} dapat warranty {totalYears} berbanding {factoryYears} biasa.",
+    "Saya beli {product} untuk rumah. Warranty kilang {factoryYears}, extra setahun dari PlusOne, total {totalYears}. Member tak payah bayar lebih untuk extra warranty ni.",
+    "Lepas daftar member PlusOne, beli {product} terus dapat extra warranty. {factoryYears} kilang ditambah 1 tahun, total {totalYears}."
    ],
    "closers": [
-    "Lega sikit, tak payah risau sangat kalau rosak lepas setahun.",
-    "Benda free macam ni patut lebih ramai tahu.",
+    "Yuran member pun murah, dari RM12 setahun je.",
+    "Lega sikit, barang mahal macam ni ada warranty lebih lama.",
     "Simpan resit elok-elok, nanti senang kalau nak claim.",
-    "Bagi saya ini nilai tambah bila beli kat Senheng.",
-    "Rasa lebih tenang nak guna barang ni lama-lama.",
-    "Ni antara sebab saya pilih beli kat sini.",
-    "Untung jadi member Senheng.",
-    "Barang elektrik ni kita tak tahu bila nak rosak, jadi warranty lebih lama memang membantu.",
-    "Berbaloi daftar member.",
+    "Bagi saya, berbaloi jadi member PlusOne.",
     "Harap tak perlu guna, tapi ada pun bagus.",
-    "Saya appreciate sebab staf terangkan dengan jelas.",
-    "Lepas ni beli barang elektrik lain pun saya datang sini.",
-    "Kurang satu benda nak risau.",
-    "Kawan-kawan yang belum jadi member, boleh la daftar.",
-    "Memang berbaloi beli kat Senheng.",
+    "Kalau rosak lepas warranty kilang habis, masih ada cover.",
+    "Ni antara sebab saya pilih beli kat Senheng.",
+    "Jangan lupa renew member setiap tahun kalau nak enjoy benefit ni.",
+    "Lepas ni beli barang besar lain pun saya beli sini.",
+    "Kawan-kawan yang selalu beli barang elektrik, baik daftar member PlusOne.",
     "Senang hati bawa balik barang.",
-    "Kalau ada masalah lepas warranty asal habis, masih boleh claim.",
-    "Rasa dihargai sebagai customer tetap.",
+    "Barang elektrik ni kita tak tahu bila nak rosak, jadi tambahan setahun tu membantu.",
+    "Saya appreciate staf yang terangkan benefit member dengan jelas.",
+    "Duit yuran member tu dah terbalas dengan extra warranty ni.",
+    "Rasa lebih selamat beli barang mahal.",
+    "Kurang satu benda nak risau.",
     "Terima kasih Senheng Temerloh.",
-    "Jarang dapat warranty tambahan tanpa bayar.",
     "Puas hati dengan pembelian kali ni.",
-    "Barang mahal macam ni memang patut ada warranty lebih lama.",
     "Nanti saya recommend pada family.",
-    "Rasa lebih selamat beli barang mahal macam ni.",
-    "Next time beli barang lain pun saya akan tanya pasal PlusOne."
+    "Patut lebih ramai tahu pasal benefit member PlusOne ni.",
+    "Rasa dihargai sebagai member.",
+    "Jarang dapat warranty tambahan tanpa bayar asing.",
+    "Lagi tenang guna barang ni lama-lama.",
+    "Memang berbaloi beli kat Senheng.",
+    "Next time beli barang lain pun saya pastikan member masih aktif."
    ]
   },
   "plusone_claim": {
    "label": "PlusOne Warranty Claim",
    "requirements": [
     "Produk",
-    "Pengalaman claim PlusOne Warranty"
+    "Hasil claim: repair atau dapat baru"
    ],
    "required": [
-    "product"
+    "product",
+    "claimOutcome"
    ],
-   "note": "Untuk claim dalam tempoh PlusOne Warranty. TV tak layak PlusOne.",
+   "note": "Untuk barang yang rosak lepas warranty kilang habis, dalam extra 1 tahun PlusOne. Pilih apa yang betul-betul berlaku.",
    "opener": "claim",
-   "cores": [
-    "{product} saya rosak lepas warranty asal habis, tapi masih dalam tempoh PlusOne. Staf terus proses claim.",
-    "Staf check tarikh beli {product}, confirm masih bawah PlusOne Warranty, dan claim terus dibuka.",
-    "Saya claim PlusOne untuk {product}. Staf semak rekod dan terangkan langkah seterusnya.",
-    "Warranty asal {product} dah tamat, nasib baik ada PlusOne yang cover setahun lagi. Claim diterima.",
-    "Bawa {product} dengan resit, staf semak tempoh PlusOne. Masih valid, jadi claim jalan.",
-    "Claim untuk {product} dibuat bawah PlusOne. Staf bagitahu berapa lama proses dan apa yang cover.",
-    "{product} buat hal masa tahun tambahan PlusOne. Claim saya diproses tanpa banyak soal.",
-    "Staf dengar dulu masalah {product}, check rekod PlusOne, baru buka claim.",
-    "Saya ingat kena bayar repair sendiri untuk {product}. Rupanya masih bawah PlusOne, jadi boleh claim.",
-    "Claim PlusOne untuk {product} senang. Staf yang uruskan borang dan semakan.",
-    "{product} saya masih dalam tempoh PlusOne Warranty. Staf terus ambil dan proses claim.",
-    "Masa beli {product} dulu saya dapat PlusOne free. Hari ni guna untuk claim.",
-    "Staf confirm {product} masih dicover PlusOne, lepas tu terangkan jangka masa siap.",
-    "Claim {product} bawah PlusOne lebih mudah dari yang saya sangka. Staf semak, isi butiran, siap.",
-    "Saya bawa {product} ke outlet untuk claim PlusOne. Staf terus semak tanpa suruh saya tunggu lama.",
-    "PlusOne Warranty betul-betul boleh guna. {product} saya rosak dan claim diterima.",
-    "Staf terangkan proses claim PlusOne untuk {product} dari mula sampai habis.",
-    "{product} ada masalah, dan sebab warranty asal dah habis, saya guna PlusOne. Claim berjalan lancar.",
-    "Lepas semak resit {product}, staf confirm layak claim PlusOne dan terus proses.",
-    "Claim PlusOne untuk {product}. Staf ambil butiran dan bagitahu bila boleh datang ambil semula.",
-    "Kalau tak ada PlusOne, mesti saya kena tanggung kos baiki {product} sendiri. Claim dibuat terus kat outlet.",
-    "Staf semak {product} dan rekod PlusOne depan saya, jadi saya tahu status claim dengan jelas.",
-    "Saya hantar {product} untuk claim PlusOne. Staf terangkan apa yang cover dan apa yang tak.",
-    "Tempoh warranty tambahan PlusOne tolong saya bila {product} rosak. Claim diuruskan staf.",
-    "Claim PlusOne untuk {product} saya diterima selepas staf semak tempoh dan resit.",
-    "{product} tiba-tiba tak berfungsi. Staf check, masih bawah PlusOne, terus buka claim.",
-    "Untuk {product} ni, PlusOne yang selamatkan saya. Staf proses claim dengan cepat.",
-    "Bawa resit dengan {product}, staf buat selebihnya. Claim PlusOne siap dibuka hari tu.",
-    "Saya tak pasti {product} masih boleh claim. Staf semak dan confirm masih dalam tempoh PlusOne.",
-    "Proses claim PlusOne {product} teratur. Saya tahu apa nak buat dan bila nak datang balik."
-   ],
+   "cores": {
+    "repair": [
+     "{product} saya rosak lepas warranty kilang habis, tapi masih dalam extra setahun PlusOne. Staf terus proses claim, dan kos repair ditanggung.",
+     "Claim PlusOne untuk {product}. Warranty kilang dah tamat, jadi kos repair ditanggung bawah PlusOne ikut harga masa saya beli.",
+     "Staf check tarikh beli {product}, confirm masih dalam tempoh extra PlusOne. Barang dihantar repair, saya tak payah bayar.",
+     "Ingatkan kena tanggung sendiri kos repair {product} sebab warranty kilang dah habis. Rupanya PlusOne cover, repair ditanggung.",
+     "Bawa {product} dengan resit. Staf terangkan kos repair ditanggung PlusOne, hadnya ikut harga beli dulu.",
+     "{product} buat hal masa tahun tambahan PlusOne. Staf uruskan repair, dan kos dia ditanggung.",
+     "Warranty kilang {product} dah lepas, tapi sebab saya member PlusOne masa beli, ada extra setahun. Repair ditanggung terus.",
+     "Staf dengar masalah {product}, semak rekod PlusOne, lepas tu hantar repair. Kos repair tak keluar dari poket saya.",
+     "Claim PlusOne {product} senang. Staf terangkan kos repair ditanggung sampai nilai harga beli, dan bagitahu anggaran masa siap.",
+     "Masa beli {product} dulu saya member PlusOne, jadi dapat extra setahun warranty. Bila rosak dalam tempoh tu, repair ditanggung.",
+     "{product} saya dihantar repair bawah PlusOne. Staf bagi update, dan saya tak perlu bayar kos repair.",
+     "Kalau tak ada PlusOne, mesti saya kena bayar sendiri repair {product} ni. Kos tu ditanggung sebab masih dalam extra warranty.",
+     "Staf semak {product} dan rekod PlusOne depan saya. Masih dalam tempoh, jadi repair ditanggung.",
+     "Saya hantar {product} untuk claim PlusOne. Staf terangkan kos repair ditanggung ikut harga beli, dan apa yang cover.",
+     "{product} tiba-tiba tak berfungsi lepas warranty kilang habis. Staf confirm masih dalam extra setahun PlusOne, terus buka claim repair.",
+     "Claim PlusOne untuk {product} diterima. Barang dibaiki tanpa caj sebab masih dalam tempoh extra warranty.",
+     "Bawa resit dengan {product}, staf buat selebihnya. Claim PlusOne dibuka dan kos repair ditanggung.",
+     "Saya tak pasti {product} masih boleh claim. Staf semak, masih dalam extra setahun PlusOne, jadi repair ditanggung.",
+     "Proses claim PlusOne {product} teratur. Staf hantar repair, kos ditanggung, dan saya tahu bila nak datang ambil.",
+     "Staf terangkan, PlusOne tanggung kos repair {product} sampai nilai masa saya beli. Lega dengar macam tu."
+    ],
+    "replace": [
+     "{product} saya rosak masa tempoh extra PlusOne. Parts takde, tak boleh repair, jadi saya dapat tukar baru.",
+     "Claim PlusOne untuk {product}. Kos repair terlalu mahal, jadi staf uruskan tukar baru dengan spec yang setara.",
+     "Staf check {product}, confirm masih dalam extra setahun PlusOne. Bila tak boleh repair, saya dapat barang baru.",
+     "Warranty kilang {product} dah habis, tapi PlusOne masih cover. Repair tak dapat dibuat sebab parts takde, akhirnya dapat tukar baru.",
+     "Masa beli {product} dulu staf cakap kalau rosak takleh repair, boleh dapat baru. Memang betul, claim PlusOne saya dapat tukar baru.",
+     "Repair {product} ambil masa terlalu lama sebab tunggu parts. Bawah PlusOne, saya dapat tukar baru.",
+     "Ingatkan dah kena beli baru guna duit sendiri. Rupanya {product} masih bawah PlusOne, dan sebab tak boleh repair, saya dapat ganti baru.",
+     "Claim PlusOne {product} saya berakhir dengan tukar baru. Model dia ikut spec semasa yang setara.",
+     "Staf terangkan dari awal, kalau {product} tak boleh repair, PlusOne bagi tukar baru. Itu yang jadi pada saya.",
+     "{product} rosak lepas warranty kilang tamat. Parts tak ada, jadi bawah PlusOne saya dapat yang baru.",
+     "Kos baiki {product} terlalu tinggi, jadi staf proses tukar baru bawah PlusOne.",
+     "Saya bawa {product} untuk claim PlusOne. Tak boleh repair, dan saya dapat barang baru dengan spec yang sama level.",
+     "Bersyukur ada PlusOne. {product} tak dapat dibaiki, tapi saya dapat tukar baru.",
+     "Lepas semakan, {product} saya tak boleh repair. Sebab masih dalam extra setahun PlusOne, saya dapat ganti baru.",
+     "{product} saya rosak dan tak boleh repair. Staf jelaskan barang ganti bawah PlusOne ikut harga dan spec semasa, dan memang saya dapat yang setara.",
+     "Claim PlusOne untuk {product}. Mula-mula hantar repair, bila parts takde, staf tukar kepada barang baru.",
+     "{product} saya diganti baru bawah PlusOne sebab kerosakan tak boleh dibaiki.",
+     "Saya tak sangka claim PlusOne boleh sampai tukar baru. {product} tak boleh repair, jadi dapat ganti.",
+     "Masih dalam tempoh extra PlusOne masa {product} rosak. Repair tak berbaloi, jadi dapat tukar baru.",
+     "Staf uruskan claim PlusOne untuk {product} dari mula. Bila confirm tak boleh repair, saya dapat barang baru."
+    ]
+   },
    "closers": [
     "Bersyukur dulu dapat PlusOne masa beli.",
-    "Jimat duit repair.",
+    "Jimat duit, tak payah keluar sendiri.",
     "Baru nampak gunanya PlusOne.",
     "Simpan resit memang penting.",
     "Tak perlu pusing sana sini.",
@@ -446,61 +464,65 @@
     "Tak sangka urusan claim boleh semudah ni.",
     "Kurang stress bila staf yang uruskan.",
     "Rasa dilindungi sebagai customer.",
-    "Lepas ni beli barang lain pun saya pastikan dapat PlusOne.",
+    "Lepas ni saya pastikan member PlusOne sentiasa renew.",
     "Puas hati dengan cara claim diuruskan.",
     "Saya tunggu update je lepas ni.",
     "Patut ramai lagi tahu pasal PlusOne ni.",
-    "Memang berbaloi jadi member Senheng.",
+    "Yuran member dari RM12 setahun tu memang berbaloi.",
     "Tak menyesal beli kat Senheng dulu.",
     "Senang hati bila tahu barang ada yang cover.",
     "Kalau tak, mesti dah kena bayar sendiri.",
     "Layanan masa claim pun sama baik macam masa beli.",
     "Terima kasih Grand Senheng Temerloh.",
     "Urusan selesai lebih cepat dari jangkaan."
-   ]
+   ],
+   "variant": "claimOutcome"
   },
   "replacement_entitlement": {
    "label": "Replacement Warranty Entitlement",
    "requirements": [
     "Produk",
-    "Ambil Replacement Warranty"
+    "Harga barang (bawah RM400)",
+    "Harga RW"
    ],
    "required": [
-    "product"
+    "product",
+    "purchasePrice",
+    "rwPrice"
    ],
-   "note": "RW add-on berbayar untuk small appliance terpilih. Warranty asal 1 tahun + RW 1 tahun = 2 tahun. Rosak dalam 2 tahun, tukar baru.",
+   "note": "RW add-on berbayar untuk small appliance bawah RM400. Warranty asal 1 tahun + RW 1 tahun = 2 tahun. Rosak dalam 2 tahun, tukar baru.",
    "opener": "purchase",
    "cores": [
-    "Saya tambah RW untuk {product}. Warranty asal 1 tahun, RW tambah 1 tahun lagi, jadi 2 tahun. Kalau rosak dalam tempoh tu, terus tukar baru.",
-    "Staf terangkan RW masa saya beli {product}. Bayar sikit lagi, warranty setahun jadi 2 tahun, dan kalau rosak dalam 2 tahun dapat tukar baru.",
-    "Untuk {product} ni saya ambil RW. Warranty 1 tahun + 1 tahun, total 2 tahun. Rosak dalam masa tu, tukar baru.",
-    "{product} sekarang ada warranty 2 tahun sebab saya tambah RW. Asalnya setahun je. Kalau rosak, dapat tukar baru.",
-    "Saya ambil add-on RW untuk {product}. Dengan bayaran sikit, warranty yang asal 1 tahun jadi 2 tahun, dan rosak boleh tukar baru.",
-    "Tambah RW untuk {product}: setahun warranty asal, setahun lagi dari RW. Dalam 2 tahun kalau rosak, tukar baru.",
-    "Lepas tambah RW, warranty {product} jadi 2 tahun berbanding setahun sebelum ni. Rosak dalam tempoh tu, dapat tukar baru.",
-    "Staf offer RW untuk {product}. Tambah sikit duit, warranty dari 1 tahun ke 2 tahun. Kalau rosak, tukar baru terus.",
-    "Saya pilih tambah RW untuk {product} sebab kalau rosak dalam 2 tahun boleh tukar baru. Warranty asal cuma 1 tahun.",
-    "{product} dengan RW: warranty asal 1 tahun, tambah 1 tahun, jadi 2 tahun semua. Rosak, tukar baru.",
-    "Caj RW untuk {product} staf bagitahu awal. Dengan bayaran tu, warranty setahun jadi 2 tahun dan rosak boleh tukar baru.",
-    "Saya ambil RW sekali dengan {product}. Warranty biasa setahun, dengan RW jadi 2 tahun. Kalau ada rosak, tukar baru.",
-    "Untuk small appliance macam {product}, saya tambah RW. Warranty 1 tahun jadi 2 tahun, dan rosak dalam tempoh dapat tukar baru.",
-    "Beli {product} dengan RW. Kalau rosak dalam 2 tahun, terus tukar baru. Tanpa RW, warranty dia setahun je.",
-    "Staf terang ringkas: tambah RW, warranty {product} dari setahun jadi 2 tahun, rosak dalam tempoh tu tukar baru. Saya fikir sekejap, lepas tu ambil.",
-    "Saya tambah RW untuk {product}. Setahun dari pengeluar, setahun lagi dari RW. Rosak dalam 2 tahun, dapat tukar baru.",
-    "RW yang saya ambil untuk {product} bagi warranty 2 tahun, berbanding 1 tahun asal. Rosak, tukar baru.",
-    "Saya jarang ambil add-on, tapi RW untuk {product} ni senang faham. Warranty 1 tahun jadi 2 tahun, rosak tukar baru.",
-    "Bayar sikit untuk RW, {product} saya dapat warranty 2 tahun (1 tahun asal + 1 tahun RW). Rosak dalam tempoh, tukar baru.",
-    "Tambah RW masa bayar {product}. Warranty asal 1 tahun, RW tambah setahun. Total 2 tahun, kalau rosak tukar baru.",
-    "Kira senang je: warranty {product} 1 tahun, tambah RW 1 tahun lagi, dapat 2 tahun. Dalam tempoh tu kalau rosak, dapat tukar baru.",
-    "Saya ambil RW untuk {product} lepas staf kira caj dia. Warranty setahun jadi 2 tahun, dan rosak boleh tukar baru.",
-    "{product} saya beli siap dengan RW. Warranty yang biasanya 1 tahun dah jadi 2 tahun. Kalau rosak, tukar baru.",
-    "Dengan RW, {product} ni ada warranty 2 tahun. Setahun asal, setahun tambahan. Rosak dalam tempoh tu, dapat tukar baru.",
-    "Orang rumah suruh ambil RW untuk {product}. Warranty setahun jadi 2 tahun, rosak boleh tukar baru.",
-    "Staf bagitahu ada RW untuk {product}. Saya tambah, jadi warranty asal 1 tahun naik ke 2 tahun. Rosak dalam 2 tahun, tukar baru.",
-    "RW untuk {product} dah ambil. Dalam 2 tahun kalau rosak, tukar baru. Asal warranty 1 tahun je.",
-    "Saya tambah RW sebab {product} ni hari-hari guna. Warranty asal 1 tahun, dengan RW jadi 2 tahun, rosak tukar baru.",
-    "Ambil RW untuk {product} kat Grand Senheng Temerloh. Warranty jadi 2 tahun dari setahun, kalau rosak tukar baru.",
-    "Lepas fikir-fikir, saya ambil RW untuk {product}. Warranty asal setahun, sekarang dah 2 tahun. Kalau ada rosak, bawa ke kedai, tukar baru."
+    "Saya tambah RW {rwPrice} untuk {product}. Warranty asal 1 tahun, RW tambah 1 tahun lagi, jadi 2 tahun. Kalau rosak dalam tempoh tu, terus tukar baru.",
+    "Staf terangkan RW masa saya beli {product} {purchasePrice}. Tambah {rwPrice} je, warranty setahun jadi 2 tahun, dan kalau rosak dalam 2 tahun dapat tukar baru.",
+    "Untuk {product} ni saya ambil RW, bayar {rwPrice}. Warranty 1 tahun + 1 tahun, total 2 tahun. Rosak dalam masa tu, tukar baru.",
+    "{product} sekarang ada warranty 2 tahun sebab saya tambah RW {rwPrice}. Asalnya setahun je. Kalau rosak, dapat tukar baru.",
+    "Saya ambil add-on RW untuk {product}. Dengan {rwPrice}, warranty yang asal 1 tahun jadi 2 tahun, dan rosak boleh tukar baru.",
+    "Tambah RW {rwPrice} untuk {product}: setahun warranty asal, setahun lagi dari RW. Dalam 2 tahun kalau rosak, tukar baru.",
+    "Lepas tambah RW {rwPrice}, warranty {product} jadi 2 tahun berbanding setahun sebelum ni. Rosak dalam tempoh tu, dapat tukar baru.",
+    "Staf offer RW untuk {product}. Tambah {rwPrice}, warranty dari 1 tahun ke 2 tahun. Kalau rosak, tukar baru terus kat kedai.",
+    "Saya pilih tambah RW untuk {product} sebab kalau rosak dalam 2 tahun boleh tukar baru. Caj RW {rwPrice} je, warranty asal cuma 1 tahun.",
+    "{product} {purchasePrice}, tambah RW {rwPrice}. Warranty asal 1 tahun, tambah 1 tahun, jadi 2 tahun semua. Rosak, tukar baru.",
+    "Caj RW {rwPrice} untuk {product} staf bagitahu awal. Dengan bayaran tu, warranty setahun jadi 2 tahun dan rosak boleh tukar baru.",
+    "Saya ambil RW sekali dengan {product}, tambah {rwPrice}. Warranty biasa setahun, dengan RW jadi 2 tahun. Kalau ada rosak, tukar baru.",
+    "Untuk small appliance macam {product}, saya tambah RW {rwPrice}. Warranty 1 tahun jadi 2 tahun, dan rosak dalam tempoh dapat tukar baru.",
+    "Beli {product} dengan RW {rwPrice}. Kalau rosak dalam 2 tahun, terus tukar baru. Tanpa RW, warranty dia setahun je.",
+    "Staf terang ringkas: tambah RW {rwPrice}, warranty {product} dari setahun jadi 2 tahun, rosak dalam tempoh tu tukar baru. Saya fikir sekejap, lepas tu ambil.",
+    "Saya tambah RW untuk {product}, {rwPrice}. Setahun dari pengeluar, setahun lagi dari RW. Rosak dalam 2 tahun, dapat tukar baru.",
+    "RW {rwPrice} yang saya ambil untuk {product} bagi warranty 2 tahun, berbanding 1 tahun asal. Rosak, tukar baru.",
+    "Saya jarang ambil add-on, tapi RW untuk {product} ni senang faham. Tambah {rwPrice}, warranty 1 tahun jadi 2 tahun, rosak tukar baru.",
+    "Bayar {rwPrice} untuk RW, {product} saya dapat warranty 2 tahun (1 tahun asal + 1 tahun RW). Rosak dalam tempoh, tukar baru.",
+    "Tambah RW {rwPrice} masa bayar {product}. Warranty asal 1 tahun, RW tambah setahun. Total 2 tahun, kalau rosak tukar baru.",
+    "Kira senang je: warranty {product} 1 tahun, tambah RW {rwPrice} dapat 1 tahun lagi, jadi 2 tahun. Dalam tempoh tu kalau rosak, dapat tukar baru.",
+    "Saya ambil RW untuk {product} lepas staf bagitahu caj dia {rwPrice}. Warranty setahun jadi 2 tahun, dan rosak boleh tukar baru.",
+    "{product} saya beli {purchasePrice}, siap dengan RW {rwPrice}. Warranty yang biasanya 1 tahun dah jadi 2 tahun. Kalau rosak, tukar baru.",
+    "Dengan RW {rwPrice}, {product} ni ada warranty 2 tahun. Setahun asal, setahun tambahan. Rosak dalam tempoh tu, dapat tukar baru.",
+    "Orang rumah suruh ambil RW untuk {product}. Tambah {rwPrice}, warranty setahun jadi 2 tahun, rosak boleh tukar baru.",
+    "Staf bagitahu ada RW untuk {product}, {rwPrice}. Saya tambah, jadi warranty asal 1 tahun naik ke 2 tahun. Rosak dalam 2 tahun, tukar baru.",
+    "RW untuk {product} dah ambil, {rwPrice}. Dalam 2 tahun kalau rosak, tukar baru. Asal warranty 1 tahun je.",
+    "Saya tambah RW {rwPrice} sebab {product} ni hari-hari guna. Warranty asal 1 tahun, dengan RW jadi 2 tahun, rosak tukar baru.",
+    "Ambil RW untuk {product} kat Grand Senheng Temerloh, tambah {rwPrice}. Warranty jadi 2 tahun dari setahun, kalau rosak tukar baru.",
+    "Lepas fikir-fikir, saya ambil RW {rwPrice} untuk {product}. Warranty asal setahun, sekarang dah 2 tahun. Kalau ada rosak, bawa ke kedai, tukar baru."
    ],
    "closers": [
     "Bayar sikit sekarang, senang hati kemudian.",
@@ -511,7 +533,7 @@
     "Dapat peace of mind, tak la risau sangat.",
     "Caj tambahan tu reasonable untuk perlindungan 2 tahun.",
     "Lepas ni beli small appliance lain pun saya akan tambah RW.",
-    "Senang, kalau rosak bawa je ke outlet.",
+    "Staf cakap kalau rosak, bawa ke outlet dan boleh terus pilih barang baru masa tu juga.",
     "Staf terangkan syarat dengan jelas, jadi saya tak ragu.",
     "Kurang satu benda nak risau.",
     "Tak rugi ambil.",
@@ -522,9 +544,9 @@
     "Kalau rosak pun, dah tahu nak buat apa.",
     "Terima kasih staf yang explain.",
     "Barang kecil pun boleh rosak awal, jadi RW ni membantu.",
-    "Lebih baik bersedia awal.",
+    "Yang best, masa tukar nanti boleh pilih model lain kalau nak.",
     "Malas nak pening kepala kemudian.",
-    "Ok sangat untuk harga yang dibayar.",
+    "Bayar sikit je, berbaloi untuk 2 tahun.",
     "Rasa keputusan ni betul.",
     "Ni kali pertama saya ambil RW, rasa berbaloi.",
     "Simpan resit, senang nanti."
@@ -557,20 +579,20 @@
     "{product} rosak lepas setahun lebih. Warranty asal dah tamat, tapi RW sambung sampai 2 tahun. Dapat tukar baru.",
     "Staf semak rekod RW untuk {product}. Masih dalam 2 tahun, jadi barang tu ditukar baru.",
     "Ingatkan kena hantar repair berminggu. Sebab ada RW, {product} saya terus ditukar baru, masih dalam 2 tahun.",
-    "Claim RW untuk {product}. Rosak dalam 2 tahun, dan staf proses tukar baru dengan cepat.",
+    "Claim RW untuk {product}. Rosak dalam 2 tahun, staf semak dan terus bagi tukar baru on the spot.",
     "Saya datang dengan {product} yang dah tak berfungsi. Staf check, semak RW, masih dalam 2 tahun, jadi dapat tukar baru.",
     "Dapat {product} baru lepas claim RW. Yang lama rosak dalam tempoh 2 tahun.",
     "Dulu tambah RW untuk {product}, warranty jadi 2 tahun. Bila rosak, betul-betul dapat tukar baru.",
     "{product} saya rosak sebelum cukup 2 tahun. RW cover, staf uruskan tukar baru.",
-    "Claim RW {product} diterima. Masih dalam 2 tahun, terus dapat yang baru.",
-    "Bawa {product} ke outlet, staf semak RW. Rosak dalam 2 tahun, jadi tukar baru.",
-    "Lepas {product} rosak, saya terus ke Senheng. RW masih aktif dalam 2 tahun, dapat tukar baru.",
+    "Claim RW {product} diterima masa tu juga. Masih dalam 2 tahun, terus pilih barang baru dan bawa balik.",
+    "Bawa {product} ke outlet, staf semak RW. Rosak dalam 2 tahun, jadi tukar baru, dan saya boleh pilih model yang saya nak.",
+    "Lepas {product} rosak, saya terus ke Senheng. RW masih aktif dalam 2 tahun, dapat tukar baru on the spot.",
     "RW yang saya ambil dulu akhirnya berguna. {product} rosak dalam 2 tahun, dapat tukar baru.",
     "Proses claim RW untuk {product} straightforward. Rosak dalam 2 tahun, staf semak, lepas tu tukar baru.",
     "Pertama kali saya guna RW. {product} buat hal sebelum 2 tahun, dan saya dapat tukar baru tanpa bayar.",
     "Staf terangkan proses RW dengan jelas. {product} saya yang rosak dalam 2 tahun ditukar baru.",
     "Mula-mula risau claim ditolak. Rupanya mudah, {product} rosak dalam 2 tahun dan RW bagi tukar baru.",
-    "Saya tunjuk resit {product} dan terangkan masalah. Masih dalam 2 tahun RW, jadi dapat tukar baru.",
+    "Saya tunjuk resit {product} dan terangkan masalah. Masih dalam 2 tahun RW, jadi dapat tukar baru. Saya ambil model lain yang saya lagi berkenan.",
     "Barang yang hari-hari guna macam {product} ni memang susah bila rosak. Ada RW, rosak dalam 2 tahun, dapat tukar baru.",
     "Hari ni pergi claim RW. {product} rosak dalam 2 tahun, staf layan baik dan saya dapat tukar baru."
    ],
@@ -591,9 +613,9 @@
     "Tak sangka urusan tukar baru semudah ni.",
     "Recommend RW untuk small appliance.",
     "Saya akan terus beli kat Senheng lepas ni.",
-    "Tak payah tunggu repair berminggu-minggu.",
+    "Siap on the spot, tak payah tunggu repair berminggu-minggu.",
     "Benda macam ni yang buat saya percaya beli kat sini.",
-    "Fair dan jelas.",
+    "Boleh pilih model yang saya nak masa tukar, itu yang saya suka.",
     "Pengalaman yang baik walaupun mula-mula barang rosak.",
     "Bersyukur dulu dengar cakap staf ambil RW.",
     "Dapat barang baru tanpa bayar lagi.",
@@ -703,7 +725,7 @@
   "Suasana kedai tenang, tak sesak.",
   "Staf pandai terang dalam bahasa mudah.",
   "Dokumen semua staf yang tolong uruskan.",
-  "Staf panggil dan update saya bila dah siap.",
+  "Staf tak buat saya tunggu lama.",
   "Tak rasa macam kena layan acuh tak acuh.",
   "Staf terangkan syarat dengan jujur.",
   "Saya datang tanpa appointment, staf tetap layan terus.",
@@ -712,22 +734,32 @@
   "Staf ulang balik maklumat penting supaya saya tak lupa.",
   "Tak ada istilah teknikal yang buat pening.",
   "Staf layan dengan sopan walaupun masa tu dah dekat waktu tutup."
+ ],
+ "plusone_claim_outcomes": [
+  {
+   "id": "repair",
+   "label": "Repair, kos ditanggung"
+  },
+  {
+   "id": "replace",
+   "label": "Tak boleh repair, dapat baru"
+  }
  ]
 }
 </script>
 <script>
 (() => {
   "use strict";
-  const CONFIG = {placeId:"ChIJhUovtuy4zjERZlW96Pgwgec", bagKey:"gs009-bag-v5", sessionKey:"gs009-session-v5", count:3, maintenanceFee:0.05};
+  const CONFIG = {placeId:"ChIJhUovtuy4zjERZlW96Pgwgec", bagKey:"gs009-bag-v6", sessionKey:"gs009-session-v6", count:3, maintenanceFee:0.05};
   const GROUPS = [
     {title:"S-Coin", items:[
       {id:"scoin_issuance", icon:"🪙", title:"Dapat S-Coin", desc:"Cashback lepas beli barang"},
       {id:"scoin_redemption", icon:"🎁", title:"Redeem S-Coin", desc:"Barang free guna S-Coin"}]},
     {title:"PlusOne Warranty", items:[
-      {id:"plusone_entitlement", icon:"🛡️", title:"Dapat PlusOne", desc:"Extra warranty 1 tahun (bukan TV)"},
-      {id:"plusone_claim", icon:"🧾", title:"Claim PlusOne", desc:"Tuntut bawah PlusOne"}]},
+      {id:"plusone_entitlement", icon:"🛡️", title:"Dapat PlusOne", desc:"Member: extra 1 tahun warranty"},
+      {id:"plusone_claim", icon:"🧾", title:"Claim PlusOne", desc:"Repair atau dapat baru"}]},
     {title:"Replacement Warranty (RW)", items:[
-      {id:"replacement_entitlement", icon:"➕", title:"Tambah RW", desc:"Warranty jadi 2 tahun"},
+      {id:"replacement_entitlement", icon:"➕", title:"Tambah RW", desc:"Tambah RM sikit, jadi 2 tahun"},
       {id:"replacement_claim", icon:"🔄", title:"Claim RW", desc:"Rosak, tukar baru"}]}
   ];
   const ITEMS = Object.fromEntries(GROUPS.flatMap(g => g.items).map(i => [i.id, i]));
@@ -752,6 +784,7 @@
     return {gross, fee: gross * CONFIG.maintenanceFee, net: coins / 100, coins};
   }
   const redeemCoins = value => Math.round(parseAmount(value) * 100);
+  const years = value => Math.min(10, Math.floor(parseAmount(value)));
 
   /* ---------- step 1: categories ---------- */
   function renderCategories(){
@@ -815,15 +848,46 @@
       h.appendChild(field("itemValue", "Nilai barang yang ditebus", "Contoh: 200.00", {prefix:"RM", decimal:true}));
       const calc = el("div", "calc"); calc.id = "scoinCalc"; calc.setAttribute("aria-live", "polite"); h.appendChild(calc);
     }
+    if (id === "plusone_entitlement"){
+      h.appendChild(field("purchasePrice", "Harga beli", "Contoh: 2,000.00", {prefix:"RM", decimal:true}));
+      const wf = field("factoryYears", "Warranty kilang (tahun)", "Contoh: 1", {decimal:true});
+      const input = wf.querySelector("input"); input.inputMode = "numeric";
+      const chips = chipField("", [1,2,3].map(v => ({label:v + " tahun", value:v})), state.details.factoryYears, v => {input.value = v; capture()});
+      wf.appendChild(chips.querySelector(".chips")); h.appendChild(wf);
+      const calc = el("div", "calc"); calc.id = "scoinCalc"; calc.setAttribute("aria-live", "polite"); h.appendChild(calc);
+    }
+    if (id === "plusone_claim"){
+      const hidden = el("input"); hidden.type = "hidden"; hidden.id = "claimOutcome"; hidden.value = state.details.claimOutcome || "";
+      const f = chipField("Apa yang berlaku?", DATA.plusone_claim_outcomes.map(o => ({label:o.label, value:o.id})), hidden.value, v => {hidden.value = v; capture()});
+      f.appendChild(hidden); h.appendChild(f);
+    }
+    if (id === "replacement_entitlement"){
+      h.appendChild(field("purchasePrice", "Harga barang", "Contoh: 100.00", {prefix:"RM", decimal:true, hint:"Bawah RM400"}));
+      h.appendChild(field("rwPrice", "Harga RW yang ditambah", "Contoh: 7.00", {prefix:"RM", decimal:true}));
+      const calc = el("div", "calc"); calc.id = "scoinCalc"; calc.setAttribute("aria-live", "polite"); h.appendChild(calc);
+    }
     h.querySelectorAll("input").forEach(i => i.addEventListener("input", capture));
     updateCalc();
   }
   function capture(){
-    const d = {}; ["product","purchasePrice","cashbackPercent","itemValue"].forEach(id => {const i = $(id); if (i) d[id] = i.value});
+    const d = {}; ["product","purchasePrice","cashbackPercent","itemValue","factoryYears","rwPrice","claimOutcome"].forEach(id => {const i = $(id); if (i) d[id] = i.value});
     state.details = d; state.original = ""; clearErrors(); updateCalc(); saveSession();
   }
   function updateCalc(){
     const box = $("scoinCalc"); if (!box) return; box.textContent = "";
+    if (state.category === "plusone_entitlement"){
+      const y = years(state.details.factoryYears), price = parseAmount(state.details.purchasePrice);
+      if (y <= 0){box.textContent = "Pilih warranty kilang untuk kira jumlah warranty."; return}
+      box.append(el("strong", "", "Total warranty " + (y + 1) + " tahun"), el("span", "", "Kilang " + y + " tahun + PlusOne 1 tahun"));
+      if (price > 0) box.append(el("span", "fee", (price < 500 ? "Biasanya untuk barang lebih RM500. " : "") + "Repair dalam tahun PlusOne ditanggung sampai " + money(price) + "."));
+      return;
+    }
+    if (state.category === "replacement_entitlement"){
+      const price = parseAmount(state.details.purchasePrice), rw = parseAmount(state.details.rwPrice);
+      box.append(el("strong", "", "Warranty 2 tahun" + (rw > 0 ? " dengan RW " + money(rw) : "")), el("span", "", "Asal 1 tahun + RW 1 tahun. Rosak dalam 2 tahun, tukar baru."));
+      if (price > 400) box.append(el("span", "fee", "RW hanya untuk barang bawah RM400."));
+      return;
+    }
     if (state.category === "scoin_redemption"){
       const v = parseAmount(state.details.itemValue);
       if (v <= 0){box.textContent = "Isi nilai barang untuk kira S-Coin yang digunakan."; return}
@@ -847,6 +911,12 @@
     const d = state.details, id = state.category; let ok = !!String(d.product || "").trim(), msg = "Lengkapkan maklumat yang diperlukan.";
     if (id === "scoin_issuance"){const p = parseAmount(d.cashbackPercent); ok = ok && p > 0 && p <= 100 && parseAmount(d.purchasePrice) > 0 && calcScoin(d.purchasePrice, p).coins > 0}
     if (id === "scoin_redemption") ok = ok && redeemCoins(d.itemValue) > 0;
+    if (id === "plusone_entitlement") ok = ok && years(d.factoryYears) > 0 && parseAmount(d.purchasePrice) > 0;
+    if (id === "plusone_claim") ok = ok && !!d.claimOutcome;
+    if (id === "replacement_entitlement"){
+      ok = ok && parseAmount(d.purchasePrice) > 0 && parseAmount(d.rwPrice) > 0;
+      if (parseAmount(d.purchasePrice) > 400){ok = false; msg = "RW hanya untuk small appliance bawah RM400."}
+    }
     if (id.startsWith("plusone_") && /(^|\s)(tv|television|televisyen)(\s|$)/i.test(String(d.product || ""))){ok = false; msg = "TV tak layak untuk PlusOne Warranty. Pilih kategori yang betul."}
     showError("detailsError", !ok, msg); return ok;
   }
@@ -862,24 +932,32 @@
       scoinCoins: r.coins.toLocaleString("en-MY") + " S-Coin",
       scoinRM: money(r.net),
       itemRM: money(parseAmount(d.itemValue)),
-      redeemCoins: redeemCoins(d.itemValue).toLocaleString("en-MY") + " S-Coin"
+      redeemCoins: redeemCoins(d.itemValue).toLocaleString("en-MY") + " S-Coin",
+      factoryYears: years(d.factoryYears) + " tahun",
+      totalYears: (years(d.factoryYears) + 1) + " tahun",
+      rwPrice: money(parseAmount(d.rwPrice))
     };
   }
   function fill(t){
     const v = values();
-    const s = String(t).replace(/\{(\w+)\}/g, (_, k) => v[k] ?? "").replace(/\s+/g, " ").trim();
-    return s.charAt(0).toUpperCase() + s.slice(1);
+    // Capitalise a value that starts a sentence (but leave names like "iPhone" alone).
+    const cap = x => /^[a-z](?![A-Z])/.test(x) ? x.charAt(0).toUpperCase() + x.slice(1) : x;
+    const s = String(t).replace(/(^|[.!?] )\{(\w+)\}/g, (_, p, k) => p + cap(String(v[k] ?? "")))
+      .replace(/\{(\w+)\}/g, (_, k) => v[k] ?? "").replace(/\s+/g, " ").trim();
+    return cap(s);
   }
   function rnd(n){if (window.crypto?.getRandomValues){const a = new Uint32Array(1); crypto.getRandomValues(a); return a[0] % n} return Math.floor(Math.random() * n)}
   function shuffle(a){for (let i = a.length - 1; i > 0; i--){const j = rnd(i + 1); [a[i], a[j]] = [a[j], a[i]]} return a}
   function loadBags(){try{return JSON.parse(localStorage.getItem(CONFIG.bagKey)) || {}}catch{return {}}}
   // Core sentence: shuffle bag per category, so one phone sees every core before any repeats.
   function drawCore(){
-    const T = cat().cores, n = T.length, bags = loadBags();
-    let rest = (Array.isArray(bags[state.category]) ? bags[state.category] : []).filter(i => Number.isInteger(i) && i < n);
+    const c = cat(), variant = c.variant ? String(state.details[c.variant] || "") : "";
+    const T = Array.isArray(c.cores) ? c.cores : c.cores[variant], key = state.category + (variant ? ":" + variant : "");
+    const n = T.length, bags = loadBags();
+    let rest = (Array.isArray(bags[key]) ? bags[key] : []).filter(i => Number.isInteger(i) && i < n);
     if (!rest.length) rest = shuffle([...Array(n).keys()].filter(i => i !== state.last.core));
     const pick = rest[0];
-    bags[state.category] = rest.slice(1);
+    bags[key] = rest.slice(1);
     try{localStorage.setItem(CONFIG.bagKey, JSON.stringify(bags))}catch{}
     state.last.core = pick;
     return T[pick];
